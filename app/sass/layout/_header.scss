@@ -1,0 +1,57 @@
+.header {
+  @include flex;
+  padding: 15px 0 10px;
+  &-nav {
+    @include flex;
+    width: 100%;
+    max-width: 790px;
+    li {
+      a {
+        display: inline-block;
+        padding: 7px 5px;
+        border-bottom: 2px solid transparent;
+        opacity: 0.69;
+        color: #32363c;
+        font-family: $FontAvenir;
+        font-size: 18px;
+        font-weight: 400;
+        transition: .2s;
+        &:hover {
+          color: #caa265;
+        }
+        &:active,
+        &.active {
+          border-color: #31363b;
+          font-family: $FontAvenirDemi;
+          font-size: 22px;
+          color: #35393e;
+        }
+      }
+    }
+  }
+  &-column {
+    text-align: center;
+  }
+  &-phone {
+    display: block;
+    margin-bottom: 14px;
+    opacity: 0.97;
+    color: #32363c;
+    font-family: $FontAvenirDemi;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 0.14px;
+    transition: .2s;
+    &:hover {
+      color: #caa265;
+    }
+  }
+  .btn {
+    width: 216px;
+    min-height: 45px;
+    font-family: $FontAvenir;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.17px;
+  }
+}

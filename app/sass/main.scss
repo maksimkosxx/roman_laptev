@@ -7,7 +7,9 @@
         'base/typography',
         'base/base';
 
-@import 'layout/top';
+@import 'layout/top',
+        'layout/header',
+        'layout/hero';
 
 @import 'components/buttons',
         'components/carousel',

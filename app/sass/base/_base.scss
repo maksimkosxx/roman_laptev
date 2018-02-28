@@ -2,6 +2,7 @@ body {
   font-family: $FontAvenir;
 }
 * {
+  box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -11,4 +12,29 @@ a {
   &:focus {
     text-decoration: none;
   }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+h1 {
+  width: 423px;
+  height: 48px;
+  opacity: 0.99;
+  color: #2e3339;
+  font-family: $FontSylfaen;
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 57.36px;
+}
+
+h2 {
+  color: #363a3e;
+  font-family: $FontSylfaen;
+  font-size: 45px;
+  font-weight: 400;
+  line-height: 47px;
 }

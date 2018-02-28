@@ -1,14 +1,15 @@
 .btn {
+  display: block;
   border: none;
-  color: #32363c;
-  letter-spacing: 0.17px;
+  border-radius: 2px;
   box-shadow: 0 4px 8px rgba(116, 102, 81, 0.35);
   background-color: #dcb476;
+  color: #32363c;
   transition: .2s;
   cursor: pointer;
   outline: none;
   &:hover {
-    background-image: darken(#dcb476, 5%);
+    background: darken(#dcb476, 5%);
     transition: .2s;
   }
   &:active {
