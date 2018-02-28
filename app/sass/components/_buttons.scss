@@ -1,0 +1,17 @@
+.btn {
+  border: none;
+  color: #32363c;
+  letter-spacing: 0.17px;
+  box-shadow: 0 4px 8px rgba(116, 102, 81, 0.35);
+  background-color: #dcb476;
+  transition: .2s;
+  cursor: pointer;
+  outline: none;
+  &:hover {
+    background-image: darken(#dcb476, 5%);
+    transition: .2s;
+  }
+  &:active {
+    transform: scale(0.98);
+  }
+}

@@ -1,0 +1,75 @@
+@mixin font($size, $height, $family, $weight) {
+  font-size: $size;
+  line-height: $height;
+  font-family: $family;
+  font-weight: $weight;
+}
+
+
+// Placeholders mixins
+
+@mixin placeholder {
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
+@mixin placeholder-focus {
+  &:focus:-moz-placeholder { @content; }
+  &:focus::-moz-placeholder { @content; }
+  &:focus:-ms-input-placeholder { @content; }
+  &:focus::-webkit-input-placeholder { @content; }
+}
+
+// Flex mixins
+
+@mixin flex() {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+// Media queries mixins
+
+@mixin respond-to($media) {
+  @if $media == xs {
+    @media only screen and (min-width: $xs) { @content; }
+  }
+  @else if $media == sm {
+    @media only screen and (min-width: $sm) { @content; }
+  }
+  @else if $media == md {
+    @media only screen and (min-width: $md) { @content; }
+  }
+}
+
+
+// Mixins for links
+
+@mixin links ($link, $active) {
+  & {
+    color: $link;
+    transition: .2s;
+    &:visited {
+      color: $active;
+    }
+    &:hover {
+      color: $active;
+    }
+    &:active, &:focus {
+      color: $active;
+    }
+  }
+}
+
+// Services background items mixin
+
+//@for $i from 1 through 7 {
+//  .services-content__item:nth-child(#{$i}) {
+//    .services-item {
+//      background-image: url("/img/layout/services/item#{$i}.jpg");
+//    }
+//  }
+//}
