@@ -2,7 +2,7 @@
   position: relative;
   max-width: 1400px;
   margin: 0 auto;
-  min-height: 797px;
+  min-height: 800px;
   &::before {
     content: '';
     display: block;
@@ -15,9 +15,21 @@
     width: 100%;
     height: 100%;
     background-color: #d9d5d0;
-    opacity: 0.5;
+    opacity: 0.4;
     background: url(/img/bg_block1.png) center no-repeat;
     background-size: cover;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 13%;
+    z-index: 3;
+    display: block;
+    width: 100%;
+    max-width: 455px;
+    min-height: 761px;
+    background: url(/img/roman.png) 0 100% no-repeat;
   }
 }
 
@@ -25,9 +37,65 @@
   position: relative;
   z-index: 2;
   padding-top: 220px;
+  text-align: right;
   &-content {
     min-height: 407px;
-    border: 3px solid #ffffff;
-
+    padding-right: 80px;
+    border: 2px solid #ffffff;
+    legend {
+      padding: 0 15px 0 11px;
+      font-family: $FontSylfaen;
+      font-size: 70px;
+      font-weight: 400;
+      line-height: 57.36px;
+      color: #2e3339;
+    }
+    &__text  {
+      display: inline-block;
+      max-width: 410px;
+      margin-right: 27px;
+      text-align: left;
+      &::before {
+        content: '';
+        display: block;
+        width: 72px;
+        height: 2px;
+        margin: 35px 0;
+        background-color: #000000;
+      }
+    }
+    &__description {
+      color: #373a3f;
+      font-family: $FontAvenir;
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 35px;
+    }
+    &__link {
+      display: block;
+      max-width: 410px;
+      opacity: 0.84;
+      color: #32363c;
+      font-family: $FontAvenirDemi;
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 35px;
+      text-align: left;
+      &::after {
+        content: '';
+        display: inline-block;
+        margin: 37px 0 0 13px;
+        border: 6px solid transparent;
+        border-left: 11px solid #32363c;
+      }
+      &:hover {
+        color: #caa265;
+        transition: .2s;
+        &::after {
+          border-left-color: #caa265;
+          transition: .2s;
+        }
+      }
+    }
   }
  }
