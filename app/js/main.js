@@ -1,6 +1,17 @@
-// $(document).ready(function () {
-//
-//
+$(document).ready(function () {
+
+    // VIDEO
+
+
+    $('.about-video__btn').on('click', function(ev) {
+
+        $(this).parents().addClass('active');
+
+        $('.about-video iframe')[0].src += "&autoplay=1";
+        ev.preventDefault();
+
+    });
+
 //     // Tabs
 //
 //     $('.tabs-nav li').on('click', function () {
@@ -165,5 +176,5 @@
 
 
 
-// });
+});
 

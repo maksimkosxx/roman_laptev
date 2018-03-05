@@ -58,12 +58,11 @@
   }
 }
 
-// Services background items mixin
+// Events background items mixin
 
-//@for $i from 1 through 7 {
-//  .services-content__item:nth-child(#{$i}) {
-//    .services-item {
-//      background-image: url("/img/layout/services/item#{$i}.jpg");
-//    }
-//  }
-//}
+@for $i from 1 through 6 {
+  .events-item:nth-child(#{$i}) {
+    background: url("/img/events/image#{$i}.png") center no-repeat;
+    background-size: cover;
+  }
+}
