@@ -62,7 +62,6 @@
 
 @for $i from 1 through 6 {
   .events-item:nth-child(#{$i}) {
-    background: url("/img/events/image#{$i}.png") center no-repeat;
-    background-size: cover;
+    background-image: url("/img/events/image#{$i}.png");
   }
 }
