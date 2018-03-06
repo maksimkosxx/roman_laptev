@@ -12,6 +12,13 @@ $(document).ready(function () {
 
     });
 
+    // Datepicker
+
+
+    $( function() {
+        $('#date').datepicker();
+    } );
+
 //     // Tabs
 //
 //     $('.tabs-nav li').on('click', function () {
