@@ -1,15 +1,30 @@
 $(document).ready(function () {
 
-    // VIDEO
+    // VIDEO youtube
 
+    $(function() {
+        $('.youtube').each(function() {
+            // По YouTube ID, находим превью картинку
+            $(this).css('background-image', 'url(http://i.ytimg.com/vi/' + this.id + '/sddefault.jpg)');
 
-    $('.about-video__btn').on('click', function(ev) {
+            // Добавляем кнопку play
+            $(this).append($('<div/>', {'class': 'play'}));
 
-        $(this).parents().addClass('active');
+            $('.youtube .play').on('click', function() {
 
-        $('.about-video iframe')[0].src += "&autoplay=1";
-        ev.preventDefault();
+                $(this).parents().addClass('active');
+            });
 
+            $(document).delegate('#'+this.id, 'click', function() {
+                // Создаем iFrame с параметром autoplay
+                var iframe_url = "https://www.youtube.com/embed/" + this.id + "?autoplay=1&autohide=1";
+                if ($(this).data('params')) iframe_url+='&'+$(this).data('params');
+
+                var iframe = $('<iframe/>', {'frameborder': '0', 'src': iframe_url, 'width': $(this).width(), 'height': $(this).height() });
+
+                $(this).replaceWith(iframe);
+            });
+        });
     });
 
     // Datepicker
