@@ -1,0 +1,117 @@
+.steps {
+  padding: 70px 0;
+  &-title {
+    margin-bottom: 18px;
+    text-align: center;
+    color: #363a3e;
+    font-family: $FontSylfaen;
+    font-size: 45px;
+    font-weight: 400;
+    line-height: 46px;
+  }
+  &-description {
+    color: #363a3e;
+    text-align: center;
+    font-family: $FontAvenir;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 40px;
+    &::after {
+      content: '';
+      display: block;
+      width: 71px;
+      height: 2px;
+      margin: 30px auto 0;
+      background-color: #3e3e3e;
+      opacity: 0.76;
+    }
+  }
+  &-item {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1082px;
+    min-height: 603px;
+    margin: 60px auto 0;
+    border: 2px solid #a78c6e;
+    &__image {
+      position: relative;
+      left: -40px;
+    }
+    &__text {
+      width: 100%;
+      max-width: 340px;
+      padding-right: 25px;
+      box-sizing: border-box;
+    }
+    &__number {
+      opacity: 0.32;
+      color: #dbb574;
+      font-family: $FontSylfaen;
+      font-size: 150px;
+      font-weight: 400;
+      line-height: 50px;
+    }
+    &__title {
+      position: relative;
+      z-index: 2;
+      margin: -45px 0 20px;
+      color: #363a3e;
+      font-family: $FontSylfaen;
+      font-size: 45px;
+      font-weight: 400;
+      line-height: 45px;
+      div:last-child {
+        position: relative;
+        right: -65px;
+        span {
+          padding: 5px 0;
+          background-color: #fff;
+        }
+      }
+    }
+    &__description {
+      max-width: 310px;
+      opacity: 0.72;
+      color: #373a3f;
+      font-family: $FontAvenir;
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 34px;
+    }
+    &--left {
+      .steps-item__image {
+        left: auto;
+        right: -40px;
+      }
+      .steps-item__text {
+        max-width: 360px;
+        padding-right: 0;
+        padding-left: 40px;
+      }
+      .steps-item__title {
+        left: -63px;
+        div {
+          &:first-child {
+            span {
+              padding: 10px 0 5px;
+              background-color: #fff;
+            }
+          }
+          &:last-child {
+            right: -80px;
+          }
+        }
+      }
+    }
+    &:nth-of-type(3) {
+      .steps-item__title {
+        div:last-child {
+          position: relative;
+          right: -48px;
+        }
+      }
+    }
+  }
+}
