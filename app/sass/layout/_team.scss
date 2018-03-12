@@ -1,0 +1,116 @@
+.team {
+  padding: 90px 0;
+  &-title {
+    margin-bottom: 26px;
+    color: #363a3e;
+    font-family: $FontSylfaen;
+    font-size: 45px;
+    font-weight: 400;
+    line-height: 46px;
+    text-align: center;
+  }
+  &-description {
+    opacity: 0.84;
+    color: #363a3e;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 40px;
+    text-align: center;
+    &::after {
+      content: '';
+      display: block;
+      width: 71px;
+      height: 2px;
+      margin: 40px auto 0;
+      background-color: #3e3e3e;
+      opacity: 0.76;
+    }
+  }
+  &-content {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 180px -28px 0;
+  }
+  &-item {
+    width: 100%;
+    max-width: 372px;
+    min-height: 533px;
+    margin: 0 14px 73px;
+    border: 2px solid #a78c6e;
+    text-align: center;
+    img {
+      margin-top: calc(-50% + 55px);
+    }
+    &__name {
+      margin-top: 28px;
+      color: #363a3e;
+      font-family: $FontSylfaen;
+      font-size: 32px;
+      font-weight: 400;
+      line-height: 40px;
+      &::after {
+        content: '';
+        display: block;
+        width: 71px;
+        height: 2px;
+        margin: 16px auto 18px;
+        background-color: #3e3e3e;
+      }
+    }
+    &__position {
+      opacity: 0.71;
+      color: #363a3e;
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 40px;
+    }
+    &__description {
+      margin-top: 40px;
+      padding: 0 15px;
+      p {
+        margin: 0 0 10px;
+        font-size: 22px;
+        font-weight: 400;
+        color: #363a3e;
+        span {
+          font-family: $FontAvenirDemi;
+          font-weight: 600;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+  &-footer {
+    max-width: 920px;
+    padding: 0 15px;
+    margin: 0 auto;
+    text-align: center;
+    &__title {
+      margin-bottom: 28px;
+      color: #363a3e;
+      font-family: $FontSylfaen;
+      font-size: 32px;
+      font-weight: 400;
+      line-height: 40px;
+    }
+    p {
+      opacity: 0.7;
+      color: #363a3e;
+      font-family: $FontAvenir;
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 30px;
+      span {
+        display: block;
+        margin-top: 20px;
+        color: #363a3e;
+        font-family: $FontAvenir;
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 30px;
+      }
+    }
+  }
+}

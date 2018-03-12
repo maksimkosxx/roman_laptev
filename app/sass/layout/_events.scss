@@ -111,8 +111,6 @@
       }
     }
     &:hover {
-      //transform: scale(0.98);
-      //transition: .2s;
       &::after {
         z-index: 1;
         padding-top: 0;
@@ -122,10 +120,6 @@
         background-image: radial-gradient(circle, rgba(0,0,0,0.5), transparent 100%);
         transition: .2s;
       }
-      //fieldset {
-      //  transform: scale(1.01);
-      //  transition: .5s;
-      //}
     }
   }
   &--principles {

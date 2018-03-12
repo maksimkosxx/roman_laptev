@@ -1,0 +1,75 @@
+.contacts {
+  @include flex;
+  max-width: 1094px;
+  min-height: 671px;
+  margin: 74px 0 59px;
+  padding: 15px 0 15px 70px;
+  border: 2px solid #a78c6e;
+  &-text {
+    max-width: 50%;
+    &__description {
+      margin-bottom: 50px;
+      opacity: 0.64;
+      color: #363a3e;
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 28px;
+    }
+    &__title {
+      color: #363a3e;
+      font-family: $FontSylfaen;
+      font-size: 45px;
+      font-weight: 400;
+      line-height: 47px;
+      &::after {
+        content: '';
+        display: block;
+        width: 71px;
+        height: 2px;
+        margin: 38px 0 0;
+        background-color: #3e3e3e;
+        opacity: 0.76;
+      }
+    }
+    &__phone {
+      display: block;
+      margin-top: 50px;
+      color: #363a3e;
+      font-family: $FontAvenirDemi;
+      font-size: 45px;
+      font-weight: 400;
+      line-height: 46px;
+      &:hover {
+        color: #caa265;
+      }
+    }
+    &__btn {
+      width: 100%;
+      max-width: 288px;
+      min-height: 62px;
+      margin-top: 40px;
+      color: #43464a;
+      font-family: $FontAvenir;
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 60px;
+    }
+    &__social {
+      @include flex;
+      max-width: 294px;
+      margin-top: 50px;
+      a {
+        transition: .2s;
+        &:hover {
+          opacity: 0.7;
+        }
+        &:active {
+          transform: scale(0.95);
+        }
+      }
+    }
+  }
+  &-image {
+    margin-right: -70px;
+  }
+}
