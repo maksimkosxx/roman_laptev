@@ -1,0 +1,118 @@
+.reviews {
+  max-width: 1135px;
+  min-height: 757px;
+  margin: 50px 0 66px;
+  padding: 60px 0 20px;
+  border: 2px solid #a78c6e;
+  &-title {
+    max-width: 610px;
+    margin: -80px auto 0;
+    color: #363a3e;
+    font-family: $FontSylfaen;
+    font-size: 45px;
+    font-weight: 400;
+    line-height: 46px;
+    text-align: center;
+    background-color: #ffffff;
+  }
+  &-tabs {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 480px;
+    margin: 40px auto 45px;
+    &__button {
+      padding: 0 0 3px;
+      opacity: 0.66;
+      color: #484a4d;
+      font-family: $FontAvenir;
+      font-size: 18px;
+      font-weight: 400;
+      border: none;
+      outline: none;
+      background: none;
+      border-bottom: 2px solid #fff;
+      transition: .2s;
+      &.active {
+        opacity: 1;
+        color: #4a4d51;
+        font-family: $FontAvenirDemi;
+        border-bottom-color: #3e3e3e;
+      }
+    }
+  }
+  &-slider {
+    position: relative;
+    right: -20px;
+    width: 100%;
+    &__item {
+      padding-left: 47px;
+    }
+    &__wrapper {
+      @include flex;
+      overflow: hidden;
+    }
+    &__text {
+      max-width: 705px;
+    }
+    &__title {
+      margin-bottom: 15px;
+      color: #363a3e;
+      font-family: $FontSylfaen;
+      font-size: 32px;
+      font-weight: 400;
+      line-height: 40px;
+    }
+    &__event {
+      opacity: 0.72;
+      color: #373a3f;
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 34px;
+      &::after {
+        content: '';
+        display: block;
+        width: 71px;
+        height: 2px;
+        margin: 31px 0 0;
+        background-color: #3e3e3e;
+        opacity: 0.76;
+      }
+    }
+    &__description {
+      margin-top: 33px;
+      opacity: 0.72;
+      color: #373a3f;
+      font-size: 18px;
+      line-height: 28px;
+      span {
+        font-family: $FontAvenirDemi;
+        font-weight: 600;
+      }
+    }
+    &__image {
+      img {
+        box-shadow: 0 5px 24px 8px rgba(156, 153, 149, 0.2);
+      }
+    }
+    &__link {
+      margin-top: 20px;
+      text-align: center;
+      a {
+        display: inline-block;
+        border-bottom: 2px solid #939496;
+        color: #373a3f;
+        font-family: $FontAvenir;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 28px;
+        opacity: 0.55;
+        transition: .2s;
+        &:hover {
+          border-bottom-color: #fff;
+        }
+      }
+    }
+  }
+}

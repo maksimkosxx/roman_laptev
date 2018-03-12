@@ -34,6 +34,11 @@ $(document).ready(function () {
         $('#date').datepicker();
     } );
 
+
+    // Slick
+
+    $('.reviews-slider').slick();
+
 //     // Tabs
 //
 //     $('.tabs-nav li').on('click', function () {

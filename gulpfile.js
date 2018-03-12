@@ -41,7 +41,11 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest('app/libs')); // Выгружаем в папку app/libs
 });
 gulp.task('sass-libs', function(){ // Создаем таск Sass
-    return gulp.src('app/sass/vendors/jquery-ui.scss') // Выбираем файл для минификации
+    return gulp.src([ // Берем все необходимые библиотеки
+       'app/sass/vendors/jquery-ui.scss', // Выбираем файл для минификации
+       'app/sass/vendors/slick.scss',
+       'app/sass/vendors/slick-theme.scss'
+    ])
         .pipe(sass({outputStyle: 'compressed'})) // Преобразуем Sass в CSS посредством gulp-sass
         .pipe(rename({suffix: '.min'})) // Добавляем суффикс .min
         .pipe(gulp.dest('app/libs')) // Выгружаем в папку app/libs
