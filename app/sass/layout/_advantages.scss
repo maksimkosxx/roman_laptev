@@ -21,26 +21,32 @@
     max-width: 282px;
     padding: 0 12px;
     box-sizing: border-box;
-    fieldset {
+    &__wrapper {
+      position: relative;
       max-width: 260px;
-      min-height: 534px;
+      min-height: 447px;
       border: 2px solid #a78c6e;
-      legend {
-        position: relative;
-        top: -15px;
-        padding: 0 77px;
-        opacity: 0.24;
-        color: #dbb574;
-        font-family: $FontSylfaen;
-        font-size: 150px;
-        font-weight: 400;
-        line-height: 50px;
-        text-align: center;
+      border-top: 0;
+      &::after,
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        display: inline-block;
+        width: 15px;
+        height: 2px;
+        background-color: #a78c6e;
+      }
+      &::after {
+        right: 0;
+      }
+      &::before {
+        left: 0;
       }
       .text {
         position: relative;
-        top: -36px;
-        max-width: 215px;
+        top: -61px;
+        max-width: 212px;
         margin: 0 auto;
         opacity: 0.85;
         color: #373a3f;
@@ -54,6 +60,18 @@
           font-weight: 600;
         }
       }
+    }
+    &__number {
+      position: relative;
+      top: -40px;
+      padding: 0 77px;
+      opacity: 0.24;
+      color: #dbb574;
+      font-family: $FontSylfaen;
+      font-size: 150px;
+      font-weight: 400;
+      line-height: 50px;
+      text-align: center;
     }
     img {
       position: absolute;

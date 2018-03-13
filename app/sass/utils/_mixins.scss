@@ -28,14 +28,11 @@
 // Media queries mixins
 
 @mixin respond-to($media) {
-  @if $media == xs {
-    @media only screen and (min-width: $xs) { @content; }
-  }
-  @else if $media == sm {
-    @media only screen and (min-width: $sm) { @content; }
+  @if $media == sm {
+    @media only screen and (max-width: $sm) { @content; }
   }
   @else if $media == md {
-    @media only screen and (min-width: $md) { @content; }
+    @media only screen and (max-width: $md) { @content; }
   }
 }
 

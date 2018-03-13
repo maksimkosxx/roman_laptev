@@ -34,20 +34,34 @@
       background: none;
       border-bottom: 2px solid #fff;
       transition: .2s;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.3;
+      }
       &.active {
         opacity: 1;
         color: #4a4d51;
         font-family: $FontAvenirDemi;
         border-bottom-color: #3e3e3e;
+        pointer-events: none;
+      }
+    }
+    &__content {
+     visibility: hidden;
+      height: 0;
+      transition: .2s;
+      &.active {
+        height: auto;
+        visibility: visible;
       }
     }
   }
   &-slider {
     position: relative;
-    right: -20px;
-    width: 100%;
+    right: -25px;
     &__item {
-      padding-left: 47px;
+      padding-left: 20px;
+      outline: none!important;
     }
     &__wrapper {
       @include flex;
@@ -82,6 +96,7 @@
     }
     &__description {
       margin-top: 33px;
+      padding-bottom: 30px;
       opacity: 0.72;
       color: #373a3f;
       font-size: 18px;
@@ -93,11 +108,12 @@
     }
     &__image {
       img {
-        box-shadow: 0 5px 24px 8px rgba(156, 153, 149, 0.2);
+        box-shadow: -5px 6px 38px -10px rgba(156, 153, 149, 0.9);
       }
     }
     &__link {
       margin-top: 20px;
+      padding-right: 30px;
       text-align: center;
       a {
         display: inline-block;

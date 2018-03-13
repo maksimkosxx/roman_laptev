@@ -1,10 +1,40 @@
+.wrapper-header {
+  background-color: #d9d5d0;
+  &.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    z-index: 5;
+    width: 100%;
+    border-bottom: 1px solid #b7b7b7;
+    transition: .2s;
+  }
+}
 .header {
   @include flex;
-  padding: 15px 0 10px;
+  padding: 15px 0 20px;
+
   &-nav {
     @include flex;
     width: 100%;
     max-width: 790px;
+    @include respond-to(sm) {
+      flex-flow: column;
+      .btn-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 5;
+        width: 22px;
+        height: 22px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        outline: none;
+      }
+    }
     li {
       a {
         display: inline-block;
@@ -15,7 +45,7 @@
         font-family: $FontAvenir;
         font-size: 18px;
         font-weight: 400;
-        transition: .2s;
+        transition: .1s;
         &:hover {
           color: #caa265;
         }
@@ -31,6 +61,9 @@
   }
   &-column {
     text-align: center;
+    @include respond-to(sm) {
+      display: none;
+    }
   }
   &-phone {
     display: block;
