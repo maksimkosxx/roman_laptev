@@ -40,7 +40,6 @@
   text-align: right;
   &-content {
     min-height: 407px;
-    //padding-right: 80px;
     border: 2px solid #ffffff;
     border-top: 0;
     text-align: right;
@@ -95,6 +94,11 @@
       font-size: 22px;
       font-weight: 400;
       line-height: 35px;
+      @include respond-to(sm) {
+        span:last-of-type {
+          display: none;
+        }
+      }
     }
     &__link {
       display: block;
@@ -106,6 +110,9 @@
       font-weight: 400;
       line-height: 35px;
       text-align: left;
+      @include respond-to(sm) {
+          display: none;
+      }
       &::after {
         content: '';
         display: inline-block;

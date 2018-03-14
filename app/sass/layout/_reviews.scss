@@ -47,28 +47,52 @@
       }
     }
     &__content {
-     visibility: hidden;
+      position: relative;
+      visibility: hidden;
       height: 0;
       transition: .2s;
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -30px;
+        left: -24px;
+        width: 89px;
+        height: 71px;
+        background: url(/img/icons/quotes2.png) center no-repeat;
+      }
       &.active {
         height: auto;
         visibility: visible;
       }
+
     }
+  }
+  &-quotes {
+    position: absolute;
+    top: 0;
+    left: -20px;
+    z-index: 1;
   }
   &-slider {
     position: relative;
+    z-index: 2;
     right: -25px;
     &__item {
       padding-left: 20px;
       outline: none!important;
     }
     &__wrapper {
-      @include flex;
-      overflow: hidden;
+      display: flex;
+      flex-flow: row wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding-top: 10px;
+
     }
     &__text {
       max-width: 705px;
+      margin-top: -10px;
     }
     &__title {
       margin-bottom: 15px;
