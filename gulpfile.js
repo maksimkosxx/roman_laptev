@@ -34,7 +34,8 @@ gulp.task('scripts', function() {
         'app/libs/js/jquery-3.2.1.min.js', // Берем jQuery
         'app/libs/js/jquery.validate.min.js', // Валидация форм
         'app/libs/js/slick.min.js', // Карусель slick
-        'app/libs/js/jquery-ui.min.js' // Календарь
+        'app/libs/js/jquery-ui.min.js', // Календарь
+        'app/libs/js/jquery.shorten.1.0.js' // Читать далее
     ])
         .pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
         .pipe(uglify()) // Сжимаем JS файл

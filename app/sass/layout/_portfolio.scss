@@ -1,15 +1,28 @@
 .wrapper-portfolio {
-  margin-top: 100px;
+  margin-top: 200px;
   background: url(/img/bg_block6.jpg) center no-repeat;
   background-size: cover;
+  @include respond-to(sm) {
+    margin-top: 0;
+    background: #d9d5d0;
+  }
+
 }
 .portfolio {
   padding: 50px 0;
+  @include respond-to(sm) {
+    padding: 25px 0;
+  }
   fieldset {
     position: relative;
     top: -40px;
     margin: 0 15px;
     border: 2px solid #a78c6e;
+    @include respond-to(sm) {
+      top: 0;
+      margin: 0;
+      border: none;
+    }
     legend {
       position: relative;
       top: 45px;
@@ -21,12 +34,33 @@
       font-size: 45px;
       font-weight: 400;
       line-height: 46px;
+      @include respond-to(sm) {
+        top: 0;
+        margin-left: 0;
+        font-size: 22px;
+        line-height: 22px;
+        text-align: center;
+        &::after {
+          content: '';
+          display: block;
+          width: 53px;
+          height: 2px;
+          margin: 13px auto 0;
+          background-color: #3e3e3e;
+          opacity: 0.76;
+        }
+      }
     }
   }
   &-content {
     position: relative;
     top: -60px;
     margin: 0 -20px;
+    @include respond-to(sm) {
+      top: 0;
+      margin: 20px -15px 0;
+      overflow: hidden;
+    }
     &__row {
       &::after {
         content: "";
@@ -41,10 +75,25 @@
     max-width: 382px;
     height: 239px;
     margin: 5px;
+    @include respond-to(sm) {
+      width: 48.8%;
+      max-width: 100%;
+      height: auto;
+      margin: 0 0 7px;
+      &:nth-of-type(odd) {
+        float: left;
+      }
+      &:nth-of-type(even) {
+        float: right;
+      }
+    }
     &--video {
       width: 100%;
       max-width: 777px;
       height: 344px;
+      @include respond-to(sm) {
+        height: 205px;
+      }
       .play {
         width: 50px;
         height: 50px;
@@ -58,10 +107,18 @@
         float: right;
         margin-top: -142px;
         min-height: 344px;
+        @include respond-to(sm) {
+          margin-top: 0;
+          float: none;
+          min-height: inherit;
+        }
       }
       &.second {
         max-width: 774px;
         min-height: 488px;
+        @include respond-to(sm) {
+          min-height: inherit;
+        }
       }
     }
     img {
@@ -71,10 +128,16 @@
     }
     &--large {
       min-height: 488px;
+      @include respond-to(sm) {
+        min-height: inherit;
+      }
     }
     &:nth-of-type(10),
     &:nth-of-type(11) {
       margin-top: -245px;
+      @include respond-to(sm) {
+        margin-top: 0;
+      }
     }
   }
   &-btn {
@@ -88,6 +151,10 @@
     font-weight: 400;
     cursor: pointer;
     transition: .2s;
+    @include respond-to(sm) {
+      margin-top: 14px;
+      font-size: 15px;
+    }
     span {
       display: inline-block;
       padding-bottom: 6px;

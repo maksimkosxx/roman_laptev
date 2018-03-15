@@ -4,11 +4,20 @@
   padding: 60px 0 50px;
   background: url(/img/bg_block4.jpg) center no-repeat;
   background-size: cover;
+  @include respond-to(sm) {
+    padding: 30px 0;
+    min-height: inherit;
+  }
 }
 .order {
   min-height: 651px;
   padding-top: 39px;
   border: 3px solid #ffffff;
+  @include respond-to(sm) {
+    position: relative;
+    min-height: inherit;
+    padding: 20px 0 60px 0;
+  }
   &-advantages {
     display: flex;
     flex-flow: row wrap;
@@ -16,8 +25,26 @@
     justify-content: space-between;
     padding: 0 0 0 50px;
     margin-bottom: 10px;
+    @include respond-to(sm) {
+      padding: 0 0 0 23px;
+      align-items: flex-start;
+    }
     &__item {
       flex-grow: 1;
+      @include respond-to(sm) {
+        position: relative;
+        max-width: 49%;
+        min-height: 95px;
+        margin-bottom: 20px;
+        &:nth-of-type(3) {
+          .text {
+            display: none;
+          }
+          .text--mobile {
+            display: block;
+          }
+        }
+      }
       &::after {
         content: '';
         display: block;
@@ -26,6 +53,13 @@
         margin-top: 13px;
         background-color: #fff;
         opacity: 0.76;
+        @include respond-to(sm) {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 26px;
+          margin-top: 10px;
+        }
       }
     }
     .number {
@@ -33,9 +67,16 @@
       font-family: $FontSylfaen;
       font-size: 100px;
       font-weight: 400;
+      @include respond-to(sm) {
+        margin-bottom: 5px;
+        font-size: 30px;
+      }
       span {
         color: #dbb574;
         font-size: 50px;
+        @include respond-to(sm) {
+          font-size: 17px;
+        }
       }
     }
     .text {
@@ -46,6 +87,12 @@
       font-size: 22px;
       font-weight: 500;
       line-height: 28px;
+      @include respond-to(sm) {
+        top: -5px;
+        max-width: 90%;
+        font-size: 14px;
+        line-height: 17px;
+      }
     }
   }
   &-form {
@@ -61,6 +108,18 @@
     padding: 50px 15px;
     box-shadow: 0 5px 24px 8px rgba(156, 153, 149, 0.2);
     background-color: #ffffff;
+    @include respond-to(sm) {
+      position: absolute;
+      bottom: -85%;
+      left: 0;
+      right: 0;
+      min-height: inherit;
+      flex-direction: column;
+      justify-content: flex-start;
+      max-width: 90%;
+      padding: 20px 15px 15px;
+      text-align: center;
+    }
     &__text {
       display: flex;
       flex-direction: column;
@@ -68,6 +127,11 @@
       justify-content: center;
       max-width: 50%;
       padding-left: 40px;
+      @include respond-to(sm) {
+        max-width: 100%;
+        padding-left: 0;
+        text-align: center;
+      }
       .title {
         width: 200px;
         margin-bottom: 17px;
@@ -77,6 +141,12 @@
         font-weight: 400;
         line-height: 46px;
         text-align: left;
+        @include respond-to(sm) {
+          margin-bottom: 9px;
+          font-size: 22px;
+          line-height: 15.81px;
+          text-align: center;
+        }
       }
       .text {
         max-width: 200px;
@@ -86,6 +156,12 @@
         font-weight: 400;
         line-height: 34px;
         text-align: left;
+        @include respond-to(sm) {
+          max-width: 175px;
+          font-size: 15px;
+          line-height: 17px;
+          text-align: center;
+        }
         &::after {
           content: '';
           display: block;
@@ -94,6 +170,10 @@
           margin-top: 30px;
           background-color: #363a3e;
           opacity: 0.76;
+          @include respond-to(sm) {
+            width: 25px;
+            margin: 17px auto 0;
+          }
         }
       }
     }

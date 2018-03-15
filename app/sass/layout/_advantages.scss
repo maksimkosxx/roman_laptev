@@ -1,5 +1,10 @@
 .advantages {
   padding: 50px 0;
+  @include respond-to(sm) {
+    max-width: 400px;
+    padding: 190px 0 30px;
+    margin: 0 auto;
+  }
   &-title {
     color: #363a3e;
     font-family: $FontSylfaen;
@@ -7,6 +12,10 @@
     font-weight: 400;
     line-height: 40px;
     text-align: center;
+    @include respond-to(sm) {
+      font-size: 22px;
+      line-height: 27.9px;
+    }
   }
   &-content {
     display: flex;
@@ -14,6 +23,27 @@
     align-items: flex-start;
     justify-content: space-between;
     margin: 110px 0 0;
+    @include respond-to(sm) {
+      display: block;
+      margin: 0 auto;
+      padding-bottom: 7px;
+      .slick-next,
+      .slick-prev {
+        top: 58%;
+        width: 19px;
+        height: 50px;
+        &::before {
+          background-size: cover;
+        }
+      }
+      .slick-prev {
+        left: -3.5%;
+      }
+      .slick-next {
+        right: -3.5%;
+        top: 59%;
+      }
+    }
   }
   &-item {
     position: relative;
@@ -21,12 +51,24 @@
     max-width: 282px;
     padding: 0 12px;
     box-sizing: border-box;
+    @include respond-to(sm) {
+      max-width: 100%;
+      min-height: 313px;
+      padding: 85px 15px 0;
+      margin: auto;
+    }
     &__wrapper {
       position: relative;
       max-width: 260px;
       min-height: 447px;
       border: 2px solid #a78c6e;
       border-top: 0;
+      @include respond-to(sm) {
+        width: calc(100% - 30px);
+        max-width: 300px;
+        min-height: 313px;
+        margin: auto;
+      }
       &::after,
       &::before {
         content: '';
@@ -36,6 +78,9 @@
         width: 15px;
         height: 2px;
         background-color: #a78c6e;
+        @include respond-to(sm) {
+          width: 10px;
+        }
       }
       &::after {
         right: 0;
@@ -55,6 +100,12 @@
         font-weight: 400;
         line-height: 23px;
         text-align: center;
+        @include respond-to(sm) {
+          max-width: 210px;
+          top: -48px;
+          font-size: 15px;
+          line-height: 18.16px;
+        }
         span {
           font-family: $FontAvenirDemi;
           font-weight: 600;
@@ -72,6 +123,11 @@
       font-weight: 400;
       line-height: 50px;
       text-align: center;
+      @include respond-to(sm) {
+        top: -30px;
+        font-size: 90px;
+        line-height: 39.48px;
+      }
     }
     img {
       position: absolute;
@@ -79,6 +135,16 @@
       left: 0;
       pointer-events: none;
       user-select: none;
+      @include respond-to(sm) {
+        top: 45%;
+        bottom: auto;
+        left: 0;
+        right: 0;
+        width: 90%;
+        max-width: 315px;
+        max-height: 270px;
+        margin: auto;
+      }
     }
   }
 }

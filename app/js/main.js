@@ -1,16 +1,41 @@
 $(document).ready(function () {
 
+
+    // MOBILE MENU
+
+    $('.btn-menu').on('click', function(e) {
+        e.preventDefault();
+
+        $('.wrapper-popup').fadeIn(400,
+            function () {
+                $('body').css('overflow', 'hidden');
+                $('.wrapper-header')
+                    .css('display', 'block')
+                    .animate({opacity: 1}, 200);
+            });
+    });
+    $('.header-close, .wrapper-popup').on('click', function () {
+        $('body').css('overflow', 'auto');
+        $('.wrapper-header')
+            .animate({opacity: 0}, 200,
+                function () {
+                    $(this).css('display', 'none');
+                    $('.wrapper-popup').fadeOut(400);
+                }
+            );
+    });
+
     // STICKY HEADER
 
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         if ($(this).scrollTop() > 50
-        ){
+        ) {
             $('.wrapper-header').addClass('sticky');
             $('.sticky').animate({
                 opacity: 1
             }, 1500);
         }
-        else{
+        else {
             $('.wrapper-header').removeClass('sticky');
         }
     });
@@ -88,8 +113,43 @@ $(document).ready(function () {
         infinite: true,
         speed: 500,
         fade: true,
-        cssEase: 'linear'
+        cssEase: 'linear',
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    adaptiveHeight: true
+                }
+            }
+
+        ]
     });
+
+    $('.advantages-content').slick({
+        dots: false,
+        infinite: false,
+        arrows: false,
+        responsive: [
+            {
+                breakpoint: 9999,
+                settings: "unslick"
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    speed: 300,
+                    dots: true,
+                    arrows: true
+
+                }
+            }
+
+        ]
+    });
+
+
 
     // Reviews tabs
 
@@ -103,6 +163,35 @@ $(document).ready(function () {
         $(this).addClass('active');
         $(item).show('easy').addClass('active');
     });
+
+
+    // Read more review
+
+    $('.reviews-slider__description').shorten({
+        "showChars" : 180,              // - длина текста в символах.
+        "moreText"  : "Читать далее",      // - текст "читать далее".
+        "ellipsesText" : "...",         // - вместо многоточия можно вписать к примеру и "[...]".
+        "lessText"  : "Скрыть текст"   // - текст возврата в исходное состояние.
+    });
+
+    // function moreReview() {
+    //
+    //     if($(window).width() < 768) {
+    //         var lettersToCut = 180;
+    //         var contentWrapper = $('.reviews-slider__description');
+    //         var contentText = contentWrapper.text();
+    //         contentText = contentText.substr(0, lettersToCut);
+    //         contentWrapper.text(contentText);
+    //         contentWrapper.append("... <a class='review-more' href='#'>Читать далее</a>");
+    //
+    //         $('.review-more').on('click', function () {
+    //             contentWrapper.html(contentText.substring(0,2000));
+    //             return false;
+    //         });
+    //     }
+    // }
+    // moreReview();
+
 
     // Hide portfolio
 
@@ -223,14 +312,6 @@ $(document).ready(function () {
             }
         });
     });
-
-
-    // MOBILE MENU
-
-    // $('.mobile-btn').on('click', function () {
-    //     $('.nav').slideToggle();
-    //     $(this).toggleClass('active');
-    // });
 
 
     // PHONE MASK

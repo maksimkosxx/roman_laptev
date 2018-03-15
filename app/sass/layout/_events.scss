@@ -1,5 +1,9 @@
 .events {
   padding: 60px 0 140px;
+  @include respond-to(sm) {
+    margin-top: -15px;
+    padding: 0 0 60px;
+  }
   &-title {
     max-width: 525px;
     margin: 0 auto;
@@ -9,6 +13,10 @@
     font-weight: 400;
     line-height: 47px;
     text-align: center;
+    @include respond-to(sm) {
+      font-size: 22px;
+      line-height: 21.24px;
+    }
     &::after {
       content: '';
       display: block;
@@ -17,6 +25,10 @@
       margin: 47px auto 0;
       background-color: #3e3e3e;
       opacity: 0.76;
+      @include respond-to(sm) {
+        width: 33px;
+        margin: 14px auto 0;
+      }
     }
   }
   &-content {
@@ -25,6 +37,9 @@
     align-items: flex-start;
     justify-content: center;
     margin: 55px -15px 0;
+    @include respond-to(sm) {
+      margin: 20px -5px 0;
+    }
   }
   &-item {
     position: relative;
@@ -42,6 +57,12 @@
     background-size: 102%;
     background-repeat: no-repeat;
     cursor: pointer;
+    @include respond-to(sm) {
+      flex-basis: 48%;
+      max-width: 48%;
+      min-height: 140px;
+      margin: 3px;
+    }
     &::after {
       content: '';
       display: block;
@@ -55,7 +76,11 @@
       width: 50%;
       height: 50%;
       border-radius: 50%;
-      background-image: radial-gradient(circle, rgba(0, 0, 0, 0.3), transparent 60%);
+      background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4), transparent 60%);
+      @include respond-to(sm) {
+        width: 80%;
+        height: 80%;
+      }
     }
     &__center {
       position: relative;
@@ -66,6 +91,10 @@
       border: 2px solid #fff;
       border-top: none;
       text-align: center;
+      @include respond-to(sm) {
+        width: 80%;
+        height: 61px;
+      }
       p {
         position: absolute;
         bottom: 24px;
@@ -78,11 +107,19 @@
         font-weight: 400;
         line-height: 35px;
         text-align: center;
+        @include respond-to(sm) {
+          bottom: 13px;
+          font-size: 17px;
+          line-height: 19.74px;
+        }
       }
     }
     &__image {
       img {
         margin-top: -35px;
+        @include respond-to(sm) {
+          width: 33px;
+        }
       }
       &::before,
       &::after {
@@ -93,6 +130,9 @@
         max-width: 53px;
         height: 2px;
         background-color: #ffffff;
+        @include respond-to(sm) {
+          max-width: 30px;
+        }
       }
       &::before {
         float: left;
@@ -120,6 +160,9 @@
   }
   &--principles {
     padding-top: 90px;
+    @include respond-to(sm) {
+      padding-top: 60px;
+    }
     .events-title {
       max-width: 710px;
       &:after {
@@ -155,6 +198,12 @@
         font-size: 34px;
         font-weight: 400;
         line-height: 35px;
+        @include respond-to(sm) {
+          width: 85%;
+          height: 56px;
+          font-size: 16px;
+          line-height: 17px;
+        }
       }
       span {
         position: absolute;
@@ -177,6 +226,11 @@
         font-weight: 400;
         line-height: 34px;
         transition: .5s;
+        @include respond-to(sm) {
+          padding: 5px;
+          font-size: 11px;
+          line-height: 15px;
+        }
       }
       &:hover {
         &:after {
