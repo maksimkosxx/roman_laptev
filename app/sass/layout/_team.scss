@@ -1,5 +1,8 @@
 .team {
   padding: 90px 0;
+  @include respond-to(sm) {
+    padding: 290px 0 0;
+  }
   &-title {
     margin-bottom: 26px;
     color: #363a3e;
@@ -8,6 +11,11 @@
     font-weight: 400;
     line-height: 46px;
     text-align: center;
+    @include respond-to(sm) {
+      margin-bottom: 12px;
+      font-size: 22px;
+      line-height: 28.59px;
+    }
   }
   &-description {
     opacity: 0.84;
@@ -16,6 +24,10 @@
     font-weight: 400;
     line-height: 40px;
     text-align: center;
+    @include respond-to(sm) {
+      font-size: 15px;
+      line-height: 24px;
+    }
     &::after {
       content: '';
       display: block;
@@ -24,6 +36,10 @@
       margin: 40px auto 0;
       background-color: #3e3e3e;
       opacity: 0.76;
+      @include respond-to(sm) {
+        width: 47px;
+        margin-top: 20px;
+      }
     }
   }
   &-content {
@@ -32,6 +48,9 @@
     align-items: flex-start;
     justify-content: center;
     margin: 180px -28px 0;
+    @include respond-to(sm) {
+      margin: 21px 0 10px;
+    }
   }
   &-item {
     width: 100%;
@@ -40,8 +59,32 @@
     margin: 0 14px 73px;
     border: 2px solid #a78c6e;
     text-align: center;
+    @include respond-to(sm) {
+      max-width: 100%;
+      margin:  0 0 12px;
+      padding: 15px 0;
+      min-height: inherit;
+      &__wrapper {
+        max-width: 77%;
+        margin: 0 auto;
+        text-align: right;
+      }
+      &__info {
+        display: inline-block;
+        vertical-align: middle;
+        width: 40%;
+        margin-left: 13px;
+      }
+    }
     img {
       margin-top: calc(-50% + 55px);
+      @include respond-to(sm) {
+        display: inline-block;
+        vertical-align: middle;
+        width: 93px;
+        height: 93px;
+        margin-top: 0;
+      }
     }
     &__name {
       margin-top: 28px;
@@ -50,6 +93,12 @@
       font-size: 32px;
       font-weight: 400;
       line-height: 40px;
+      @include respond-to(sm) {
+        margin: 0 0 0 -1px;
+        font-size: 20px;
+        line-height: 24.86px;
+        text-align: left;
+      }
       &::after {
         content: '';
         display: block;
@@ -57,6 +106,9 @@
         height: 2px;
         margin: 16px auto 18px;
         background-color: #3e3e3e;
+        @include respond-to(sm) {
+          display: none;
+        }
       }
     }
     &__position {
@@ -65,19 +117,35 @@
       font-size: 22px;
       font-weight: 400;
       line-height: 40px;
+      @include respond-to(sm) {        
+        font-size: 14px;
+        line-height: 24.86px;
+        text-align: left;
+      }
     }
     &__description {
       margin-top: 40px;
       padding: 0 15px;
+      @include respond-to(sm) {
+        width: 100%;
+        margin: 17px auto 0;
+      }
       p {
         margin: 0 0 10px;
         font-size: 22px;
         font-weight: 400;
         color: #363a3e;
+        @include respond-to(sm) {
+          font-size: 15px;
+          line-height: 20px;
+        }
         span {
           font-family: $FontAvenirDemi;
           font-weight: 600;
           line-height: 30px;
+          @include respond-to(sm) {
+            line-height: 20px;
+          }
         }
       }
     }
@@ -94,6 +162,10 @@
       font-size: 32px;
       font-weight: 400;
       line-height: 40px;
+      @include respond-to(sm) {
+        font-size: 17px;
+        line-height: 22px;
+      }
     }
     p {
       opacity: 0.7;
@@ -102,6 +174,9 @@
       font-size: 22px;
       font-weight: 400;
       line-height: 30px;
+      @include respond-to(sm) {
+        display: none;
+      }
       span {
         display: block;
         margin-top: 20px;

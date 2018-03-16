@@ -13,18 +13,29 @@
     background: url(/img/gift-bg.jpg) 43% 0 no-repeat;
     background-size: cover;
     opacity: 0.25;
+    @include respond-to(sm) {
+      background-position: 50% 0;
+    }
   }
 }
 .gift {
   position: relative;
   z-index: 2;
   padding: 80px 0 70px;
+  @include respond-to(sm) {
+    padding: 40px 0 110px;
+  }
   fieldset {
     max-width: 1090px;
     margin: 0 auto;
     padding: 50px 0 60px 40px;
     min-height: 662px;
     border: 2px solid #a78c6e;
+    @include respond-to(sm) {
+      min-height: inherit;
+      padding: 15px 20px 20px;
+      text-align: center;
+    }
     legend {
       padding: 0 10px;
       color: #eecc96;
@@ -32,6 +43,10 @@
       font-size: 45px;
       font-weight: 400;
       line-height: 48px;
+      @include respond-to(sm) {
+        font-size: 22px;
+        line-height: 48px;
+      }
     }
   }
   &-content {
@@ -48,6 +63,11 @@
     font-size: 22px;
     font-weight: 400;
     line-height: 34px;
+    @include respond-to(sm) {
+      padding-right: 0;
+      font-size: 15px;
+      line-height: 19px;
+    }
     span {
       font-family: $FontAvenirDemi;
       font-weight: 600;
@@ -59,10 +79,40 @@
       font-size: 32px;
       font-weight: 400;
       line-height: 40px;
+      @include respond-to(sm) {
+        margin: 30px 0 13px;
+        font-size: 22px;
+        line-height: 40px;
+      }
     }
     li {
       line-height: 50px;
       letter-spacing: 1.65px;
+      @include respond-to(sm) {
+        margin-bottom: 25px;
+        line-height: normal;
+        span:first-of-type {
+          display: block;
+          width: 35px;
+          height: 35px;
+          margin: 0 auto 5px;
+          padding: 7px 0 0 3px;
+          border-radius: 50%;
+          border: 1px solid #ffffff;
+        }
+        span:nth-of-type(2) {
+          display: none;
+        }
+        &:last-of-type {
+          span {
+            display: inline-block;
+            width: auto;
+            height: auto;
+            margin: auto;
+            border: none;
+          }
+        }
+      }
     }
   }
   &-form {
@@ -75,6 +125,12 @@
     box-shadow: 0 5px 11px 2px rgba(0, 0, 0, 0.35);
     background-color: #ffffff;
     text-align: center;
+    @include respond-to(sm) {
+      min-height: inherit;
+      margin: 0 0 -440px 0;
+      padding: 27px 15px 20px;
+      box-shadow: 0 5px 24px 8px rgba(156, 153, 150, 0.2);
+    }
     form {
       max-width: 290px;
       margin: 0 auto;
@@ -88,6 +144,11 @@
       font-size: 32px;
       font-weight: 400;
       line-height: 40px;
+      @include respond-to(sm) {
+        margin-bottom: 11px;
+        font-size: 22px;
+        line-height: 25px;
+      }
     }
     &__description {
       opacity: 0.79;
@@ -96,6 +157,10 @@
       font-size: 22px;
       font-weight: 400;
       line-height: 28px;
+      @include respond-to(sm) {
+        font-size: 15px;
+        line-height: 28px;
+      }
       &::after {
         content: '';
         display: block;
@@ -104,6 +169,10 @@
         margin: 40px auto;
         background-color: #3e3e3e;
         opacity: 0.76;
+        @include respond-to(sm) {
+          width: 51px;
+          margin: 16px auto 19px;
+        }
       }
     }
   }

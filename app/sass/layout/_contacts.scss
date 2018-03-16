@@ -5,8 +5,18 @@
   margin: 74px 0 59px;
   padding: 15px 0 15px 70px;
   border: 2px solid #a78c6e;
+  @include respond-to(sm) {
+    flex-direction: column;
+    margin: 50px 0 30px;
+    padding: 16px;
+    min-height: inherit;
+  }
   &-text {
     max-width: 50%;
+    @include respond-to(sm) {
+      order: 2;
+      max-width: 100%;
+    }
     &__description {
       margin-bottom: 50px;
       opacity: 0.64;
@@ -14,6 +24,11 @@
       font-size: 22px;
       font-weight: 400;
       line-height: 28px;
+      @include respond-to(sm) {
+        margin: 15px 0;
+        font-size: 15px;
+        line-height: 19px;
+      }
     }
     &__title {
       color: #363a3e;
@@ -21,6 +36,10 @@
       font-size: 45px;
       font-weight: 400;
       line-height: 47px;
+      @include respond-to(sm) {
+        font-size: 22px;
+        line-height: 23.49px;
+      }
       &::after {
         content: '';
         display: block;
@@ -29,6 +48,10 @@
         margin: 38px 0 0;
         background-color: #3e3e3e;
         opacity: 0.76;
+        @include respond-to(sm) {
+          width: 39px;
+          margin-top: 14px;
+        }
       }
     }
     &__phone {
@@ -39,6 +62,11 @@
       font-size: 45px;
       font-weight: 400;
       line-height: 46px;
+      @include respond-to(sm) {
+        margin-top: 23px;
+        font-size: 22px;
+        line-height: 22.99px;
+      }
       &:hover {
         color: #caa265;
       }
@@ -53,11 +81,25 @@
       font-size: 22px;
       font-weight: 400;
       line-height: 60px;
+      @include respond-to(sm) {
+        width: 194px;
+        min-height: 47px;
+        font-size: 15px;
+        line-height: 45px;
+        margin-top: 25px;
+      }
     }
     &__social {
       @include flex;
       max-width: 294px;
       margin-top: 50px;
+      @include respond-to(sm) {
+        max-width: 200px;
+        margin-top: 20px;
+        img {
+          max-width: 21px;
+        }
+      }
       a {
         transition: .2s;
         &:hover {
@@ -71,5 +113,13 @@
   }
   &-image {
     margin-right: -70px;
+    @include respond-to(sm) {
+      order: 1;
+      margin-right: 0;
+      img {
+        max-width: 100%;
+        margin-top: -40px;
+      }
+    }
   }
 }

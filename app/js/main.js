@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     // MOBILE MENU
 
-    $('.btn-menu').on('click', function(e) {
+    $('.btn-menu').on('click', function (e) {
         e.preventDefault();
 
         $('.wrapper-popup').fadeIn(400,
@@ -28,22 +28,41 @@ $(document).ready(function () {
     // STICKY HEADER
 
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 50
-        ) {
-            $('.wrapper-header').addClass('sticky');
-            $('.sticky').animate({
-                opacity: 1
-            }, 1500);
+
+        if ($(window).width() > 768) {
+
+            if ($(this).scrollTop() > 50
+            ) {
+                $('.wrapper-header').addClass('sticky');
+                $('.sticky').animate({
+                    opacity: 1
+                }, 1500);
+            }
+            else {
+                $('.wrapper-header').removeClass('sticky');
+            }
+
         }
-        else {
-            $('.wrapper-header').removeClass('sticky');
-        }
+
     });
 
 
     // NAVIGATION SCROLL
 
     $('.header-nav > li a').on('click', function () {
+
+
+        if ($(window).width() < 768) {
+
+            $('.wrapper-header')
+                .animate({opacity: 0}, 200,
+                    function () {
+                        $('.wrapper-header').css('display', 'none');
+                        $('.wrapper-popup').fadeOut(400);
+                        $('body').css('overflow', 'auto');
+                    }
+            );
+        }
 
         $('.header-nav li a').removeClass('active');
         $(this).addClass('active');
@@ -113,16 +132,7 @@ $(document).ready(function () {
         infinite: true,
         speed: 500,
         fade: true,
-        cssEase: 'linear',
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    adaptiveHeight: true
-                }
-            }
-
-        ]
+        cssEase: 'linear'
     });
 
     $('.advantages-content').slick({
@@ -150,7 +160,6 @@ $(document).ready(function () {
     });
 
 
-
     // Reviews tabs
 
     $('.reviews-tabs__button').on('click', function () {
@@ -167,30 +176,22 @@ $(document).ready(function () {
 
     // Read more review
 
-    $('.reviews-slider__description').shorten({
-        "showChars" : 180,              // - длина текста в символах.
-        "moreText"  : "Читать далее",      // - текст "читать далее".
-        "ellipsesText" : "...",         // - вместо многоточия можно вписать к примеру и "[...]".
-        "lessText"  : "Скрыть текст"   // - текст возврата в исходное состояние.
-    });
+    if ($(window).width() < 768) {
 
-    // function moreReview() {
-    //
-    //     if($(window).width() < 768) {
-    //         var lettersToCut = 180;
-    //         var contentWrapper = $('.reviews-slider__description');
-    //         var contentText = contentWrapper.text();
-    //         contentText = contentText.substr(0, lettersToCut);
-    //         contentWrapper.text(contentText);
-    //         contentWrapper.append("... <a class='review-more' href='#'>Читать далее</a>");
-    //
-    //         $('.review-more').on('click', function () {
-    //             contentWrapper.html(contentText.substring(0,2000));
-    //             return false;
-    //         });
-    //     }
-    // }
-    // moreReview();
+        $('.reviews-slider__description').shorten({
+            "showChars": 180,              // - длина текста в символах.
+            "moreText": "Читать далее",      // - текст "читать далее".
+            "ellipsesText": "...",         // - вместо многоточия можно вписать к примеру и "[...]".
+            "lessText": "Скрыть текст"   // - текст возврата в исходное состояние.
+        });
+
+        $('.popup--policy .text').shorten({
+            "showChars": 550,              // - длина текста в символах.
+            "moreText": "Читать далее",      // - текст "читать далее".
+            "ellipsesText": "...",         // - вместо многоточия можно вписать к примеру и "[...]".
+            "lessText": "Скрыть текст"   // - текст возврата в исходное состояние.
+        });
+    }
 
 
     // Hide portfolio
@@ -263,6 +264,14 @@ $(document).ready(function () {
     }
 
     popups();
+
+    // Accordeon
+
+    $('.offers-item__title').on('click', function () {
+       $(this)
+           .toggleClass('active')
+           .siblings('.offers-item__list').slideToggle();
+    });
 
 
     // VALIDATION

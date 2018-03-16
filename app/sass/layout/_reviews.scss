@@ -5,7 +5,9 @@
   padding: 60px 0 20px;
   border: 2px solid #a78c6e;
   @include respond-to(sm) {
+    min-height: auto;
     margin: 0;
+    padding-bottom: 0;
     border: none;
   }
   &-title {
@@ -33,6 +35,8 @@
     margin: 40px auto 45px;
     @include respond-to(sm) {
       max-width: 280px;
+      margin: 17px auto;
+
     }
     &__button {
       padding: 0 0 3px;
@@ -102,7 +106,7 @@
     @include respond-to(sm) {
       left: 0;
       right: auto;
-      padding: 20px 10px 20px 20px;
+      padding: 20px 10px 0 20px;
       border: 2px solid #a78c6e;
       .slick-prev,
       .slick-next {
@@ -205,12 +209,31 @@
       line-height: 28px;
       @include respond-to(sm) {
         margin-top: 15px;
+        padding-bottom: 30px;
         font-size: 12px;
         line-height: 18px;
       }
-      span {
+      & > span:first-of-type {
         font-family: $FontAvenirDemi;
         font-weight: 600;
+      }
+      .morelink {
+        display: block;
+        margin: 15px 0;
+        text-align: center;
+        span {
+          display: inline-block!important;
+          border-bottom: 2px solid #3e3e3e;
+          font-family: $FontAvenir;
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 18px;
+          color: #373a3f;
+          transition: .2s;
+          &:hover {
+            border: none;
+          }
+        }
       }
     }
     &__image {
@@ -259,3 +282,4 @@
     }
   }
 }
+

@@ -6,6 +6,11 @@
   line-height: 28px;
   text-align: center;
   opacity: 0.64;
+  @include respond-to(sm) {
+    margin-bottom: 40px;
+    font-size: 10px;
+    line-height: 14px;
+  }
   a {
     display: inline-block;
     margin-top: 7px;
@@ -16,6 +21,11 @@
     font-weight: 400;
     line-height: 28px;
     transition: .2s;
+    @include respond-to(sm) {
+      font-size: 10px;
+      line-height: 14px;
+      border-bottom: 1px solid #939496;
+    }
     &:hover {
       border-bottom-color: transparent;
     }

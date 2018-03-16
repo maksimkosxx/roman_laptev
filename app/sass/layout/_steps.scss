@@ -1,5 +1,8 @@
 .steps {
   padding: 70px 0;
+  @include respond-to(sm) {
+    padding: 30px 0;
+  }
   &-title {
     margin-bottom: 18px;
     text-align: center;
@@ -7,7 +10,11 @@
     font-family: $FontSylfaen;
     font-size: 45px;
     font-weight: 400;
-    line-height: 46px;
+    @include respond-to(sm) {
+      margin-bottom: 16px;
+      font-size: 22px;
+      line-height: 24.36px;
+    }
   }
   &-description {
     color: #363a3e;
@@ -16,6 +23,10 @@
     font-size: 22px;
     font-weight: 400;
     line-height: 40px;
+    @include respond-to(sm) {
+      font-size: 15px;
+      line-height: 21.18px;
+    }
     &::after {
       content: '';
       display: block;
@@ -24,6 +35,10 @@
       margin: 30px auto 0;
       background-color: #3e3e3e;
       opacity: 0.76;
+      @include respond-to(sm) {
+        width: 41px;
+        margin-top: 16px;
+      }
     }
   }
   &-item {
@@ -35,15 +50,37 @@
     min-height: 603px;
     margin: 60px auto 0;
     border: 2px solid #a78c6e;
+    @include respond-to(sm) {
+      flex-direction: column;
+      margin-top: 27px;
+      min-height: 127px;
+      border: none;
+    }
     &__image {
       position: relative;
       left: -40px;
+      @include respond-to(sm) {
+        opacity: 1;
+        width: calc(100% + 30px);
+        left: 0;
+        margin: 0 -15px;
+        img {
+          max-width: 100%;
+        }
+      }
     }
     &__text {
       width: 100%;
       max-width: 340px;
       padding-right: 25px;
       box-sizing: border-box;
+      @include respond-to(sm) {
+        order: 2;
+        max-width: 100%;
+        margin-top: 75px;
+        padding: 0 20px 25px;
+        border: 2px solid #a78c6e;
+      }
     }
     &__number {
       opacity: 0.32;
@@ -52,6 +89,15 @@
       font-size: 150px;
       font-weight: 400;
       line-height: 50px;
+      @include respond-to(sm) {
+        position: relative;
+        top: -35px;
+        z-index: 3;
+        font-size: 79px;
+        line-height: 26.48px;
+        text-align: center;
+        opacity: 0.2;
+      }
     }
     &__title {
       position: relative;
@@ -62,9 +108,20 @@
       font-size: 45px;
       font-weight: 400;
       line-height: 45px;
+      @include respond-to(sm) {
+        max-width: 190px;
+        margin: -60px auto 0;
+        font-size: 22px;
+        line-height: 25px;
+        text-align: center;
+        background: #fff;
+      }
       div:last-child {
         position: relative;
         right: -65px;
+        @include respond-to(sm) {
+          right: auto;
+        }
         span {
           padding: 5px 0;
           background-color: #fff;
@@ -79,28 +136,49 @@
       font-size: 22px;
       font-weight: 400;
       line-height: 34px;
+      @include respond-to(sm) {
+        margin-top: 15px;
+        font-size: 15px;
+        line-height: 18.01px;
+        text-align: center;
+      }
     }
     &--left {
       .steps-item__image {
         left: auto;
         right: -40px;
+        @include respond-to(sm) {
+          right: auto;
+        }
       }
       .steps-item__text {
         max-width: 360px;
         padding-right: 0;
         padding-left: 40px;
+        @include respond-to(sm) {
+          padding: 0 20px 20px;
+        }
       }
       .steps-item__title {
         left: -63px;
+        @include respond-to(sm) {
+          left: auto;
+        }
         div {
           &:first-child {
             span {
               padding: 10px 0 5px;
               background-color: #fff;
+              @include respond-to(sm) {
+                padding: 0;
+              }
             }
           }
           &:last-child {
             right: -80px;
+            @include respond-to(sm) {
+              right: auto;
+            }
           }
         }
       }
@@ -110,6 +188,9 @@
         div:last-child {
           position: relative;
           right: -48px;
+          @include respond-to(sm) {
+            right: auto;
+          }
         }
       }
     }
@@ -124,6 +205,11 @@
       font-weight: 400;
       line-height: 48px;
       text-align: center;
+      @include respond-to(sm) {
+        margin: 17px 0;
+        font-size: 22px;
+        line-height: 25.42px;
+      }
     }
     &__btn {
       max-width: 288px;
@@ -134,6 +220,12 @@
       font-size: 22px;
       line-height: 60px;
       font-weight: 400;
+      @include respond-to(sm) {
+        width: 194px;
+        min-height: 47px;
+        font-size: 15px;
+        line-height: 45px;
+      }
     }
   }
 }

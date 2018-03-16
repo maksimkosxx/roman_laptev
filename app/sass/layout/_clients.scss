@@ -20,12 +20,19 @@
 }
 .clients {
   padding: 40px 10px 60px;
+  @include respond-to(sm) {
+    padding: 22px 0 0;
+  }
   &-title {
     font-family: $FontSylfaen;
     font-size: 45px;
     line-height: 46px;
     color: #363a3e;
     text-align: center;
+    @include respond-to(sm) {
+      font-size: 22px;
+      line-height: 21.71px;
+    }
   }
   &-description {
     font-size: 22px;
@@ -33,29 +40,58 @@
     font-weight: 400;
     color: #363a3e;
     text-align: center;
+    @include respond-to(sm) {
+      font-size: 15px;
+      line-height: 22px;
+    }
     &::after {
       content: '';
       display: block;
       width: 71px;
       height: 2px;
-      margin: 40px auto 20px;
+      margin: 15px auto;
       background-color: #3e3e3e;
       opacity: 0.76;
+      @include respond-to(sm) {
+        width: 37px;
+        margin-bottom: 25px;
+      }
     }
   }
   &-content {
     display: flex;
     flex-flow: column;
     justify-content: space-between;
+    @include respond-to(sm) {
+      margin-top: -20px;
+    }
     &__row {
       @include flex;
+      flex-wrap: wrap;
+      @include respond-to(sm) {
+        &:first-of-type {
+          .clients-item:last-of-type {
+            img {
+              max-width: 70%;
+            }
+          }
+        }
+      }
     }
   }
   &-item {
     display: flex;
-    flex-flow: row;
+    flex-flow: row wrap;
     justify-content: center;
     align-items: center;
     min-height: 152px;
+    @include respond-to(sm) {
+      width: 100%;
+      max-width: 50%;
+      min-height: 100px;
+      img {
+        max-width: 90%;
+      }
+    }
   }
 }
