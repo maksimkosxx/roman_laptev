@@ -27,8 +27,14 @@ img {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
-  @include respond-to(sm) {
+  @include respond-to(md) {
    max-width: 400px;
+  }
+  @include respond-to(md) {
+    max-width: 600px;
+  }
+  @include respond-to(lg) {
+   max-width: 930px;
   }
 }
 

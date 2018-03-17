@@ -1,6 +1,6 @@
 .events {
   padding: 60px 0 140px;
-  @include respond-to(sm) {
+  @include respond-to(md) {
     margin-top: -15px;
     padding: 0 0 60px;
   }
@@ -13,7 +13,7 @@
     font-weight: 400;
     line-height: 47px;
     text-align: center;
-    @include respond-to(sm) {
+    @include respond-to(md) {
       font-size: 22px;
       line-height: 21.24px;
     }
@@ -25,7 +25,7 @@
       margin: 47px auto 0;
       background-color: #3e3e3e;
       opacity: 0.76;
-      @include respond-to(sm) {
+      @include respond-to(md) {
         width: 33px;
         margin: 14px auto 0;
       }
@@ -37,7 +37,7 @@
     align-items: flex-start;
     justify-content: center;
     margin: 55px -15px 0;
-    @include respond-to(sm) {
+    @include respond-to(md) {
       margin: 20px -5px 0;
     }
   }
@@ -57,7 +57,7 @@
     background-size: 102%;
     background-repeat: no-repeat;
     cursor: pointer;
-    @include respond-to(sm) {
+    @include respond-to(md) {
       flex-basis: 48%;
       max-width: 48%;
       min-height: 140px;
@@ -77,7 +77,7 @@
       height: 50%;
       border-radius: 50%;
       background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4), transparent 60%);
-      @include respond-to(sm) {
+      @include respond-to(md) {
         width: 80%;
         height: 80%;
       }
@@ -91,7 +91,7 @@
       border: 2px solid #fff;
       border-top: none;
       text-align: center;
-      @include respond-to(sm) {
+      @include respond-to(md) {
         width: 80%;
         height: 61px;
       }
@@ -107,7 +107,7 @@
         font-weight: 400;
         line-height: 35px;
         text-align: center;
-        @include respond-to(sm) {
+        @include respond-to(md) {
           bottom: 13px;
           font-size: 17px;
           line-height: 19.74px;
@@ -117,7 +117,7 @@
     &__image {
       img {
         margin-top: -35px;
-        @include respond-to(sm) {
+        @include respond-to(md) {
           width: 33px;
         }
       }
@@ -130,7 +130,7 @@
         max-width: 53px;
         height: 2px;
         background-color: #ffffff;
-        @include respond-to(sm) {
+        @include respond-to(md) {
           max-width: 30px;
         }
       }
@@ -160,7 +160,7 @@
   }
   &--principles {
     padding-top: 90px;
-    @include respond-to(sm) {
+    @include respond-to(md) {
       padding-top: 60px;
     }
     .events-title {
@@ -198,7 +198,7 @@
         font-size: 34px;
         font-weight: 400;
         line-height: 35px;
-        @include respond-to(sm) {
+        @include respond-to(md) {
           width: 85%;
           height: 56px;
           font-size: 16px;
@@ -226,7 +226,7 @@
         font-weight: 400;
         line-height: 34px;
         transition: .5s;
-        @include respond-to(sm) {
+        @include respond-to(md) {
           padding: 5px;
           font-size: 11px;
           line-height: 15px;

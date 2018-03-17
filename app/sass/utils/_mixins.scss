@@ -34,6 +34,9 @@
   @else if $media == md {
     @media only screen and (max-width: $md) { @content; }
   }
+  @else if $media == lg {
+    @media (min-width: $md + 1) and (max-width: $lg) { @content; }
+  }
 }
 
 

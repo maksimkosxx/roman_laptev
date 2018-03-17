@@ -4,16 +4,19 @@
   padding: 60px 0 50px;
   background: url(/img/bg_block4.jpg) center no-repeat;
   background-size: cover;
-  @include respond-to(sm) {
+  @include respond-to(md) {
     padding: 30px 0;
     min-height: inherit;
+  }
+  @include respond-to(lg) {
+    margin-bottom: 50px;
   }
 }
 .order {
   min-height: 651px;
   padding-top: 39px;
   border: 3px solid #ffffff;
-  @include respond-to(sm) {
+  @include respond-to(md) {
     position: relative;
     min-height: inherit;
     padding: 20px 0 60px 0;
@@ -25,13 +28,16 @@
     justify-content: space-between;
     padding: 0 0 0 50px;
     margin-bottom: 10px;
-    @include respond-to(sm) {
+    @include respond-to(md) {
       padding: 0 0 0 23px;
+      align-items: flex-start;
+    }
+    @include respond-to(lg) {
       align-items: flex-start;
     }
     &__item {
       flex-grow: 1;
-      @include respond-to(sm) {
+      @include respond-to(md) {
         position: relative;
         max-width: 49%;
         min-height: 95px;
@@ -45,6 +51,13 @@
           }
         }
       }
+      @include respond-to(lg) {
+        max-width: 30%;
+        margin-bottom: 50px;
+        &:nth-of-type(3) {
+          padding-left: 20px;
+        }
+      }
       &::after {
         content: '';
         display: block;
@@ -53,7 +66,7 @@
         margin-top: 13px;
         background-color: #fff;
         opacity: 0.76;
-        @include respond-to(sm) {
+        @include respond-to(md) {
           position: absolute;
           left: 0;
           bottom: 0;
@@ -67,15 +80,21 @@
       font-family: $FontSylfaen;
       font-size: 100px;
       font-weight: 400;
-      @include respond-to(sm) {
+      @include respond-to(md) {
         margin-bottom: 5px;
         font-size: 30px;
+      }
+      @include respond-to(lg) {
+        font-size: 60px;
       }
       span {
         color: #dbb574;
         font-size: 50px;
-        @include respond-to(sm) {
+        @include respond-to(md) {
           font-size: 17px;
+        }
+        @include respond-to(lg) {
+          font-size: 30px;
         }
       }
     }
@@ -87,11 +106,15 @@
       font-size: 22px;
       font-weight: 500;
       line-height: 28px;
-      @include respond-to(sm) {
+      @include respond-to(md) {
         top: -5px;
         max-width: 90%;
         font-size: 14px;
         line-height: 17px;
+      }
+      @include respond-to(lg) {
+        font-size: 17px;
+        max-width: 85%;
       }
     }
   }
@@ -108,7 +131,7 @@
     padding: 50px 15px;
     box-shadow: 0 5px 24px 8px rgba(156, 153, 149, 0.2);
     background-color: #ffffff;
-    @include respond-to(sm) {
+    @include respond-to(md) {
       position: absolute;
       bottom: -85%;
       left: 0;
@@ -127,7 +150,7 @@
       justify-content: center;
       max-width: 50%;
       padding-left: 40px;
-      @include respond-to(sm) {
+      @include respond-to(md) {
         max-width: 100%;
         padding-left: 0;
         text-align: center;
@@ -141,7 +164,7 @@
         font-weight: 400;
         line-height: 46px;
         text-align: left;
-        @include respond-to(sm) {
+        @include respond-to(md) {
           margin-bottom: 9px;
           font-size: 22px;
           line-height: 15.81px;
@@ -156,7 +179,7 @@
         font-weight: 400;
         line-height: 34px;
         text-align: left;
-        @include respond-to(sm) {
+        @include respond-to(md) {
           max-width: 175px;
           font-size: 15px;
           line-height: 17px;
@@ -170,7 +193,7 @@
           margin-top: 30px;
           background-color: #363a3e;
           opacity: 0.76;
-          @include respond-to(sm) {
+          @include respond-to(md) {
             width: 25px;
             margin: 17px auto 0;
           }

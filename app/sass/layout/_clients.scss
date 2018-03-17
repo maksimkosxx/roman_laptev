@@ -2,6 +2,9 @@
   position: relative;
   min-height: 770px;
   background-color: #ece9e5;
+  @include respond-to(lg) {
+    min-height: inherit;
+  }
   &::after {
     content: '';
     position: absolute;
@@ -20,7 +23,7 @@
 }
 .clients {
   padding: 40px 10px 60px;
-  @include respond-to(sm) {
+  @include respond-to(md) {
     padding: 22px 0 0;
   }
   &-title {
@@ -29,7 +32,7 @@
     line-height: 46px;
     color: #363a3e;
     text-align: center;
-    @include respond-to(sm) {
+    @include respond-to(md) {
       font-size: 22px;
       line-height: 21.71px;
     }
@@ -40,7 +43,7 @@
     font-weight: 400;
     color: #363a3e;
     text-align: center;
-    @include respond-to(sm) {
+    @include respond-to(md) {
       font-size: 15px;
       line-height: 22px;
     }
@@ -52,7 +55,7 @@
       margin: 15px auto;
       background-color: #3e3e3e;
       opacity: 0.76;
-      @include respond-to(sm) {
+      @include respond-to(md) {
         width: 37px;
         margin-bottom: 25px;
       }
@@ -62,13 +65,13 @@
     display: flex;
     flex-flow: column;
     justify-content: space-between;
-    @include respond-to(sm) {
+    @include respond-to(md) {
       margin-top: -20px;
     }
     &__row {
       @include flex;
       flex-wrap: wrap;
-      @include respond-to(sm) {
+      @include respond-to(md) {
         &:first-of-type {
           .clients-item:last-of-type {
             img {
@@ -85,12 +88,20 @@
     justify-content: center;
     align-items: center;
     min-height: 152px;
-    @include respond-to(sm) {
+    @include respond-to(md) {
       width: 100%;
       max-width: 50%;
       min-height: 100px;
       img {
         max-width: 90%;
+      }
+    }
+    @include respond-to(lg) {
+      width: 100%;
+      max-width: 25%;
+      min-height: 100px;
+      img {
+        max-width: 70%;
       }
     }
   }

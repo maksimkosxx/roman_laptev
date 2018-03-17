@@ -3,8 +3,11 @@
   max-width: 1400px;
   margin: 0 auto;
   min-height: 800px;
-  @include respond-to(sm) {
+  @include respond-to(md) {
     min-height: 470px;
+  }
+  @include respond-to(lg) {
+    min-height: 650px;
   }
   &::before {
     content: '';
@@ -21,7 +24,7 @@
     opacity: 0.4;
     background: url(/img/bg_block1.png) center no-repeat;
     background-size: cover;
-    @include respond-to(sm) {
+    @include respond-to(md) {
       display: none;
     }
   }
@@ -36,7 +39,7 @@
     max-width: 455px;
     min-height: 761px;
     background: url(/img/roman.png) 0 100% no-repeat;
-    @include respond-to(sm) {
+    @include respond-to(md) {
       left: 0;
       right: 0;
       width: 100%;
@@ -46,6 +49,10 @@
       background-size: 100%;
       background-position: 0 0;
     }
+    @include respond-to(lg) {
+      min-height: 600px;
+      background-size: contain;
+    }
   }
 }
 
@@ -54,7 +61,7 @@
   z-index: 2;
   padding-top: 200px;
   text-align: right;
-  @include respond-to(sm) {
+  @include respond-to(md) {
     padding: 80px 0 40px;
   }
   &-content {
@@ -62,7 +69,7 @@
     border: 2px solid #ffffff;
     border-top: 0;
     text-align: right;
-    @include respond-to(sm) {
+    @include respond-to(md) {
       min-height: 367px;
     }
     h1 {
@@ -73,17 +80,20 @@
       line-height: 57.36px;
       color: #2e3339;
       text-align: center;
-      @include respond-to(sm) {
+      @include respond-to(md) {
         font-size: 36px;
         font-weight: 400;
         line-height: 29.22px;
+      }
+      @include respond-to(lg) {
+        font-size: 60px;
       }
       span {
         float: left;
         display: inline-block;
         margin-top: -30px;
         padding: 0 7px 0 15px;
-        @include respond-to(sm) {
+        @include respond-to(md) {
           float: none;
           position: relative;
           top: -15px;
@@ -103,14 +113,17 @@
       &::before {
         float: left;
         max-width: 645px;
-        @include respond-to(sm) {
+        @include respond-to(md) {
           max-width: 8%;
+        }
+        @include respond-to(lg) {
+          max-width: 49%;
         }
       }
       &::after {
         float: right;
         max-width: 61px;
-        @include respond-to(sm) {
+        @include respond-to(md) {
           max-width: 8%;
         }
       }
@@ -120,11 +133,14 @@
       max-width: 410px;
       margin-right: 94px;
       text-align: left;
-      @include respond-to(sm) {
+      @include respond-to(md) {
         display: block;
         max-width: 100%;
         margin-right: 0;
         text-align: center;
+      }
+      @include respond-to(lg) {
+        margin-right: 28px;
       }
       &::before {
         content: '';
@@ -133,7 +149,7 @@
         height: 2px;
         margin: 35px 0;
         background-color: #000000;
-        @include respond-to(sm) {
+        @include respond-to(md) {
           display: none;
         }
       }
@@ -144,7 +160,7 @@
       font-size: 22px;
       font-weight: 400;
       line-height: 35px;
-      @include respond-to(sm) {
+      @include respond-to(md) {
         line-height: 0;
         span {
           font-size: 15px;
@@ -165,7 +181,7 @@
       font-weight: 400;
       line-height: 35px;
       text-align: left;
-      @include respond-to(sm) {
+      @include respond-to(md) {
           display: none;
       }
       &::after {
@@ -203,7 +219,7 @@
     background-color: #31363b;
     opacity: 0.76;
   }
-  @include respond-to(sm) {
+  @include respond-to(md) {
     display: block;
   }
 }

@@ -13,7 +13,7 @@
     background: url(/img/gift-bg.jpg) 43% 0 no-repeat;
     background-size: cover;
     opacity: 0.25;
-    @include respond-to(sm) {
+    @include respond-to(md) {
       background-position: 50% 0;
     }
   }
@@ -22,7 +22,7 @@
   position: relative;
   z-index: 2;
   padding: 80px 0 70px;
-  @include respond-to(sm) {
+  @include respond-to(md) {
     padding: 40px 0 110px;
   }
   fieldset {
@@ -31,10 +31,13 @@
     padding: 50px 0 60px 40px;
     min-height: 662px;
     border: 2px solid #a78c6e;
-    @include respond-to(sm) {
+    @include respond-to(md) {
       min-height: inherit;
       padding: 15px 20px 20px;
       text-align: center;
+    }
+    @include respond-to(lg) {
+      padding: 50px 0 60px 25px;
     }
     legend {
       padding: 0 10px;
@@ -43,7 +46,7 @@
       font-size: 45px;
       font-weight: 400;
       line-height: 48px;
-      @include respond-to(sm) {
+      @include respond-to(md) {
         font-size: 22px;
         line-height: 48px;
       }
@@ -54,6 +57,10 @@
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
+    @include respond-to(lg) {
+      align-items: flex-start;
+      justify-content: center;
+    }
   }
   &-text {
     max-width: 660px;
@@ -63,10 +70,15 @@
     font-size: 22px;
     font-weight: 400;
     line-height: 34px;
-    @include respond-to(sm) {
+    @include respond-to(md) {
       padding-right: 0;
       font-size: 15px;
       line-height: 19px;
+    }
+    @include respond-to(lg) {
+      max-width: 62%;
+      font-size: 17px;
+      line-height: 25px;
     }
     span {
       font-family: $FontAvenirDemi;
@@ -79,8 +91,13 @@
       font-size: 32px;
       font-weight: 400;
       line-height: 40px;
-      @include respond-to(sm) {
+      @include respond-to(md) {
         margin: 30px 0 13px;
+        font-size: 22px;
+        line-height: 40px;
+      }
+      @include respond-to(lg) {
+        margin: 15px 0 1px;
         font-size: 22px;
         line-height: 40px;
       }
@@ -88,7 +105,7 @@
     li {
       line-height: 50px;
       letter-spacing: 1.65px;
-      @include respond-to(sm) {
+      @include respond-to(md) {
         margin-bottom: 25px;
         line-height: normal;
         span:first-of-type {
@@ -125,11 +142,15 @@
     box-shadow: 0 5px 11px 2px rgba(0, 0, 0, 0.35);
     background-color: #ffffff;
     text-align: center;
-    @include respond-to(sm) {
+    @include respond-to(md) {
       min-height: inherit;
       margin: 0 0 -440px 0;
       padding: 27px 15px 20px;
       box-shadow: 0 5px 24px 8px rgba(156, 153, 150, 0.2);
+    }
+    @include respond-to(lg) {
+      max-width: 360px;
+      margin-right: -30px;
     }
     form {
       max-width: 290px;
@@ -144,7 +165,7 @@
       font-size: 32px;
       font-weight: 400;
       line-height: 40px;
-      @include respond-to(sm) {
+      @include respond-to(md) {
         margin-bottom: 11px;
         font-size: 22px;
         line-height: 25px;
@@ -157,7 +178,7 @@
       font-size: 22px;
       font-weight: 400;
       line-height: 28px;
-      @include respond-to(sm) {
+      @include respond-to(md) {
         font-size: 15px;
         line-height: 28px;
       }
@@ -169,7 +190,7 @@
         margin: 40px auto;
         background-color: #3e3e3e;
         opacity: 0.76;
-        @include respond-to(sm) {
+        @include respond-to(md) {
           width: 51px;
           margin: 16px auto 19px;
         }
