@@ -1,6 +1,9 @@
 .team {
   padding: 90px 0;
   @include respond-to(md) {
+    padding: 290px 0 50px;
+  }
+  @include respond-to(sm) {
     padding: 290px 0 0;
   }
   &-title {
@@ -11,7 +14,7 @@
     font-weight: 400;
     line-height: 46px;
     text-align: center;
-    @include respond-to(md) {
+    @include respond-to(sm) {
       margin-bottom: 12px;
       font-size: 22px;
       line-height: 28.59px;
@@ -24,7 +27,7 @@
     font-weight: 400;
     line-height: 40px;
     text-align: center;
-    @include respond-to(md) {
+    @include respond-to(sm) {
       font-size: 15px;
       line-height: 24px;
     }
@@ -36,7 +39,7 @@
       margin: 40px auto 0;
       background-color: #3e3e3e;
       opacity: 0.76;
-      @include respond-to(md) {
+      @include respond-to(sm) {
         width: 47px;
         margin-top: 20px;
       }
@@ -49,6 +52,9 @@
     justify-content: center;
     margin: 180px -28px 0;
     @include respond-to(md) {
+      margin: 180px -15px 0;
+    }
+    @include respond-to(sm) {
       margin: 21px 0 10px;
     }
   }
@@ -60,10 +66,19 @@
     border: 2px solid #a78c6e;
     text-align: center;
     @include respond-to(md) {
+      max-width: 350px;
+      &:last-of-type {
+        margin-top: 120px;
+      }
+    }
+    @include respond-to(sm) {
       max-width: 100%;
       margin:  0 0 12px;
       padding: 15px 0;
       min-height: inherit;
+      &:last-of-type {
+        margin-top: 0;
+      }
       &__wrapper {
         max-width: 77%;
         margin: 0 auto;
@@ -81,7 +96,7 @@
     }
     img {
       margin-top: calc(-50% + 55px);
-      @include respond-to(md) {
+      @include respond-to(sm) {
         display: inline-block;
         vertical-align: middle;
         width: 93px;
@@ -96,7 +111,7 @@
       font-size: 32px;
       font-weight: 400;
       line-height: 40px;
-      @include respond-to(md) {
+      @include respond-to(sm) {
         margin: 0 0 0 -1px;
         font-size: 20px;
         line-height: 24.86px;
@@ -109,7 +124,7 @@
         height: 2px;
         margin: 16px auto 18px;
         background-color: #3e3e3e;
-        @include respond-to(md) {
+        @include respond-to(sm) {
           display: none;
         }
       }
@@ -120,7 +135,7 @@
       font-size: 22px;
       font-weight: 400;
       line-height: 40px;
-      @include respond-to(md) {
+      @include respond-to(sm) {
         font-size: 14px;
         line-height: 24.86px;
         text-align: left;
@@ -129,7 +144,7 @@
     &__description {
       margin-top: 40px;
       padding: 0 15px;
-      @include respond-to(md) {
+      @include respond-to(sm) {
         width: 100%;
         margin: 17px auto 0;
       }
@@ -142,7 +157,7 @@
         font-size: 22px;
         font-weight: 400;
         color: #363a3e;
-        @include respond-to(md) {
+        @include respond-to(sm) {
           font-size: 15px;
           line-height: 20px;
         }
@@ -154,7 +169,7 @@
           font-family: $FontAvenirDemi;
           font-weight: 600;
           line-height: 30px;
-          @include respond-to(md) {
+          @include respond-to(sm) {
             line-height: 20px;
           }
         }
@@ -173,7 +188,7 @@
       font-size: 32px;
       font-weight: 400;
       line-height: 40px;
-      @include respond-to(md) {
+      @include respond-to(sm) {
         font-size: 17px;
         line-height: 22px;
       }
@@ -185,7 +200,7 @@
       font-size: 22px;
       font-weight: 400;
       line-height: 30px;
-      @include respond-to(md) {
+      @include respond-to(sm) {
         display: none;
       }
       span {

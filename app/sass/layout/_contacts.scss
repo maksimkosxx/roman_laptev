@@ -5,18 +5,22 @@
   margin: 74px 0 59px;
   padding: 15px 0 15px 70px;
   border: 2px solid #a78c6e;
+  @include respond-to(lg) {
+    padding: 50px 20px 50px 30px;
+  }
   @include respond-to(md) {
     flex-direction: column;
     margin: 50px 0 30px;
     padding: 16px;
     min-height: inherit;
   }
-  @include respond-to(lg) {
-    padding: 50px 20px 50px 30px;
-  }
   &-text {
     max-width: 50%;
     @include respond-to(md) {
+      order: 2;
+      max-width: 77%;
+    }
+    @include respond-to(sm) {
       order: 2;
       max-width: 100%;
     }
@@ -27,14 +31,14 @@
       font-size: 22px;
       font-weight: 400;
       line-height: 28px;
-      @include respond-to(md) {
-        margin: 15px 0;
-        font-size: 15px;
-        line-height: 19px;
-      }
       @include respond-to(lg) {
         font-size: 19px;
         line-height: 23px;
+      }
+      @include respond-to(sm) {
+        margin: 15px 0;
+        font-size: 15px;
+        line-height: 19px;
       }
     }
     &__title {
@@ -43,13 +47,13 @@
       font-size: 45px;
       font-weight: 400;
       line-height: 47px;
-      @include respond-to(md) {
-        font-size: 22px;
-        line-height: 23.49px;
-      }
       @include respond-to(lg) {
         font-size: 35px;
         line-height: 40px;
+      }
+      @include respond-to(sm) {
+        font-size: 22px;
+        line-height: 23.49px;
       }
       &::after {
         content: '';
@@ -59,7 +63,7 @@
         margin: 38px 0 0;
         background-color: #3e3e3e;
         opacity: 0.76;
-        @include respond-to(md) {
+        @include respond-to(sm) {
           width: 39px;
           margin-top: 14px;
         }
@@ -73,13 +77,13 @@
       font-size: 45px;
       font-weight: 400;
       line-height: 46px;
-      @include respond-to(md) {
+      @include respond-to(lg) {
+        font-size: 35px;
+      }
+      @include respond-to(sm) {
         margin-top: 23px;
         font-size: 22px;
         line-height: 22.99px;
-      }
-      @include respond-to(lg) {
-        font-size: 35px;
       }
       &:hover {
         color: #caa265;
@@ -95,7 +99,7 @@
       font-size: 22px;
       font-weight: 400;
       line-height: 60px;
-      @include respond-to(md) {
+      @include respond-to(sm) {
         width: 194px;
         min-height: 47px;
         font-size: 15px;
@@ -107,7 +111,7 @@
       @include flex;
       max-width: 294px;
       margin-top: 50px;
-      @include respond-to(md) {
+      @include respond-to(sm) {
         max-width: 200px;
         margin-top: 20px;
         img {
@@ -127,19 +131,23 @@
   }
   &-image {
     margin-right: -70px;
-    @include respond-to(md) {
-      order: 1;
-      margin-right: 0;
-      img {
-        max-width: 100%;
-        margin-top: -40px;
-      }
-    }
     @include respond-to(lg) {
       margin-right: -45px;
       img {
         max-width: 100%;
       }
+    }
+    @include respond-to(md) {
+      order: 1;
+      margin-right: 0;
+      margin-bottom: 50px;
+      img {
+        max-width: 100%;
+        margin-top: -40px;
+      }
+    }
+    @include respond-to(sm) {
+      margin: 0;
     }
   }
 }

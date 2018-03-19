@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     // MOBILE MENU
 
-    $('.btn-menu').on('click', function (e) {
+    $('.btn-menu').on('click', function(e) {
         e.preventDefault();
 
         $('.wrapper-popup').fadeIn(400,
@@ -43,6 +43,16 @@ $(document).ready(function () {
             }
 
         }
+        if ($(this).scrollTop() > 50
+        ) {
+            $('.btn-menu').addClass('sticky');
+            $('.sticky').animate({
+                opacity: 1
+            }, 1500);
+        }
+        else {
+            $('.btn-menu').removeClass('sticky');
+        }
 
     });
 
@@ -61,7 +71,7 @@ $(document).ready(function () {
                         $('.wrapper-popup').fadeOut(400);
                         $('body').css('overflow', 'auto');
                     }
-            );
+                );
         }
 
         $('.header-nav li a').removeClass('active');
@@ -116,6 +126,7 @@ $(document).ready(function () {
         });
     });
 
+
     // Datepicker
 
 
@@ -168,15 +179,15 @@ $(document).ready(function () {
         var item = '#item_' + click_id;
 
         $('.reviews-tabs__button').removeClass('active');
-        $('.reviews-tabs__content').hide('easy').removeClass('active');
+        $('.reviews-tabs__content').css('display', 'none').removeClass('active');
         $(this).addClass('active');
-        $(item).show('easy').addClass('active');
+        $(item).css('display', 'block').addClass('active');
     });
 
 
     // Read more review
 
-    if ($(window).width() < 768) {
+    if ($(window).width() < 1024) {
 
         $('.reviews-slider__description').shorten({
             "showChars": 180,              // - длина текста в символах.
@@ -185,8 +196,11 @@ $(document).ready(function () {
             "lessText": "Скрыть текст"   // - текст возврата в исходное состояние.
         });
 
+    }
+    if ($(window).width() < 768) {
+
         $('.popup--policy .text').shorten({
-            "showChars": 550,              // - длина текста в символах.
+            "showChars": 400,              // - длина текста в символах.
             "moreText": "Читать далее",      // - текст "читать далее".
             "ellipsesText": "...",         // - вместо многоточия можно вписать к примеру и "[...]".
             "lessText": "Скрыть текст"   // - текст возврата в исходное состояние.
@@ -268,9 +282,9 @@ $(document).ready(function () {
     // Accordeon
 
     $('.offers-item__title').on('click', function () {
-       $(this)
-           .toggleClass('active')
-           .siblings('.offers-item__list').slideToggle();
+        $(this)
+            .toggleClass('active')
+            .siblings('.offers-item__list').slideToggle();
     });
 
 
@@ -299,8 +313,6 @@ $(document).ready(function () {
                             $('.popup--thanks .title').html(titleText);
                         }
 
-                        console.log(inputName);
-
                         $('.wrapper-popup').fadeIn(400,
                             function () {
                                 $('body').css('overflow', 'hidden');
@@ -321,6 +333,24 @@ $(document).ready(function () {
             }
         });
     });
+
+
+    // Old Browsers
+
+
+    $.reject({
+        reject: {
+            msie6:true,
+            msie7:true,
+            msie8:true,
+            msie9:true,
+            msie10:true,
+            firefox2:true
+        }
+    });
+
+
+
 
 
     // PHONE MASK

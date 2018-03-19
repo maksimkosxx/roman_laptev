@@ -1,6 +1,6 @@
 .steps {
   padding: 70px 0;
-  @include respond-to(md) {
+  @include respond-to(sm) {
     padding: 30px 0;
   }
   &-title {
@@ -10,7 +10,7 @@
     font-family: $FontSylfaen;
     font-size: 45px;
     font-weight: 400;
-    @include respond-to(md) {
+    @include respond-to(sm) {
       margin-bottom: 16px;
       font-size: 22px;
       line-height: 24.36px;
@@ -23,7 +23,7 @@
     font-size: 22px;
     font-weight: 400;
     line-height: 40px;
-    @include respond-to(md) {
+    @include respond-to(sm) {
       font-size: 15px;
       line-height: 21.18px;
     }
@@ -35,7 +35,7 @@
       margin: 30px auto 0;
       background-color: #3e3e3e;
       opacity: 0.76;
-      @include respond-to(md) {
+      @include respond-to(sm) {
         width: 41px;
         margin-top: 16px;
       }
@@ -50,29 +50,39 @@
     min-height: 603px;
     margin: 60px auto 0;
     border: 2px solid #a78c6e;
+    @include respond-to(lg) {
+      min-height: 430px;
+    }
     @include respond-to(md) {
       flex-direction: column;
-      margin-top: 27px;
+      margin: 27px auto 100px;
       min-height: 127px;
       border: none;
     }
-    @include respond-to(lg) {
-      min-height: 430px;
+    @include respond-to(sm) {
+      margin: 27px auto 0;
     }
     &__image {
       position: relative;
       left: -40px;
-      @include respond-to(md) {
-        opacity: 1;
-        width: calc(100% + 30px);
-        left: 0;
-        margin: 0 -15px;
+      @include respond-to(lg) {
+        max-width: 58%;
         img {
           max-width: 100%;
         }
       }
-      @include respond-to(lg) {
-        max-width: 58%;
+      @include respond-to(md) {
+        left: 0;
+        width: 100%;
+        img {
+          width: 100%;
+        }
+      }
+      @include respond-to(sm) {
+        opacity: 1;
+        width: calc(100% + 30px);
+        left: 0;
+        margin: 0 -15px;
         img {
           max-width: 100%;
         }
@@ -84,6 +94,13 @@
       padding-right: 25px;
       box-sizing: border-box;
       @include respond-to(md) {
+        order: 2;
+        max-width: 100%;
+        margin-top: 90px;
+        padding: 0 20px 25px;
+        border: 2px solid #a78c6e;
+      }
+      @include respond-to(sm) {
         order: 2;
         max-width: 100%;
         margin-top: 75px;
@@ -102,10 +119,14 @@
         position: relative;
         top: -35px;
         z-index: 3;
-        font-size: 79px;
-        line-height: 26.48px;
+        font-size: 100px;
+        line-height: 40px;
         text-align: center;
         opacity: 0.2;
+      }
+      @include respond-to(sm) {
+        font-size: 79px;
+        line-height: 26.48px;
       }
     }
     &__title {
@@ -118,12 +139,18 @@
       font-weight: 400;
       line-height: 45px;
       @include respond-to(md) {
+        max-width: 250px;
+        margin: -75px auto 0;
+        font-size: 30px;
+        line-height: 35px;
+        text-align: center;
+        background: #fff;
+      }
+      @include respond-to(sm) {
         max-width: 190px;
         margin: -60px auto 0;
         font-size: 22px;
         line-height: 25px;
-        text-align: center;
-        background: #fff;
       }
       div:last-child {
         position: relative;
@@ -146,10 +173,16 @@
       font-weight: 400;
       line-height: 34px;
       @include respond-to(md) {
+        max-width: 500px;
+        margin: 20px auto;
+        font-size: 20px;
+        line-height: 25px;
+        text-align: center;
+      }
+      @include respond-to(sm) {
         margin-top: 15px;
         font-size: 15px;
         line-height: 18.01px;
-        text-align: center;
       }
     }
     &--left {
@@ -165,6 +198,7 @@
         padding-right: 0;
         padding-left: 40px;
         @include respond-to(md) {
+          max-width: 100%;
           padding: 0 20px 20px;
         }
       }
@@ -214,7 +248,7 @@
       font-weight: 400;
       line-height: 48px;
       text-align: center;
-      @include respond-to(md) {
+      @include respond-to(sm) {
         margin: 17px 0;
         font-size: 22px;
         line-height: 25.42px;
@@ -229,7 +263,7 @@
       font-size: 22px;
       line-height: 60px;
       font-weight: 400;
-      @include respond-to(md) {
+      @include respond-to(sm) {
         width: 194px;
         min-height: 47px;
         font-size: 15px;

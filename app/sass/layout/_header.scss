@@ -51,11 +51,11 @@
     @include flex;
     width: 100%;
     max-width: 790px;
-    @include respond-to(md) {
-      flex-flow: column;
-    }
     @include respond-to(lg) {
       justify-content: flex-start;
+    }
+    @include respond-to(md) {
+      flex-flow: column;
     }
     li {
       @include respond-to(lg) {
@@ -74,14 +74,14 @@
         font-size: 18px;
         font-weight: 400;
         transition: .1s;
+        @include respond-to(lg) {
+          font-size: 16px;
+        }
         @include respond-to(md) {
           margin-bottom: 7px;
           padding: 0 1px;
           font-size: 15px;
           line-height: 30px;
-        }
-        @include respond-to(lg) {
-          font-size: 16px;
         }
         &:hover {
           color: #caa265;

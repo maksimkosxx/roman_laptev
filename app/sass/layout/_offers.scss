@@ -4,7 +4,7 @@
 
 .offers {
   padding: 54px 0;
-  @include respond-to(md) {
+  @include respond-to(sm) {
     padding: 27px 0;
   }
   &-title {
@@ -17,7 +17,7 @@
     font-weight: 400;
     line-height: 46px;
     text-align: center;
-    @include respond-to(md) {
+    @include respond-to(sm) {
       font-size: 22px;
       line-height: 21.44px;
     }
@@ -29,9 +29,38 @@
       margin: 35px auto 50px;
       background-color: #3e3e3e;
       opacity: 0.76;
-      @include respond-to(md) {
+      @include respond-to(sm) {
         width: 36px;
         margin: 15px auto 35px;
+      }
+    }
+  }
+  .offers-tabs {
+    position: relative;
+    @include respond-to(md) {
+      min-height: 263px;
+      border: 2px solid #a78c6e;
+      &::after {
+        content: 'Свадьба, корпоратив, юбилей, выпускной';
+        display: block;
+        position: absolute;
+        top: -20px;
+        left: 61px;
+        max-width: 610px;
+        padding: 0 15px;
+        margin: 0 auto;
+        color: #363a3e;
+        font-family: $FontSylfaen;
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 40px;
+        text-align: center;
+        background-color: #ece9e5;
+      }
+    }
+    @include respond-to(sm) {
+      &::after {
+        display: none;
       }
     }
   }
@@ -43,9 +72,25 @@
     padding-top: 40px;
     text-align: center;
     @include respond-to(md) {
+      position: absolute;
+      left: 0;
+      z-index: 3;
+      top: 1.5px;
       padding: 30px 0 13px;
       margin-bottom: 0;
-      &:nth-of-type(3) {
+      border: none;
+      &:last-of-type {
+        right: -20px;
+        left: auto;
+        border: none;
+      }
+    }
+    @include respond-to(sm) {
+      position: relative;
+      &:last-of-type {
+        padding-top: 0;
+        right: auto;
+        left: auto;
         border: none;
       }
     }
@@ -57,7 +102,8 @@
       display: inline-block;
       max-width: 610px;
       padding: 0 8px;
-      margin: 0 auto;
+      //margin: 0 auto;
+      transform: translate(44%, 0);
       color: #363a3e;
       font-family: $FontSylfaen;
       font-size: 32px;
@@ -66,6 +112,10 @@
       text-align: center;
       background-color: #ece9e5;
       @include respond-to(md) {
+        display: none;
+      }
+      @include respond-to(sm) {
+        display: block;
         max-width: 160px;
         font-size: 15px;
         line-height: 18.65px;
@@ -80,7 +130,13 @@
     justify-content: space-between;
     margin: 0 -17px -27px;
     @include respond-to(md) {
+      width: 100%;
+      max-width: 370px;
       margin: 0 -10px 0;
+    }
+    @include respond-to(sm) {
+      width: auto;
+
     }
   }
   &-item {
@@ -92,6 +148,10 @@
     box-shadow: 0 4px 16px rgba(116, 102, 81, 0.35);
     background-color: #ffffff;
     text-align: left;
+    @include respond-to(lg) {
+      max-width: 32%;
+      min-height: 700px;
+    }
     @include respond-to(md) {
       min-height: inherit;
       margin-bottom: 8px;
@@ -101,10 +161,6 @@
         display: none;
         padding: 0 20px 27px 10px;
       }
-    }
-    @include respond-to(lg) {
-     max-width: 32%;
-      min-height: 700px;
     }
     &__title {
       margin-bottom: 25px;
@@ -265,6 +321,9 @@
     line-height: 28px;
     text-align: center;
     @include respond-to(md) {
+      margin-top: 20px;
+    }
+    @include respond-to(sm) {
       max-width: 290px;
       font-size: 12px;
       line-height: 13.05px;

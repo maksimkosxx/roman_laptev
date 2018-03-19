@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Роман Лаптев</title>
@@ -12,11 +12,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-    <link href="/favicon32.ico" rel="apple-touch-icon" sizes="32x32">
+    <link href="/favicon32.png" rel="apple-touch-icon" sizes="32x32">
 
     <link rel="stylesheet" href="/libs/jquery-ui.min.css">
     <link rel="stylesheet" href="/libs/slick-theme.min.css">
     <link rel="stylesheet" href="/libs/slick.min.css">
+    <link rel="stylesheet" href="/libs/lightbox.min.css">
+    <link rel="stylesheet" href="/libs/ireject.min.css">
     <link rel="stylesheet" href="/css/main.min.css">
 
 </head>
@@ -58,11 +60,12 @@
                 </div>
             </div>
         </div>
+        <div id="about"></div>
     </div>
 </div>
 
 <div class="container">
-    <section id="about" class="about">
+    <section class="about">
         <div id="video" class="about-text">
             <fieldset>
                 <legend>Давайте <br> познакомимся</legend>
@@ -275,40 +278,64 @@
                             </div>
                         </div>
                         <div class="portfolio-item">
-                            <img src="/img/portfolio/image1.jpg" alt="">
+                            <a href="/img/portfolio/large/image1b.jpg" data-lightbox="image-1">
+                                <img src="/img/portfolio/large/image1b.jpg" alt="">
+                            </a>
                         </div>
                         <div class="portfolio-item">
-                            <img src="/img/portfolio/image2.jpg" alt="">
+                            <a href="/img/portfolio/large/image2b.jpg" data-lightbox="image-2">
+                                <img src="/img/portfolio/large/image2b.jpg" alt="">
+                            </a>
                         </div>
                         <div class="portfolio-item">
-                            <img src="/img/portfolio/image3.jpg" alt="">
+                            <a href="/img/portfolio/large/image3b.jpg" data-lightbox="image-3">
+                                <img src="/img/portfolio/large/image3b.jpg" alt="">
+                            </a>
                         </div>
                         <div class="portfolio-item">
-                            <img src="/img/portfolio/image4.jpg" alt="">
+                            <a href="/img/portfolio/large/image4b.jpg" data-lightbox="image-4">
+                                <img src="/img/portfolio/large/image4b.jpg" alt="">
+                            </a>
                         </div>
                         <div class="portfolio-item">
-                            <img src="/img/portfolio/image5.jpg" alt="">
+                            <a href="/img/portfolio/image5.jpg" data-lightbox="image-5">
+                                <img src="/img/portfolio/image5.jpg" alt="">
+                            </a>
                         </div>
                         <div class="portfolio-item">
-                            <img src="/img/portfolio/image6.jpg" alt="">
+                            <a href="/img/portfolio/image6.jpg" data-lightbox="image-6">
+                                <img src="/img/portfolio/image6.jpg" alt="">
+                            </a>
                         </div>
                         <div class="portfolio-item">
-                            <img src="/img/portfolio/image7.jpg" alt="">
+                            <a href="/img/portfolio/large/image7b.jpg" data-lightbox="image-7">
+                                <img src="/img/portfolio/large/image7b.jpg" alt="">
+                            </a>
                         </div>
                         <div class="portfolio-item portfolio-item--large">
-                            <img src="/img/portfolio/image8.jpg" alt="">
+                            <a href="/img/portfolio/large/image8b.jpg" data-lightbox="image-8">
+                                <img src="/img/portfolio/image8.jpg" alt="">
+                            </a>
                         </div>
                         <div class="portfolio-item portfolio-item--large">
-                            <img src="/img/portfolio/image9.jpg" alt="">
+                            <a href="/img/portfolio/large/image9b.jpg" data-lightbox="image-9">
+                                <img src="/img/portfolio/image9.jpg" alt="">
+                            </a>
                         </div>
                         <div class="portfolio-item">
-                            <img src="/img/portfolio/image10.jpg" alt="">
+                            <a href="/img/portfolio/large/image10b.jpg" data-lightbox="image-10">
+                                <img src="/img/portfolio/large/image10b.jpg" alt="">
+                            </a>
                         </div>
                         <div class="portfolio-item">
-                            <img src="/img/portfolio/image12.jpg" alt="">
+                            <a href="/img/portfolio/large/image11b.jpg" data-lightbox="image-11">
+                                <img src="/img/portfolio/large/image11b.jpg" alt="">
+                            </a>
                         </div>
                         <div class="portfolio-item">
-                            <img src="/img/portfolio/image11.jpg" alt="">
+                            <a href="/img/portfolio/large/image12b.jpg" data-lightbox="image-12">
+                                <img src="/img/portfolio/large/image12b.jpg" alt="">
+                            </a>
                         </div>
                     </div>
 
@@ -1074,242 +1101,244 @@
             <div class="offers-title">
                 Выберите один из вариантов нашего сотрудничества
             </div>
-            <div class="offers-content">
-                <div class="offers-content__title">
-                    Свадьба, корпоратив, юбилей, выпускной
-                </div>
-                <div class="offers-row">
-                    <div class="offers-item">
-                        <div class="offers-item__title">Стандарт</div>
-                        <div class="offers-item__list">
-                            <ul>
-                                <li>
+            <div class="offers-tabs">
+                <div class="offers-content">
+                    <div class="offers-content__title">
+                        Свадьба, корпоратив, юбилей, выпускной
+                    </div>
+                    <div class="offers-row">
+                        <div class="offers-item">
+                            <div class="offers-item__title">Стандарт</div>
+                            <div class="offers-item__list">
+                                <ul>
+                                    <li>
                                 <span>
                                     Разработка индивидуального&nbsp;сценария
                                 </span>
-                                </li>
-                                <li>
+                                    </li>
+                                    <li>
                                 <span>
                                     Консультация и помощь
                                     на&nbsp;всех&nbsp;этапах подготовки
                                 </span>
-                                </li>
-                                <li>
+                                    </li>
+                                    <li>
                                 <span>
                                     Cоставление тайминга мероприятия
                                 </span>
-                                </li>
-                                <li>
+                                    </li>
+                                    <li>
                                 <span>
                                     Работа ведущего 5 часов
                                 </span>
-                                </li>
-                                <li>
+                                    </li>
+                                    <li>
                                 <span>
                                     Работа диджея 6 часов
                                 </span>
-                                </li>
-                            </ul>
-                            <ul>
-                                <li>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
                                 <span>
                                     Комплект музыкального оборудования (звук, цветомузыка, экран)
                                 </span>
-                                </li>
-                                <li>
+                                    </li>
+                                    <li>
                                 <span>
                                     Доставка и монтаж музыкального оборудования
                                 </span>
-                                </li>
-                            </ul>
-                            <button class="offers-item__btn btn btn--order">Узнать стоимость</button>
+                                    </li>
+                                </ul>
+                                <button class="offers-item__btn btn btn--order">Узнать стоимость</button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="offers-item">
-                        <div class="offers-item__title">ОПТИМАЛЬНЫЙ</div>
-                       <div class="offers-item__list">
-                           <ul>
-                               <li>
+                        <div class="offers-item">
+                            <div class="offers-item__title">ОПТИМАЛЬНЫЙ</div>
+                            <div class="offers-item__list">
+                                <ul>
+                                    <li>
                                 <span>
                                     Разработка индивидуального&nbsp;сценария
                                 </span>
-                               </li>
-                               <li>
+                                    </li>
+                                    <li>
                                 <span>
                                     Консультация и помощь
                                     на&nbsp;всех&nbsp;этапах подготовки
                                 </span>
-                               </li>
-                               <li>
+                                    </li>
+                                    <li>
                                 <span>
                                     Cоставление тайминга мероприятия
                                 </span>
-                               </li>
-                               <li>
+                                    </li>
+                                    <li>
                                 <span>
                                     Работа ведущего 5 часов
                                 </span>
-                               </li>
-                               <li>
+                                    </li>
+                                    <li>
                                 <span>
                                     Работа диджея 6 часов
                                 </span>
-                               </li>
-                           </ul>
-                           <ul>
-                               <li>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
                                 <span>
                                     Комплект музыкального оборудования (звук, цветомузыка, экран)
                                 </span>
-                               </li>
-                               <li>
+                                    </li>
+                                    <li>
                                 <span>
                                     Доставка и монтаж музыкального оборудования
                                 </span>
-                               </li>
-                           </ul>
-                           <button class="offers-item__btn btn btn--order">Узнать стоимость</button>
-                       </div>
-                    </div>
-                    <div class="offers-item">
-                        <div class="offers-item__title">ПРЕМИУМ</div>
-                        <div class="offers-item__list">
-                            <ul>
-                                <li>
+                                    </li>
+                                </ul>
+                                <button class="offers-item__btn btn btn--order">Узнать стоимость</button>
+                            </div>
+                        </div>
+                        <div class="offers-item">
+                            <div class="offers-item__title">ПРЕМИУМ</div>
+                            <div class="offers-item__list">
+                                <ul>
+                                    <li>
                                 <span>
                                     Разработка индивидуального&nbsp;сценария
                                 </span>
-                                </li>
-                                <li>
+                                    </li>
+                                    <li>
                                 <span>
                                     Консультация и помощь
                                     на&nbsp;всех&nbsp;этапах подготовки
                                 </span>
-                                </li>
-                                <li>
+                                    </li>
+                                    <li>
                                 <span>
                                     Cоставление тайминга мероприятия
                                 </span>
-                                </li>
-                                <li>
+                                    </li>
+                                    <li>
                                 <span>
                                     Работа ведущего 5 часов
                                 </span>
-                                </li>
-                                <li>
+                                    </li>
+                                    <li>
                                 <span>
                                     Работа диджея 6 часов
                                 </span>
-                                </li>
-                            </ul>
-                            <ul>
-                                <li>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
                                 <span>
                                     Комплект музыкального оборудования (звук, цветомузыка, экран)
                                 </span>
-                                </li>
-                                <li>
+                                    </li>
+                                    <li>
                                 <span>
                                     Доставка и монтаж музыкального оборудования
                                 </span>
-                                </li>
-                            </ul>
-                            <ul>
-                                <li>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
                                 <span>
                                     Работа координатора — полный день
                                 </span>
-                                </li>
-                            </ul>
-                            <button class="offers-item__btn btn btn--order">Узнать стоимость</button>
+                                    </li>
+                                </ul>
+                                <button class="offers-item__btn btn btn--order">Узнать стоимость</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="offers-content">
-                <div class="offers-row">
-                    <div class="offers-item offers-item--small">
-                        <div class="offers-item__title">Массовые мероприятия</div>
-                        <div class="offers-item__list">
-                            <ul>
-                                <li>
+                <div class="offers-content">
+                    <div class="offers-row">
+                        <div class="offers-item offers-item--small">
+                            <div class="offers-item__title">Массовые мероприятия</div>
+                            <div class="offers-item__list">
+                                <ul>
+                                    <li>
                                 <span>
                                     Вечеринки
                                 </span>
-                                </li>
-                                <li>
+                                    </li>
+                                    <li>
                                 <span>
                                     Open air
                                 </span>
-                                </li>
-                                <li>
+                                    </li>
+                                    <li>
                                 <span>
                                     Церемонии награждения
                                 </span>
-                                </li>
-                                <li>
+                                    </li>
+                                    <li>
                                 <span>
                                     Городские праздники
                                 </span>
-                                </li>
-                                <li>
+                                    </li>
+                                    <li>
                                 <span>
                                     Презентации автосалонов
                                 </span>
-                                </li>
-                            </ul>
-                            <button class="offers-item__btn btn btn--order">Узнать стоимость</button>
+                                    </li>
+                                </ul>
+                                <button class="offers-item__btn btn btn--order">Узнать стоимость</button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="offers-item offers-item--small">
-                        <div class="offers-item__title">Выездная регистрация</div>
-                       <div class="offers-item__list">
-                           <ul>
-                               <li>
+                        <div class="offers-item offers-item--small">
+                            <div class="offers-item__title">Выездная регистрация</div>
+                            <div class="offers-item__list">
+                                <ul>
+                                    <li>
                                 <span>
                                     Разработка индивидуального&nbsp;сценария
                                 </span>
-                               </li>
-                               <li>
+                                    </li>
+                                    <li>
                                 <span>
                                     Музыкальное сопровождение
                                 </span>
-                               </li>
-                               <li>
+                                    </li>
+                                    <li>
                                 <span>
                                     Проведение выездной регистрации
                                 </span>
-                               </li>
-                               <li>
+                                    </li>
+                                    <li>
                                 <span>
                                     Работа диджея
                                 </span>
-                               </li>
-                           </ul>
-                           <button class="offers-item__btn btn btn--order">Узнать стоимость</button>
-                       </div>
-                    </div>
-                    <div class="offers-item offers-item--small">
-                        <div class="offers-item__title">Бесплатно</div>
-                        <div class="offers-item__list">
-                            <ul>
-                                <li>
+                                    </li>
+                                </ul>
+                                <button class="offers-item__btn btn btn--order">Узнать стоимость</button>
+                            </div>
+                        </div>
+                        <div class="offers-item offers-item--small">
+                            <div class="offers-item__title">Бесплатно</div>
+                            <div class="offers-item__list">
+                                <ul>
+                                    <li>
                                 <span>
                                     Благотворительная акция
                                 </span>
-                                </li>
-                                <li>
+                                    </li>
+                                    <li>
                                 <span>
                                     Социальный проект
                                 </span>
-                                </li>
-                                <li>
+                                    </li>
+                                    <li>
                                 <span>
                                     Мероприятие с широким информационным охватом
                                 </span>
-                                </li>
-                            </ul>
-                            <button class="offers-item__btn btn btn--order">Связаться</button>
+                                    </li>
+                                </ul>
+                                <button class="offers-item__btn btn btn--order">Связаться</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1342,7 +1371,8 @@
                 <a href="https://vk.com/roman_lap" target="_blank"><img src="/img/social/vk.png" alt=""></a>
                 <a href="https://www.instagram.com/roman_lap/" target="_blank"><img src="/img/social/insta.png" alt=""></a>
                 <a href="https://www.facebook.com/romanvedet/" target="_blank"><img src="/img/social/fb.png" alt=""></a>
-                <a href="https://www.youtube.com/channel/UCzw7hshWiqNqe2-Dm9k2xiQ/featured?view_as=subscriber" target="_blank"><img src="/img/social/youtube.png" alt=""></a>
+                <a href="https://www.youtube.com/channel/UCzw7hshWiqNqe2-Dm9k2xiQ/featured?view_as=subscriber"
+                   target="_blank"><img src="/img/social/youtube.png" alt=""></a>
                 <a href="skype:roma_mv?call" target="_blank"><img src="/img/social/skype.png" alt=""></a>
             </div>
         </div>
@@ -1364,7 +1394,6 @@
 </div>
 
 
-
 <div class="wrapper-popup"></div>
 <div class="popup popup--order">
     <button title="Close" class="popup-close" tabindex="-1">
@@ -1377,7 +1406,7 @@
                     <div class="title">Остался 1 шаг</div>
                     <div class="text">Заполните форму и нажмите кнопку. Я скоро перезвоню</div>
                 </div>
-                <form action="" method="post">
+                <form action="mail.php" method="post">
                     <input type="text" id="name" name="name" placeholder="Ваше имя">
                     <input type="tel" id="tel" name="tel" placeholder="Телефон" required>
                     <textarea name="text" id="text"
@@ -1410,8 +1439,18 @@
             Соглашение об обработке персональных данных
         </div>
         <div class="text">
-            Данное соглашение об обработке персональных данных разработано в соответствии с законодательством Российской Федерации. Все лица заполнившие сведения, составляющие персональные данные на данном сайте,
-            а также разместившие иную информацию обозначенными действиями подтверждают свое согласие на обработку персональных данных и их передачу оператору обработки персональных данных. Под персональными данными Гражданина понимается нижеуказанная информация: общая информация (Имя, телефон и адрес электронной почты); посетители сайта направляют свои персональные данные для получения услуг расчёта стоимости заказа. Гражданин, принимая настоящее Соглашение, выражают свою заинтересованность и полное согласие, что обработка их персональных данных может включать в себя следующие действия: сбор, систематизацию, накопление, хранение, уточнение (обновление, изменение), использование, уничтожение. Гражданин гарантирует: информация, им предоставленная, является полной, точной и достоверной; при предоставлении информации не нарушается действующее законодательство Российской Федерации, законные права и интересы третьих лиц; вся предоставленная информация заполнена Гражданина в отношении себя лично.
+            Данное соглашение об обработке персональных данных разработано в соответствии с законодательством Российской
+            Федерации. Все лица заполнившие сведения, составляющие персональные данные на данном сайте,
+            а также разместившие иную информацию обозначенными действиями подтверждают свое согласие на обработку
+            персональных данных и их передачу оператору обработки персональных данных. Под персональными данными
+            Гражданина понимается нижеуказанная информация: общая информация (Имя, телефон и адрес электронной почты);
+            посетители сайта направляют свои персональные данные для получения услуг расчёта стоимости заказа.
+            Гражданин, принимая настоящее Соглашение, выражают свою заинтересованность и полное согласие, что обработка
+            их персональных данных может включать в себя следующие действия: сбор, систематизацию, накопление, хранение,
+            уточнение (обновление, изменение), использование, уничтожение. Гражданин гарантирует: информация, им
+            предоставленная, является полной, точной и достоверной; при предоставлении информации не нарушается
+            действующее законодательство Российской Федерации, законные права и интересы третьих лиц; вся
+            предоставленная информация заполнена Гражданина в отношении себя лично.
         </div>
     </div>
 </div>
@@ -1419,6 +1458,48 @@
 
 <script src="/libs/libs.min.js"></script>
 <script src="/js/main.js"></script>
+
+
+<script type="text/javascript">(window.Image ? (new Image()) : document.createElement('img')).src = 'https://vk.com/rtrg?p=VK-RTRG-218611-fN446';</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript"> (function (d, w, c) {
+    (w[c] = w[c] || []).push(function () {
+        try {
+            w.yaCounter46926147 = new Ya.Metrika({
+                id: 46926147,
+                clickmap: true,
+                trackLinks: true,
+                accurateTrackBounce: true,
+                webvisor: true
+            });
+        } catch (e) {
+        }
+    });
+    var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () {
+        n.parentNode.insertBefore(s, n);
+    };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = "https://mc.yandex.ru/metrika/watch.js";
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else {
+        f();
+    }
+})(document, window, "yandex_metrika_callbacks"); </script>
+<noscript>
+    <div><img src="https://mc.yandex.ru/watch/46926147" style="position:absolute; left:-9999px;" alt=""/></div>
+</noscript> <!-- /Yandex.Metrika counter -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109652667-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-109652667-1');
+</script>
 
 </body>
 </html>
