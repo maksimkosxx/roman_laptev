@@ -1,9 +1,20 @@
 $(document).ready(function () {
 
 
+    if ($(window).width() > 1180) {
+
+        $('.wrapper-hero__image').fadeIn(800);
+        $('.hero-content h1').fadeIn(1500);
+        $('.hero-content__text').fadeIn(1500).css('display', 'inline-block');
+        $('.hero-content__description').fadeIn(2000);
+        $('.hero-content__link').fadeIn(3000).css('display', 'block');
+    }
+
+
+
     // MOBILE MENU
 
-    $('.btn-menu').on('click', function(e) {
+    $('.btn-menu').on('click', function (e) {
         e.preventDefault();
 
         $('.wrapper-popup').fadeIn(400,
@@ -24,6 +35,63 @@ $(document).ready(function () {
                 }
             );
     });
+
+
+    // Navigation Scroll Spy
+
+    function navScroll() {
+
+        "use strict";
+
+        var lastId,
+            topMenu = $(".header-nav"),
+            topMenuHeight = topMenu.outerHeight()+15,
+            // All list items
+            menuItems = topMenu.find("a"),
+            // Anchors corresponding to menu items
+            scrollItems = menuItems.map(function(){
+                var item = $($(this).attr("href"));
+                if (item.length) { return item; }
+            });
+
+// Bind click handler to menu items
+// so we can get a fancy scroll animation
+        menuItems.click(function(e){
+            var href = $(this).attr("href"),
+                offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight;
+            $('html, body').stop().animate({
+                scrollTop: offsetTop
+            }, 300);
+            e.preventDefault();
+        });
+        $('.header-nav li:last-of-type').on('click', function () {
+            $(this).addClass('active')
+        });
+
+// Bind to scroll
+        $(window).scroll(function(){
+            // Get container scroll position
+            var fromTop = $(this).scrollTop()+topMenuHeight;
+
+            // Get id of current scroll item
+            var cur = scrollItems.map(function(){
+                if ($(this).offset().top < fromTop)
+                    return this;
+            });
+            // Get the id of the current element
+            cur = cur[cur.length-1];
+            var id = cur && cur.length ? cur[0].id : "";
+
+            if (lastId !== id) {
+                lastId = id;
+                // Set/remove active class
+                menuItems
+                    .parent().removeClass("active")
+                    .end().filter("[href='#"+id+"']").parent().addClass("active");
+            }
+        });
+    }
+    navScroll();
 
     // STICKY HEADER
 
@@ -59,6 +127,7 @@ $(document).ready(function () {
 
     // NAVIGATION SCROLL
 
+
     $('.header-nav > li a').on('click', function () {
 
 
@@ -78,7 +147,7 @@ $(document).ready(function () {
         $(this).addClass('active');
 
         var scroll_el = $(this).attr('href');
-        if ($(scroll_el).length != 0) {
+        if ($(scroll_el).length > 0) {
             $('html, body').animate({scrollTop: $(scroll_el).offset().top}, 1500);
         }
         return false;
@@ -126,21 +195,12 @@ $(document).ready(function () {
         });
     });
 
-
-    // Datepicker
-
-
-    $(function () {
-        $('#date').datepicker();
-    });
-
-
     // Slick
 
     $('.reviews-slider').slick({
         arrows: true,
         dots: true,
-        infinite: true,
+        // infinite: true,
         speed: 500,
         fade: true,
         cssEase: 'linear'
@@ -293,12 +353,12 @@ $(document).ready(function () {
     $('form').each(function () {
         $(this).validate({
             errorPlacement: function () {
-                return false;
+
             },
             submitHandler: function (form) {
                 $.ajax({
                     type: "POST",
-                    url: "mail.php",
+                    url: "/mail.php",
                     data: $(form).serialize(),
                     success: function () {
 
@@ -330,8 +390,18 @@ $(document).ready(function () {
                         alert('Данные заполнены некорректно');
                     }
                 });
+                return false;
             }
         });
+    });
+
+
+    // Mask field
+
+    $(function(){
+        $("input[name='tel']").mask("8(999) 999-9999");
+        $("input[name='date']").mask("99.99.9999", {placeholder: "дд.мм.гггг" });
+        $("input[name='mail']").mask("99.99.9999", {placeholder: "дд.мм.гггг" });
     });
 
 
@@ -340,17 +410,14 @@ $(document).ready(function () {
 
     $.reject({
         reject: {
-            msie6:true,
-            msie7:true,
-            msie8:true,
-            msie9:true,
-            msie10:true,
-            firefox2:true
+            msie6: true,
+            msie7: true,
+            msie8: true,
+            msie9: true,
+            msie10: true,
+            firefox2: true
         }
     });
-
-
-
 
 
     // PHONE MASK

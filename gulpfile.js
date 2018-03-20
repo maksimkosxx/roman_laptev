@@ -33,8 +33,10 @@ gulp.task('scripts', function() {
     return gulp.src([ // Берем все необходимые библиотеки
         'app/libs/js/jquery-3.2.1.min.js', // Берем jQuery
         'app/libs/js/jquery.validate.min.js', // Валидация форм
+        'app/libs/js/jquery.maskedinput.min.js', // Маска поля
         'app/libs/js/slick.min.js', // Карусель slick
-        'app/libs/js/jquery-ui.min.js', // Календарь
+        'app/libs/js/lightbox.js',
+        'app/libs/js/ireject.js',
         'app/libs/js/jquery.shorten.1.0.js' // Читать далее
     ])
         .pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
@@ -43,14 +45,17 @@ gulp.task('scripts', function() {
 });
 gulp.task('sass-libs', function(){ // Создаем таск Sass
     return gulp.src([ // Берем все необходимые библиотеки
-       'app/sass/vendors/jquery-ui.scss', // Выбираем файл для минификации
        'app/sass/vendors/slick.scss',
-       'app/sass/vendors/slick-theme.scss'
+       'app/sass/vendors/slick-theme.scss',
+       'app/sass/vendors/irejetc.scss',
+       'app/sass/vendors/lightbox.scss'
     ])
         .pipe(sass({outputStyle: 'compressed'})) // Преобразуем Sass в CSS посредством gulp-sass
         .pipe(rename({suffix: '.min'})) // Добавляем суффикс .min
         .pipe(gulp.dest('app/libs')) // Выгружаем в папку app/libs
 });
+
+
 
 gulp.task('svgmin', function () {  // Минификация свг изображений
     return gulp.src('app/img/**/*.svg')

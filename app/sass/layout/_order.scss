@@ -116,14 +116,16 @@
       &.text--mobile {
         display: none;
       }
+      @include respond-to(md) {
+        &.text--mobile {
+          display: block;
+        }
+      }
       @include respond-to(sm) {
         top: -5px;
         max-width: 90%;
         font-size: 14px;
         line-height: 17px;
-        &.text--mobile {
-          display: block;
-        }
       }
       @include respond-to(lg) {
         font-size: 17px;

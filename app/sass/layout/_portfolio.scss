@@ -229,6 +229,7 @@
       }
       @include respond-to(sm) {
         height: 185px;
+        min-height: inherit;
       }
     }
     &:nth-of-type(10),

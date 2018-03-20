@@ -171,7 +171,7 @@
     }
   }
   &--principles {
-    padding: 90px 0 65px;
+    padding: 90px 0 0;
     @include respond-to(sm) {
       padding-top: 60px;
     }

@@ -1,7 +1,10 @@
+.reviews-wrapper {
+  padding-top: 80px;
+}
 .reviews {
   max-width: 1135px;
   min-height: 757px;
-  margin: 50px 0 66px;
+  margin: 60px 0 66px;
   padding: 60px 0 20px;
   border: 2px solid #a78c6e;
   @include respond-to(lg) {
@@ -123,6 +126,7 @@
       .slick-next {
         width: 17px;
         height: 46px;
+        z-index: 3;
         &::before {
           background-size: cover;
         }
@@ -271,9 +275,11 @@
         display: block;
         margin: 15px 0;
         text-align: center;
+        outline: none;
+        color: #373a3f!important;
         span {
           display: inline-block!important;
-          border-bottom: 2px solid #3e3e3e;
+          border-bottom: 2px solid #3e3e3e!important;
           font-family: $FontAvenir;
           font-size: 12px;
           font-weight: 500;
@@ -281,7 +287,14 @@
           color: #373a3f;
           transition: .2s;
           &:hover {
-            border: none;
+            border-bottom: none;
+          }
+        }
+        &.less {
+          color: #3e3e3e;
+          text-decoration: none;
+          span {
+            border-bottom: 2px solid #3e3e3e!important;
           }
         }
       }

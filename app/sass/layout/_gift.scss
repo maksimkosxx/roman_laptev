@@ -2,6 +2,9 @@
   position: relative;
   min-height: 840px;
   background-color: #363a3e;
+  //@include respond-to(sm) {
+  //  padding-bottom: 80px;
+  //}
   &::after {
     content: '';
     position: absolute;
