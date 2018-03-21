@@ -61,21 +61,18 @@
             },
 
             // Pop-up Window Text
-            header: 'Did you know that your Internet Browser is out of date?',
+            header: 'Знаете ли вы, что ваш интернет-браузер устарел?',
 
-            paragraph1: 'Your browser is out of date, and may not be compatible with '+
-            'our website. A list of the most popular web browsers can be '+
-            'found below.',
+            paragraph1: 'Ваш браузер устарел и может быть несовместим с нашим сайтом. Список наиболее популярных веб-браузеров можно найти ниже.',
 
-            paragraph2: 'Just click on the icons to get to the download page',
+            paragraph2: 'Нажмите на иконку чтобы обновить браузер',
 
             // Allow closing of window
             close: true,
 
             // Message displayed below closing link
-            closeMessage: 'By closing this window you acknowledge that your experience '+
-            'on this website may be degraded',
-            closeLink: 'Close This Window',
+            closeMessage: '',
+            closeLink: 'Закрыть это окно',
             closeURL: '#',
 
             // Allows closing of window with esc key
@@ -94,11 +91,11 @@
             },
 
             // Path where images are located
-            imagePath: './images/',
+            imagePath: '/img/browsers/',
             // Background color for overlay
             overlayBgColor: '#000',
             // Background transparency (0-1)
-            overlayOpacity: 0.8,
+            overlayOpacity: 0.7,
 
             // Fade in time on open ('slow','medium','fast' or integer in ms)
             fadeInTime: 'fast',

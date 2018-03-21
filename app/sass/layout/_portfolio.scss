@@ -20,6 +20,7 @@
   fieldset {
     position: relative;
     top: -40px;
+    height: 100%;
     margin: 0 15px;
     padding-bottom: 30px;
     border: 2px solid #a78c6e;
@@ -123,6 +124,18 @@
         content: "";
         display: block;
         clear: both;
+      }
+      &:last-of-type {
+        .portfolio-item:nth-last-of-type(3),
+        .portfolio-item:nth-last-of-type(4) {
+          margin-top: -245px;
+          @include respond-to(lg) {
+            margin-top: 0;
+          }
+          @include respond-to(md) {
+            margin-top: 0;
+          }
+        }
       }
     }
   }
@@ -230,16 +243,6 @@
       @include respond-to(sm) {
         height: 185px;
         min-height: inherit;
-      }
-    }
-    &:nth-of-type(10),
-    &:nth-of-type(11) {
-      margin-top: -245px;
-      @include respond-to(lg) {
-        margin-top: 0;
-      }
-      @include respond-to(md) {
-        margin-top: 0;
       }
     }
   }

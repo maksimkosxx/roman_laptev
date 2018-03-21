@@ -25,6 +25,16 @@
 }
 
 
+@mixin clearfix() {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+
+
 // Media queries mixins
 
 @mixin respond-to($media) {

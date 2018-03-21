@@ -32,6 +32,7 @@ gulp.task('browser-sync', function() { // Создаем таск browser-sync
 gulp.task('scripts', function() {
     return gulp.src([ // Берем все необходимые библиотеки
         'app/libs/js/jquery-3.2.1.min.js', // Берем jQuery
+        'app/libs/js/jquery.browser-plugin.js',
         'app/libs/js/jquery.validate.min.js', // Валидация форм
         'app/libs/js/jquery.maskedinput.min.js', // Маска поля
         'app/libs/js/slick.min.js', // Карусель slick

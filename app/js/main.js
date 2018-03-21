@@ -11,7 +11,6 @@ $(document).ready(function () {
     }
 
 
-
     // MOBILE MENU
 
     $('.btn-menu').on('click', function (e) {
@@ -45,20 +44,22 @@ $(document).ready(function () {
 
         var lastId,
             topMenu = $(".header-nav"),
-            topMenuHeight = topMenu.outerHeight()+15,
+            topMenuHeight = topMenu.outerHeight() + 15,
             // All list items
             menuItems = topMenu.find("a"),
             // Anchors corresponding to menu items
-            scrollItems = menuItems.map(function(){
+            scrollItems = menuItems.map(function () {
                 var item = $($(this).attr("href"));
-                if (item.length) { return item; }
+                if (item.length) {
+                    return item;
+                }
             });
 
 // Bind click handler to menu items
 // so we can get a fancy scroll animation
-        menuItems.click(function(e){
+        menuItems.click(function (e) {
             var href = $(this).attr("href"),
-                offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight;
+                offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight;
             $('html, body').stop().animate({
                 scrollTop: offsetTop
             }, 300);
@@ -69,17 +70,17 @@ $(document).ready(function () {
         });
 
 // Bind to scroll
-        $(window).scroll(function(){
+        $(window).scroll(function () {
             // Get container scroll position
-            var fromTop = $(this).scrollTop()+topMenuHeight;
+            var fromTop = $(this).scrollTop() + topMenuHeight;
 
             // Get id of current scroll item
-            var cur = scrollItems.map(function(){
+            var cur = scrollItems.map(function () {
                 if ($(this).offset().top < fromTop)
                     return this;
             });
             // Get the id of the current element
-            cur = cur[cur.length-1];
+            cur = cur[cur.length - 1];
             var id = cur && cur.length ? cur[0].id : "";
 
             if (lastId !== id) {
@@ -87,10 +88,11 @@ $(document).ready(function () {
                 // Set/remove active class
                 menuItems
                     .parent().removeClass("active")
-                    .end().filter("[href='#"+id+"']").parent().addClass("active");
+                    .end().filter("[href='#" + id + "']").parent().addClass("active");
             }
         });
     }
+
     navScroll();
 
     // STICKY HEADER
@@ -286,7 +288,7 @@ $(document).ready(function () {
                 $(this).removeClass('hide').addClass('show').html('Смотреть еще');
                 $('.portfolio-item').slice(4).fadeOut();
 
-                $('html, body').animate({scrollTop: $('#portfolio').offset().top}, 1500);
+                $('html, body').animate({scrollTop: $('.portfolio').offset().top}, 1500);
             }
         });
     }
@@ -348,30 +350,47 @@ $(document).ready(function () {
     });
 
 
+    // Mask field
+
+    $(function () {
+        $("input[name='tel']").mask("8(999) 999-9999");
+        $("input[name='date']").mask("99.99.9999", {placeholder: "дд.мм.гггг"});
+    });
+
+
     // VALIDATION
 
-    $('form').each(function () {
-        $(this).validate({
+    $("input[name='name']").on('change', function () {
+        var inputName = $(this).val(),
+            titleText = 'Спасибо, ' + inputName + '!';
+
+        // console.log(inputName);
+
+        if (inputName.length == '') {
+
+            $('.popup--thanks .title').html('Спасибо!');
+        }
+        else {
+
+            $('.popup--thanks .title').html(titleText);
+        }
+    });
+
+    $('form:not(".form-special")').each(function () {
+
+        var $form = $(this);
+
+        $form.validate({
             errorPlacement: function () {
 
             },
-            submitHandler: function (form) {
+            submitHandler: function () {
+
                 $.ajax({
                     type: "POST",
                     url: "/mail.php",
-                    data: $(form).serialize(),
+                    data: $form.serialize(),
                     success: function () {
-
-                        var inputName = $('input[name="name"]').val(),
-                            titleText = 'Спасибо, ' + inputName + '!';
-
-                        if (inputName.length === 0) {
-
-                            $('.popup--thanks .title').html('Спасибо!');
-                        }
-                        else {
-                            $('.popup--thanks .title').html(titleText);
-                        }
 
                         $('.wrapper-popup').fadeIn(400,
                             function () {
@@ -382,8 +401,10 @@ $(document).ready(function () {
                                 $('.popup--thanks')
                                     .css('display', 'block')
                                     .animate({opacity: 1}, 200);
-                            });
+                                $('.popup--thanks .text').html('Ваши данные отправлены, я свяжусь с вами в ближайшее время');
 
+                                $('.field').val('');
+                            });
 
                     },
                     error: function () {
@@ -395,36 +416,58 @@ $(document).ready(function () {
         });
     });
 
+    $('.form-special').each(function () {
 
-    // Mask field
+        var $form = $(this);
 
-    $(function(){
-        $("input[name='tel']").mask("8(999) 999-9999");
-        $("input[name='date']").mask("99.99.9999", {placeholder: "дд.мм.гггг" });
-        $("input[name='mail']").mask("99.99.9999", {placeholder: "дд.мм.гггг" });
+        $form.validate({
+            errorPlacement: function () {
+
+            },
+            submitHandler: function () {
+
+                $.ajax({
+                    type: "POST",
+                    url: "/mail.php",
+                    data: $form.serialize(),
+                    success: function () {
+
+                        $('.wrapper-popup').fadeIn(400,
+                            function () {
+                                $('body').css('overflow', 'hidden');
+                                $('.popup')
+                                    .css('display', 'none')
+                                    .animate({opacity: 1}, 200);
+                                $('.popup--thanks')
+                                    .css('display', 'block')
+                                    .animate({opacity: 1}, 200);
+                                $('.popup--thanks .text').html('Ваши данные отправлены, я вышлю статью в ближайшее время');
+
+                                $('.field').val('');
+                            });
+                    },
+                    error: function () {
+                        alert('Данные заполнены некорректно');
+                    }
+                });
+                return false;
+            }
+        });
     });
 
 
-    // Old Browsers
+    // For elderly browsers
 
+    $(function () {
+        $.reject({
+            reject: {
+                safari: false, // Apple Safari
+                chrome: false, // Google Chrome
+                firefox: false, firefox1: true, firefox2: true, // Mozilla Firefox
+                msie6: true, msie7: true, msie8: true, msie9: true // ie
+            }
+        });
 
-    $.reject({
-        reject: {
-            msie6: true,
-            msie7: true,
-            msie8: true,
-            msie9: true,
-            msie10: true,
-            firefox2: true
-        }
     });
-
-
-    // PHONE MASK
-
-    // $(function () {
-    //     $('input[name=phone]').inputmask("+7 (999) 999-99-99");
-    // });
-
 
 });

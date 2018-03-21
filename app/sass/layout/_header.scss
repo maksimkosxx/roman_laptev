@@ -45,19 +45,21 @@
   }
 }
 .header {
-  @include flex;
   padding: 15px 0 20px;
+  @include clearfix;
   &-nav {
-    @include flex;
+    float: left;
     width: 100%;
     max-width: 790px;
     @include respond-to(lg) {
-      justify-content: flex-start;
+
     }
     @include respond-to(md) {
-      flex-flow: column;
+
     }
     li {
+      display: inline-block;
+      vertical-align: middle;
       @include respond-to(lg) {
         margin-right: 20px;
         &:last-of-type {
