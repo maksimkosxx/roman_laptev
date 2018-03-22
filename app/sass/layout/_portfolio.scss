@@ -112,7 +112,8 @@
     margin: -250px -20px 0;
     @include respond-to(lg) {
       top: 0;
-      margin: 50px 0 0;
+      max-width: 850px;
+      margin: 50px auto 0;
       overflow: hidden;
     }
     @include respond-to(md) {
@@ -191,6 +192,13 @@
           margin-left: 13px;
           border: 9px solid transparent;
           border-left: 15px solid #fff;
+        }
+        @include respond-to(sm) {
+          width: 33px;
+          height: 34px;
+          &::after {
+
+          }
         }
       }
       &.first {

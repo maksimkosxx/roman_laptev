@@ -9,20 +9,22 @@
     padding: 50px 20px 50px 30px;
   }
   @include respond-to(md) {
-    flex-direction: column;
-    margin: 50px 0 30px;
-    padding: 16px;
+    position: relative;
+    display: block;
+    margin: 100px 0 20px;
+    padding: 16px 16px 30px;
     min-height: inherit;
   }
   &-text {
     max-width: 50%;
     @include respond-to(md) {
-      order: 2;
+      margin-top: 570px;
       max-width: 77%;
+      margin-left: 75px;
     }
     @include respond-to(sm) {
-      order: 2;
       max-width: 100%;
+      margin: 250px 0 0;
     }
     &__description {
       margin-bottom: 50px;
@@ -37,7 +39,7 @@
       }
       @include respond-to(sm) {
         margin: 15px 0;
-        font-size: 15px;
+        font-size: 14px;
         line-height: 19px;
       }
     }
@@ -138,9 +140,12 @@
       }
     }
     @include respond-to(md) {
-      order: 1;
-      margin-right: 0;
-      margin-bottom: 50px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      margin: 0 0 50px 0;
+      text-align: center;
       img {
         max-width: 100%;
         margin-top: -40px;
@@ -148,6 +153,9 @@
     }
     @include respond-to(sm) {
       margin: 0;
+      img {
+        max-width: calc(100% - 20px);
+      }
     }
   }
 }

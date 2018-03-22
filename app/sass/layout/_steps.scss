@@ -54,13 +54,14 @@
       min-height: 430px;
     }
     @include respond-to(md) {
-      flex-direction: column;
+      display: block;
       margin: 27px auto 100px;
-      min-height: 127px;
+      min-height: 746px;
       border: none;
     }
     @include respond-to(sm) {
       margin: 27px auto 0;
+      min-height: 455px;
     }
     &__image {
       position: relative;
@@ -79,7 +80,6 @@
         }
       }
       @include respond-to(sm) {
-        opacity: 1;
         width: calc(100% + 30px);
         left: 0;
         margin: 0 -15px;
@@ -94,14 +94,12 @@
       padding-right: 25px;
       box-sizing: border-box;
       @include respond-to(md) {
-        order: 2;
         max-width: 100%;
         margin-top: 90px;
         padding: 0 20px 25px;
         border: 2px solid #a78c6e;
       }
       @include respond-to(sm) {
-        order: 2;
         max-width: 100%;
         margin-top: 75px;
         padding: 0 20px 25px;
@@ -186,6 +184,7 @@
       }
     }
     &--left {
+      position: relative;
       .steps-item__image {
         left: auto;
         right: -40px;
@@ -198,6 +197,9 @@
         padding-right: 0;
         padding-left: 40px;
         @include respond-to(md) {
+          position: absolute;
+          bottom: 0;
+          left: 0;
           max-width: 100%;
           padding: 0 20px 20px;
         }

@@ -156,8 +156,10 @@
     transition: .2s;
     outline: none;
     @include respond-to(sm) {
+      display: block;
       width: 33px;
       height: 34px;
+      text-align: center;
     }
     &::after {
       content: '';
@@ -167,7 +169,7 @@
       border-left: 20px solid #fff;
       transition: .2s;
       @include respond-to(sm) {
-        margin-left: 12px;
+        margin: 7px 0 0 11px;
         border: 8px solid transparent;
         border-left: 11px solid #fff;
       }

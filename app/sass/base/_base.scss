@@ -27,17 +27,16 @@ img {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
-  @include respond-to(sm) {
-   max-width: 400px;
+  @include respond-to(lg) {
+    max-width: 930px;
   }
   @include respond-to(md) {
     max-width: 760px;
   }
-  @include respond-to(lg) {
-   max-width: 930px;
+  @include respond-to(sm) {
+    max-width: 400px;
   }
 }
-
 
 h2 {
   color: #363a3e;
@@ -50,3 +49,58 @@ h2 {
 .clearfix {
   clear: both;
 }
+
+.scroll-top {
+  position: fixed;
+  bottom: -2px;
+  right: -2px;
+  z-index: 5;
+  width: 40px;
+  height: 30px;
+  padding: 0;
+  border: none;
+  background: rgba(249,249,249,0.8);
+  box-shadow: 0 0 7px 1px rgba(0,0,0,0.12);
+  opacity: 0;
+  text-align: center;
+  outline: none;
+  transition: .3s;
+  &::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 25px;
+    opacity: 0.5;
+    background: url(/img/icons/top.svg) center no-repeat;
+  }
+  &.active {
+    opacity: 1;
+  }
+}
+body .cbk-phone {
+  right: 3% !important;
+  width: 80px!important;
+  height: 80px!important;
+  @include respond-to(md) {
+    right: 15% !important;
+    width: 60px!important;
+    height: 60px!important;
+  }
+}
+body .cbk-phone .cbk-phone-phone {
+  margin: 17px;
+  @include respond-to(md) {
+    margin: 13px;
+  }
+}
+body .cbk-phone .cbk-phone-bgr {
+  opacity: 0.5;
+  background-color: #d7a962!important;
+}
+body .cbk-phone .cbk-phone-phone .ws-icon-phone {
+  font-size: 47px;
+  @include respond-to(md) {
+    font-size: 35px;
+  }
+}
+

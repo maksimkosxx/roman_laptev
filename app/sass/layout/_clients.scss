@@ -24,6 +24,7 @@
     background-size: cover;
   }
 }
+
 .clients {
   padding: 40px 10px 20px;
   @include respond-to(sm) {
@@ -69,16 +70,17 @@
     flex-flow: column;
     justify-content: space-between;
     @include respond-to(sm) {
-      margin-top: -20px;
+      margin-top: 20px;
     }
     &__row {
       @include flex;
       flex-wrap: wrap;
-      @include respond-to(sm) {
+      @include respond-to(md) {
+        display: block;
         &:first-of-type {
           .clients-item:last-of-type {
             img {
-              max-width: 70%;
+              max-width: 50%;
             }
           }
         }
@@ -100,19 +102,21 @@
       }
     }
     @include respond-to(md) {
+      display: inline-block;
+      vertical-align: middle;
       width: 100%;
-      max-width: 25%;
-      min-height: 100px;
+      max-width: 24%;
+      margin-bottom: 40px;
+      min-height: inherit;
+      text-align: center;
       img {
         max-width: 70%;
       }
     }
     @include respond-to(sm) {
-      width: 100%;
-      max-width: 50%;
-      min-height: 100px;
+      max-width: 49%;
       img {
-        max-width: 90%;
+        max-width: 80%;
       }
     }
   }

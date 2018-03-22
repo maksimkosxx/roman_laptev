@@ -24,7 +24,8 @@
     z-index: 5;
     width: 100%;
     height: 56px;
-    border-bottom: 1px solid #b7b7b7;
+    box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.12);
+    background-color: rgba(249,249,249,0.95);
     transition: .2s;
     .header {
       padding: 9px 0 11px;
@@ -45,21 +46,21 @@
   }
 }
 .header {
+  @include flex;
   padding: 15px 0 20px;
-  @include clearfix;
   &-nav {
-    float: left;
+    @include flex;
     width: 100%;
     max-width: 790px;
     @include respond-to(lg) {
-
+      justify-content: flex-start;
     }
     @include respond-to(md) {
-
+      display: block;
+      text-align: center;
+      margin-top: 5px;
     }
     li {
-      display: inline-block;
-      vertical-align: middle;
       @include respond-to(lg) {
         margin-right: 20px;
         &:last-of-type {

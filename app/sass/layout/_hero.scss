@@ -1,7 +1,7 @@
 .wrapper-hero {
   position: relative;
   max-width: 1400px;
-  margin: 0 auto;
+  margin: 0 auto 0;
   min-height: 800px;
   background-color: #d9d5d0;
   @include respond-to(lg) {
@@ -39,18 +39,15 @@
     bottom: 0;
     left: 13%;
     z-index: 3;
-    display: none;
     width: 100%;
     max-width: 455px;
     min-height: 761px;
     background: url(/img/roman.png) 0 100% no-repeat;
     @include respond-to(lg) {
-      display: block;
       min-height: 600px;
       background-size: contain;
     }
     @include respond-to(md) {
-      display: block;
       left: calc(27% - 150px);
       right: 0;
       width: 100%;
@@ -94,7 +91,6 @@
       min-height: 367px;
     }
     h1 {
-      display: none;
       width: 100%;
       font-family: $FontSylfaen;
       font-size: 70px;
@@ -103,11 +99,9 @@
       color: #2e3339;
       text-align: center;
       @include respond-to(lg) {
-        display: block;
         font-size: 60px;
       }
       @include respond-to(md) {
-        display: block;
         font-size: 45px;
       }
       @include respond-to(sm) {
@@ -162,16 +156,14 @@
       }
     }
     &__text  {
-      display:none;
+      float: right;
       max-width: 410px;
       margin-right: 94px;
       text-align: left;
       @include respond-to(lg) {
-        display: block;
         margin-right: 28px;
       }
       @include respond-to(md) {
-        display: block;
         float: right;
         max-width: 300px;
         margin-right: 47px;
@@ -195,18 +187,11 @@
       }
     }
     &__description {
-      display: none;
       color: #373a3f;
       font-family: $FontAvenir;
       font-size: 22px;
       font-weight: 400;
       line-height: 35px;
-      @include respond-to(lg) {
-        display: block;
-      }
-      @include respond-to(md) {
-        display: block;
-      }
       @include respond-to(sm) {
         line-height: 0;
         padding-left: 5px;
@@ -220,7 +205,6 @@
       }
     }
     &__link {
-      display: none;
       max-width: 410px;
       opacity: 0.84;
       color: #32363c;
@@ -229,9 +213,6 @@
       font-weight: 400;
       line-height: 35px;
       text-align: left;
-      @include respond-to(md) {
-          display: block;
-      }
       @include respond-to(sm) {
         display: none;
       }
@@ -256,11 +237,11 @@
 .btn-menu {
   display: none;
   position: absolute;
-  top: 17px;
+  top: 15px;
   left: 0;
   right: 0;
   z-index: 3;
-  width: 30px;
+  width: 25px;
   height: 16px;
   margin: auto;
   span {
@@ -272,21 +253,23 @@
   }
   &.sticky {
     position: fixed;
-    top: 0;
-    right: 0;
-    left: auto;
+    top: -2px;
+    left: -2px;
+    right: auto;
     opacity: 0;
     z-index: 5;
-    width: 100%;
+    width: 40px;
     height: 30px;
+    margin: 0;
     padding: 7px 5px;
-    border-bottom: 1px solid #b7b7b7;
     transition: .2s;
-    background: #d9d5d0;
+    background: rgba(249,249,249,0.80);
+    box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.12);
     span {
-      width: 30px;
+      width: 23px;
       height: 2px;
       margin: 3px auto 0;
+      opacity: 0.5;
     }
   }
   @include respond-to(md) {

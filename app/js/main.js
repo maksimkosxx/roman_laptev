@@ -1,16 +1,6 @@
 $(document).ready(function () {
 
 
-    if ($(window).width() > 1180) {
-
-        $('.wrapper-hero__image').fadeIn(800);
-        $('.hero-content h1').fadeIn(1500);
-        $('.hero-content__text').fadeIn(1500).css('display', 'inline-block');
-        $('.hero-content__description').fadeIn(2000);
-        $('.hero-content__link').fadeIn(3000).css('display', 'block');
-    }
-
-
     // MOBILE MENU
 
     $('.btn-menu').on('click', function (e) {
@@ -92,14 +82,30 @@ $(document).ready(function () {
             }
         });
     }
-
     navScroll();
 
     // STICKY HEADER
 
     $(window).scroll(function () {
 
-        if ($(window).width() > 768) {
+        if ($(window).width() < 1024) {
+
+            if ($(this).scrollTop() > 100
+            ) {
+                $('.btn-menu').addClass('sticky');
+                $('.sticky').animate({
+                    opacity: 1
+                }, 1500);
+                $('.scroll-top').addClass('active');
+            }
+            else {
+                $('.btn-menu').removeClass('sticky');
+                $('.scroll-top').removeClass('active');
+
+            }
+        }
+
+        if ($(window).width() > 1024) {
 
             if ($(this).scrollTop() > 50
             ) {
@@ -107,23 +113,21 @@ $(document).ready(function () {
                 $('.sticky').animate({
                     opacity: 1
                 }, 1500);
+
+                // $('.wrapper-top').fadeOut('easy').animate(1500);
+
             }
             else {
                 $('.wrapper-header').removeClass('sticky');
+                // $('.wrapper-top').fadeIn('easy').animate(1500);
             }
-
-        }
-        if ($(this).scrollTop() > 50
-        ) {
-            $('.btn-menu').addClass('sticky');
-            $('.sticky').animate({
-                opacity: 1
-            }, 1500);
-        }
-        else {
-            $('.btn-menu').removeClass('sticky');
         }
 
+    });
+
+    $('.scroll-top').on('click', function() {
+        $('html, body').animate({scrollTop: 0}, 600);
+        return false;
     });
 
 
@@ -456,6 +460,7 @@ $(document).ready(function () {
     });
 
 
+
     // For elderly browsers
 
     $(function () {
@@ -469,5 +474,11 @@ $(document).ready(function () {
         });
 
     });
+
+
+    // Parallax
+
+
+
 
 });

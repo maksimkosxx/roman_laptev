@@ -2,6 +2,12 @@ form {
   max-width: 50%;
   padding-right: 40px;
   text-align: right;
+  @include respond-to(md) {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    max-width: 45%;
+  }
   @include respond-to(sm) {
     max-width: 100%;
     padding-right: 0;
@@ -34,7 +40,7 @@ form {
       font-family: $FontAvenir;
       font-size: 22px;
       font-weight: 400;
-      line-height: 60px;
+      line-height:normal!important;
       transition: .25s;
       @include respond-to(sm) {
         font-size: 15px;
@@ -54,6 +60,8 @@ form {
     color: #43464a;
     cursor: pointer;
     transition: .2s;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     &:hover {
       background-color: #c6a168;
       transition: .2s;

@@ -31,9 +31,13 @@
     @include respond-to(lg) {
       align-items: flex-start;
     }
+    @include respond-to(md) {
+      display: block;
+      text-align: center;
+
+    }
     @include respond-to(sm) {
       padding: 0 0 0 23px;
-      align-items: flex-start;
     }
     &__item {
       flex-grow: 1;
@@ -46,9 +50,13 @@
       }
       @include respond-to(md) {
         position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        width: 100%;
         max-width: 49%;
         min-height: 95px;
         margin-bottom: 30px;
+        text-align: left;
         &:nth-of-type(3) {
           .text {
             display: none;
@@ -147,6 +155,7 @@
     box-shadow: 0 5px 24px 8px rgba(156, 153, 149, 0.2);
     background-color: #ffffff;
     @include respond-to(md) {
+      display: block;
       max-width: 90%;
     }
     @include respond-to(sm) {
@@ -168,6 +177,11 @@
       justify-content: center;
       max-width: 50%;
       padding-left: 40px;
+      @include respond-to(md) {
+        display: inline-block;
+        vertical-align: middle;
+        width: 100%;
+      }
       @include respond-to(sm) {
         max-width: 100%;
         padding-left: 0;
@@ -183,7 +197,7 @@
         line-height: 46px;
         text-align: left;
         @include respond-to(sm) {
-          margin-bottom: 9px;
+          margin: 0 auto 9px;
           font-size: 22px;
           line-height: 15.81px;
           text-align: center;
@@ -198,6 +212,7 @@
         line-height: 34px;
         text-align: left;
         @include respond-to(sm) {
+          margin: 0 auto;
           max-width: 175px;
           font-size: 15px;
           line-height: 17px;

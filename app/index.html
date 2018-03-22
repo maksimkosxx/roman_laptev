@@ -19,10 +19,13 @@
     <link rel="stylesheet" href="/libs/slick.min.css">
     <link rel="stylesheet" href="/libs/lightbox.min.css">
     <link rel="stylesheet" href="/libs/irejetc.min.css">
+    <link rel="stylesheet" href="/libs/fm.revealator.jquery.min.css">
+    <link rel="stylesheet" href="/libs/onepage-scroll.min.css">
     <link rel="stylesheet" href="/css/main.min.css">
 
 </head>
 <body>
+
 <div class="wrapper-header">
     <div class="container">
         <header class="header">
@@ -94,7 +97,7 @@
             Вот уже 5 лет я веду запоминающиеся события
         </div>
         <div class="events-content">
-            <div class="events-item">
+            <div class="events-item revealator-slideright revealator-once">
                 <div class="events-item__center">
                     <div class="events-item__image">
                         <img src="/img/icons/events/icon-1.png" alt="">
@@ -102,7 +105,7 @@
                     <p>Свадьбы</p>
                 </div>
             </div>
-            <div class="events-item">
+            <div class="events-item revealator-slideright revealator-delay1 revealator-once">
                 <div class="events-item__center">
                     <div class="events-item__image">
                         <img src="/img/icons/events/icon-2.png" alt="">
@@ -110,7 +113,7 @@
                     <p>Корпоративы</p>
                 </div>
             </div>
-            <div class="events-item">
+            <div class="events-item revealator-slideright revealator-delay2 revealator-once">
                 <div class="events-item__center">
                     <div class="events-item__image">
                         <img src="/img/icons/events/icon-3.png" alt="">
@@ -118,7 +121,7 @@
                     <p>Юбилеи</p>
                 </div>
             </div>
-            <div class="events-item">
+            <div class="events-item revealator-slideright revealator-delay3 revealator-once">
                 <div class="events-item__center">
                     <div class="events-item__image">
                         <img src="/img/icons/events/icon-4.png" alt="">
@@ -126,7 +129,7 @@
                     <p>Выпускные</p>
                 </div>
             </div>
-            <div class="events-item">
+            <div class="events-item revealator-slideright revealator-delay4 revealator-once">
                 <div class="events-item__center">
                     <div class="events-item__image">
                         <img src="/img/icons/events/icon-5.png" alt="">
@@ -134,7 +137,7 @@
                     <p>Вечеринки</p>
                 </div>
             </div>
-            <div class="events-item">
+            <div class="events-item revealator-slideright revealator-delay5 revealator-once">
                 <div class="events-item__center">
                     <div class="events-item__image">
                         <img src="/img/icons/events/icon-6.png" alt="">
@@ -190,7 +193,7 @@
                 <form action="/mail.php" method="post">
                     <input type="text" name="name" class="field" placeholder="Ваше имя">
                     <input type="tel" name="tel" class="field" placeholder="Телефон" required>
-                    <input type="text" name="date" class="field" placeholder="Дата торжества">
+                    <input type="text" name="date" class="field" placeholder="Дата торжества" required>
                     <input type="submit" value="Узнать">
                 </form>
             </div>
@@ -355,9 +358,8 @@
             Каждое мероприятие неповторимо,
             неизменны лишь принципы:
         </div>
-
         <div class="events-content">
-            <div class="events-item">
+            <div class="events-item revealator-fade revealator-once">
                 <p>Вы спокойны</p>
                 <span class="back">
                     Работаю по договору, дата бронируется.
@@ -365,14 +367,14 @@
                     состоится при любых обстоятельствах
                 </span>
             </div>
-            <div class="events-item">
+            <div class="events-item revealator-fade revealator-delay1 revealator-once">
                 <p>Я вовремя</p>
                 <span class="back">
                     Приезжаю на площадку не позднее 1,5 часов до начала торжества.
                     Проверяю готовность оборудования и&nbsp;лично встречаю ваших гостей
                 </span>
             </div>
-            <div class="events-item">
+            <div class="events-item revealator-fade revealator-delay2 revealator-once">
                 <p>Все, как договаривались</p>
                 <span class="back">
                     Ваши пожелания и наши договоренности для меня закон,
@@ -380,7 +382,7 @@
                     Все остальное — импровизация и&nbsp;уникальность вашей компании
                 </span>
             </div>
-            <div class="events-item">
+            <div class="events-item revealator-fade revealator-delay3 revealator-once">
                 <p>Все свои</p>
                 <span class="back">
                    Генерирую непринужденность и единение.
@@ -388,7 +390,7 @@
                     и&nbsp;безудержному веселью.
                 </span>
             </div>
-            <div class="events-item">
+            <div class="events-item revealator-fade revealator-delay4 revealator-once">
                 <p>Я рядом</p>
                 <span class="back">
                     Даже когда я не говорю в микрофон,
@@ -396,7 +398,7 @@
                     Поэтому гости чувствуют мое внимание каждую минуту.
                 </span>
             </div>
-            <div class="events-item">
+            <div class="events-item revealator-fade revealator-delay5 revealator-once">
                 <p>Вы в центре внимания</p>
                 <span class="back">
                     Этот праздник в Вашу честь, каждый гость в почете,
@@ -1513,6 +1515,7 @@
         </div>
     </div>
 </div>
+<button class="scroll-top"></button>
 
 
 <script src="/libs/libs.min.js"></script>
@@ -1563,6 +1566,10 @@
 
     gtag('config', 'UA-109652667-1');
 </script>
+
+<link rel="stylesheet" href="https://cdn.envybox.io/widget/cbk.css">
+<script type="text/javascript" src="https://cdn.envybox.io/widget/cbk.js?wcb_code=c92fc0f9e2688c01ff73e7fcdab70e2d" charset="UTF-8" async></script>
+
 
 </body>
 </html>

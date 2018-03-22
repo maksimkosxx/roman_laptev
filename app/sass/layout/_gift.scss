@@ -2,9 +2,12 @@
   position: relative;
   min-height: 840px;
   background-color: #363a3e;
-  //@include respond-to(sm) {
-  //  padding-bottom: 80px;
-  //}
+  @include respond-to(md) {
+    min-height: 800px;
+  }
+  @include respond-to(sm) {
+    min-height: 900px;
+  }
   &::after {
     content: '';
     position: absolute;
@@ -43,7 +46,7 @@
       text-align: center;
     }
     @include respond-to(sm) {
-      min-height: inherit;
+      min-height: 750px;
     }
     legend {
       padding: 0 10px;
@@ -67,6 +70,9 @@
     @include respond-to(lg) {
       align-items: flex-start;
       justify-content: center;
+    }
+    @include respond-to(md) {
+      display: block;
     }
   }
   &-text {
@@ -122,8 +128,10 @@
         font-size: 22px;
         line-height: 40px;
       }
-      @include respond-to(sm) {
+      @include respond-to(md) {
         margin: 30px 0 13px;
+      }
+      @include respond-to(sm) {
         font-size: 22px;
         line-height: 40px;
       }
@@ -176,8 +184,9 @@
       margin-right: -30px;
     }
     @include respond-to(md) {
+      bottom: -20px;
       min-height: inherit;
-      margin: 0 0 -550px 0;
+      margin: 0 auto -530px;
       padding: 27px 15px 20px;
       box-shadow: 0 5px 24px 8px rgba(156, 153, 150, 0.2);
     }
