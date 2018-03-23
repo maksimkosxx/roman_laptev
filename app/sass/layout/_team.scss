@@ -4,7 +4,7 @@
     padding: 290px 0 50px;
   }
   @include respond-to(sm) {
-    padding: 290px 0 0;
+    padding: 270px 0 0;
   }
   &-title {
     margin-bottom: 26px;
@@ -69,6 +69,7 @@
     text-align: center;
     @include respond-to(md) {
       display: inline-block;
+      vertical-align: top;
       max-width: 350px;
       &:last-of-type {
         margin-top: 100px;

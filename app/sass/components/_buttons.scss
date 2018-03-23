@@ -8,11 +8,14 @@
   transition: .2s;
   cursor: pointer;
   outline: none;
+  font-family: $FontAvenir;
   &:hover {
-    background: darken(#dcb476, 5%);
+    background: lighten(#dcb476, 8%);
     transition: .2s;
   }
   &:active {
+    background: darken(#dcb476, 10%);
+    color: #ffffff!important;
     transform: scale(0.98);
   }
 }

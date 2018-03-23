@@ -44,6 +44,7 @@
     width: 90%;
     max-width: 400px;
     height: 433px;
+    overflow: auto;
   }
   &-close {
     position: absolute;
@@ -96,16 +97,33 @@
     min-height: inherit;
     padding: 20px;
     background-color: transparent;
+    @include respond-to(md) {
+      padding: 20px 20px 20px 40px;
+    }
     @include respond-to(sm) {
       height: 433px;
+      padding: 20px;
       bottom: auto;
     }
     &__content {
       @include flex;
       max-width: 788px;
       margin: 0 auto;
+      @include respond-to(md) {
+        display: block;
+        max-width: 655px;
+        margin: 60px auto 0;
+        padding: 0;
+        form {
+          padding-right: 20px;
+        }
+      }
       @include respond-to(sm) {
-        flex-direction: column;
+        max-width: 248px;
+        margin: 0 auto;
+        form {
+          padding-right: 0;
+        }
       }
     }
     &__text {
@@ -113,6 +131,15 @@
       max-width: 305px;
       padding-left: 0;
       text-align: left;
+      @include respond-to(md) {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 40px;
+      }
+      @include respond-to(sm) {
+        margin-right: 0;
+        max-width: 100%;
+      }
       .title {
         width: auto;
         margin-bottom: 40px;

@@ -23,8 +23,8 @@
       margin-left: 75px;
     }
     @include respond-to(sm) {
-      max-width: 100%;
-      margin: 250px 0 0;
+      max-width: 255px;
+      margin: 250px auto 0;
     }
     &__description {
       margin-bottom: 50px;
@@ -113,6 +113,9 @@
       @include flex;
       max-width: 294px;
       margin-top: 50px;
+      @include respond-to(md) {
+        display: block;
+      }
       @include respond-to(sm) {
         max-width: 200px;
         margin-top: 20px;
@@ -122,6 +125,12 @@
       }
       a {
         transition: .2s;
+        @include respond-to(md) {
+          display: inline-block;
+          vertical-align: middle;
+          width: 18%;
+          text-align: center;
+        }
         &:hover {
           opacity: 0.7;
         }
@@ -152,9 +161,10 @@
       }
     }
     @include respond-to(sm) {
-      margin: 0;
+      margin: 0 auto;
       img {
-        max-width: calc(100% - 20px);
+        max-width: calc(100% - 30px);
+        max-height: 300px;
       }
     }
   }

@@ -50,14 +50,13 @@
     position: relative;
     z-index: 2;
     display: flex;
-    //align-items: center;
     justify-content: center;
     flex: 378px 1 0;
     max-width: 378px;
     min-height: 376px;
     margin: 7.5px;
     background-color: #000;
-    background-position: 50% 50%;
+    background-position: 50% 0;
     background-size: 102%;
     background-repeat: no-repeat;
     cursor: pointer;
@@ -230,15 +229,21 @@
           transform: translate(17%, 100%);
         }
         @include respond-to(sm) {
-          width: 38vw;
+          display: table;
+          width: 123px;
           max-width: 85%;
           height: 56px;
+          margin: 0 auto;
           font-size: 16px;
           line-height: 17px;
-          transform: translate(8%, 80%);
+          transform: translate(0, 80%);
+          span {
+            display: table-cell;
+            vertical-align: middle;
+          }
         }
       }
-      span {
+      span.back {
         position: absolute;
         top: 0;
         left: 0;

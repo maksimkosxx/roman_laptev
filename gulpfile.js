@@ -14,7 +14,7 @@ gulp.task('sass', function(){ // Создаем таск Sass
     return gulp.src('app/sass/main.scss') // Берем источник
         .pipe(sass({outputStyle: 'compressed'})) // Преобразуем Sass в CSS посредством gulp-sass
         .pipe(rename({suffix: '.min'})) // Добавляем суффикс .min
-        .pipe(autoprefixer(['last 5 versions', '> 2%', 'ie 8', 'ie 9'], { cascade: true })) // Создаем префиксы
+        .pipe(autoprefixer(['last 15 versions', '> 2%', 'ie 8', 'ie 9'], { cascade: true })) // Создаем префиксы
         .pipe(gulp.dest('app/css')) // Выгружаем результата в папку app/css
         .pipe(browserSync.reload({stream: true})) // Обновляем CSS на странице при изменении
 });
@@ -33,7 +33,6 @@ gulp.task('scripts', function() {
     return gulp.src([ // Берем все необходимые библиотеки
         'app/libs/js/jquery-3.2.1.min.js', // Берем jQuery
         'app/libs/js/fm.revealator.jquery.js',
-        'app/libs/js/jquery.onepage-scroll.js',
         'app/libs/js/jquery.browser-plugin.js',
         'app/libs/js/jquery.validate.min.js', // Валидация форм
         'app/libs/js/jquery.maskedinput.min.js', // Маска поля
@@ -50,7 +49,6 @@ gulp.task('sass-libs', function(){ // Создаем таск Sass
     return gulp.src([ // Берем все необходимые библиотеки
        'app/sass/vendors/slick.scss',
        'app/sass/vendors/slick-theme.scss',
-       'app/sass/vendors/onepage-scroll.scss',
        'app/sass/vendors/irejetc.scss',
        'app/sass/vendors/lightbox.scss',
        'app/sass/vendors/fm.revealator.jquery.scss'

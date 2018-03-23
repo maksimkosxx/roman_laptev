@@ -1,8 +1,6 @@
 $(document).ready(function () {
 
-
     // MOBILE MENU
-
     $('.btn-menu').on('click', function (e) {
         e.preventDefault();
 
@@ -27,65 +25,84 @@ $(document).ready(function () {
 
 
     // Navigation Scroll Spy
-
     function navScroll() {
 
-        "use strict";
+        if ($(window).width() > 1024) {
+            var lastId,
+                topMenu = $(".header-nav"),
+                topMenuHeight = topMenu.outerHeight() + 15,
+                // All list items
+                menuItems = topMenu.find("a"),
+                // Anchors corresponding to menu items
+                scrollItems = menuItems.map(function () {
+                    var item = $($(this).attr("href"));
+                    if (item.length) {
+                        return item;
+                    }
+                });
 
-        var lastId,
-            topMenu = $(".header-nav"),
-            topMenuHeight = topMenu.outerHeight() + 15,
-            // All list items
-            menuItems = topMenu.find("a"),
-            // Anchors corresponding to menu items
-            scrollItems = menuItems.map(function () {
-                var item = $($(this).attr("href"));
-                if (item.length) {
-                    return item;
+            // Bind click handler to menu items
+            // so we can get a fancy scroll animation
+            menuItems.click(function (e) {
+                var href = $(this).attr("href"),
+                    offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight;
+                $('html, body').stop().animate({
+                    scrollTop: offsetTop
+                }, 300);
+                e.preventDefault();
+            });
+
+            // Bind to scroll
+            $(window).scroll(function () {
+                // Get container scroll position
+                var fromTop = $(this).scrollTop() + topMenuHeight;
+
+                // Get id of current scroll item
+                var cur = scrollItems.map(function () {
+                    if ($(this).offset().top < fromTop)
+                        return this;
+                });
+                // Get the id of the current element
+                cur = cur[cur.length - 1];
+                var id = cur && cur.length ? cur[0].id : "";
+
+                if (lastId !== id) {
+                    lastId = id;
+                    // Set/remove active class
+                    menuItems
+                        .parent().removeClass("active")
+                        .end().filter("[href='#" + id + "']").parent().addClass("active");
                 }
             });
-
-// Bind click handler to menu items
-// so we can get a fancy scroll animation
-        menuItems.click(function (e) {
-            var href = $(this).attr("href"),
-                offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight;
-            $('html, body').stop().animate({
-                scrollTop: offsetTop
-            }, 300);
-            e.preventDefault();
-        });
-        $('.header-nav li:last-of-type').on('click', function () {
-            $(this).addClass('active')
-        });
-
-// Bind to scroll
-        $(window).scroll(function () {
-            // Get container scroll position
-            var fromTop = $(this).scrollTop() + topMenuHeight;
-
-            // Get id of current scroll item
-            var cur = scrollItems.map(function () {
-                if ($(this).offset().top < fromTop)
-                    return this;
-            });
-            // Get the id of the current element
-            cur = cur[cur.length - 1];
-            var id = cur && cur.length ? cur[0].id : "";
-
-            if (lastId !== id) {
-                lastId = id;
-                // Set/remove active class
-                menuItems
-                    .parent().removeClass("active")
-                    .end().filter("[href='#" + id + "']").parent().addClass("active");
-            }
-        });
+        }
     }
     navScroll();
 
-    // STICKY HEADER
 
+    // NAVIGATION SCROLL <1024
+    $('.header-nav > li a').on('click', function () {
+
+        if ($(window).width() < 1024) {
+            $('.wrapper-header')
+                .animate({opacity: 0}, 200,
+                    function () {
+                        $('.wrapper-header').css('display', 'none');
+                        $('.wrapper-popup').fadeOut(400);
+                        $('body').css('overflow', 'auto');
+                    }
+                );
+        }
+        $('.header-nav li a').removeClass('active');
+        $(this).addClass('active');
+        var scroll_el = $(this).attr('href');
+        if ($(scroll_el).length > 0) {
+            $('html, body').animate({scrollTop: $(scroll_el).offset().top}, 1500);
+        }
+        return false;
+    });
+
+
+    // STICKY HEADER
     $(window).scroll(function () {
 
         if ($(window).width() < 1024) {
@@ -104,7 +121,6 @@ $(document).ready(function () {
 
             }
         }
-
         if ($(window).width() > 1024) {
 
             if ($(this).scrollTop() > 50
@@ -114,63 +130,26 @@ $(document).ready(function () {
                     opacity: 1
                 }, 1500);
 
-                // $('.wrapper-top').fadeOut('easy').animate(1500);
-
             }
             else {
                 $('.wrapper-header').removeClass('sticky');
-                // $('.wrapper-top').fadeIn('easy').animate(1500);
             }
         }
 
     });
-
-    $('.scroll-top').on('click', function() {
+    $('.scroll-top').on('click', function () {
         $('html, body').animate({scrollTop: 0}, 600);
         return false;
     });
 
 
-    // NAVIGATION SCROLL
-
-
-    $('.header-nav > li a').on('click', function () {
-
-
-        if ($(window).width() < 768) {
-
-            $('.wrapper-header')
-                .animate({opacity: 0}, 200,
-                    function () {
-                        $('.wrapper-header').css('display', 'none');
-                        $('.wrapper-popup').fadeOut(400);
-                        $('body').css('overflow', 'auto');
-                    }
-                );
-        }
-
-        $('.header-nav li a').removeClass('active');
-        $(this).addClass('active');
-
-        var scroll_el = $(this).attr('href');
-        if ($(scroll_el).length > 0) {
-            $('html, body').animate({scrollTop: $(scroll_el).offset().top}, 1500);
-        }
-        return false;
-    });
-
-
     // Scroll to video
-
     $('.hero-content__link').on('click', function () {
-
         $('html, body').animate({scrollTop: $('#video').offset().top}, 1500);
-
         return false;
     });
 
     // VIDEO youtube
-
     $(function () {
         $('.youtube').each(function () {
             // По YouTube ID, находим превью картинку
@@ -201,17 +180,15 @@ $(document).ready(function () {
         });
     });
 
-    // Slick
 
+    // Slick
     $('.reviews-slider').slick({
         arrows: true,
         dots: true,
-        // infinite: true,
         speed: 500,
         fade: true,
         cssEase: 'linear'
     });
-
     $('.advantages-content').slick({
         dots: false,
         infinite: false,
@@ -238,7 +215,6 @@ $(document).ready(function () {
 
 
     // Reviews tabs
-
     $('.reviews-tabs__button').on('click', function () {
 
         var click_id = $(this).attr('id');
@@ -251,8 +227,7 @@ $(document).ready(function () {
     });
 
 
-    // Read more review
-
+    // More review
     if ($(window).width() < 1024) {
 
         $('.reviews-slider__description').shorten({
@@ -275,7 +250,6 @@ $(document).ready(function () {
 
 
     // Hide portfolio
-
     function portfolio() {
 
         $('.portfolio-item').slice(4).fadeOut();
@@ -296,7 +270,6 @@ $(document).ready(function () {
             }
         });
     }
-
     portfolio();
 
 
@@ -342,11 +315,10 @@ $(document).ready(function () {
                 );
         });
     }
-
     popups();
 
-    // Accordeon
 
+    // Accordeon
     $('.offers-item__title').on('click', function () {
         $(this)
             .toggleClass('active')
@@ -355,7 +327,6 @@ $(document).ready(function () {
 
 
     // Mask field
-
     $(function () {
         $("input[name='tel']").mask("8(999) 999-9999");
         $("input[name='date']").mask("99.99.9999", {placeholder: "дд.мм.гггг"});
@@ -363,7 +334,6 @@ $(document).ready(function () {
 
 
     // VALIDATION
-
     $("input[name='name']").on('change', function () {
         var inputName = $(this).val(),
             titleText = 'Спасибо, ' + inputName + '!';
@@ -379,7 +349,6 @@ $(document).ready(function () {
             $('.popup--thanks .title').html(titleText);
         }
     });
-
     $('form:not(".form-special")').each(function () {
 
         var $form = $(this);
@@ -419,7 +388,6 @@ $(document).ready(function () {
             }
         });
     });
-
     $('.form-special').each(function () {
 
         var $form = $(this);
@@ -460,9 +428,7 @@ $(document).ready(function () {
     });
 
 
-
     // For elderly browsers
-
     $(function () {
         $.reject({
             reject: {
@@ -475,10 +441,21 @@ $(document).ready(function () {
 
     });
 
-
     // Parallax
 
+    $(window).scroll(function () {
 
-
+        if ($(window).width() > 1024) {
+            if ($(this).scrollTop() > 50
+            ) {
+                $('.wrapper-top').slideUp(600);
+                $('.about').css('padding-top', '250px').animate(1500);
+            }
+            else {
+                $('.wrapper-top').slideDown(600);
+                $('.about').css('padding-top', '80').animate(1500);
+            }
+        }
+    });
 
 });
