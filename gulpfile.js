@@ -53,6 +53,7 @@ gulp.task('sass-libs', function(){ // Создаем таск Sass
        'app/sass/vendors/lightbox.scss',
        'app/sass/vendors/fm.revealator.jquery.scss'
     ])
+        .pipe(concat('libs.css')) // Собираем их в кучу в новом файле libs.min.js
         .pipe(sass({outputStyle: 'compressed'})) // Преобразуем Sass в CSS посредством gulp-sass
         .pipe(rename({suffix: '.min'})) // Добавляем суффикс .min
         .pipe(gulp.dest('app/libs')) // Выгружаем в папку app/libs
