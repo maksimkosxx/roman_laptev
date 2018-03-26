@@ -1,7 +1,7 @@
 .reviews-wrapper {
   padding-top: 80px;
   @include respond-to(sm) {
-    padding-top: 50px;
+    padding-top: 40px;
   }
 }
 .reviews {
@@ -165,7 +165,7 @@
       }
     }
     @include respond-to(sm) {
-      margin-top: 20px;
+      margin: 20px 0 16px!important;
       .slick-prev {
         top: 70px;
         left: 21%;
@@ -259,6 +259,7 @@
       @include respond-to(sm) {
         font-size: 12px;
         line-height: 18px;
+        color: #000000;
       }
       &::after {
         content: '';
@@ -299,7 +300,7 @@
         margin: 15px 0;
         text-align: center;
         outline: none;
-        color: #373a3f!important;
+        color: #000!important;
         span {
           display: inline-block!important;
           border-bottom: 2px solid #3e3e3e!important;

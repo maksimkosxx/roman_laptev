@@ -4,7 +4,7 @@
     padding: 290px 0 50px;
   }
   @include respond-to(sm) {
-    padding: 270px 0 0;
+    padding: 255px 0 0;
   }
   &-title {
     margin-bottom: 26px;
@@ -93,6 +93,10 @@
         vertical-align: middle;
         width: 40%;
         margin-left: 13px;
+        @include respond-to(sm) {
+          position: relative;
+          padding-bottom: 15px;
+        }
       }
     }
     @include respond-to(lg) {
@@ -129,7 +133,11 @@
         margin: 16px auto 18px;
         background-color: #3e3e3e;
         @include respond-to(sm) {
-          display: none;
+          position: absolute;
+          bottom: -2px;
+          left: 0;
+          width: 44px;
+          margin: 0;
         }
       }
     }
@@ -141,7 +149,7 @@
       line-height: 40px;
       @include respond-to(sm) {
         font-size: 14px;
-        line-height: 24.86px;
+        line-height: 13px;
         text-align: left;
       }
     }

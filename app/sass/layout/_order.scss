@@ -66,6 +66,9 @@
           }
         }
       }
+      @include respond-to(sm) {
+        margin-bottom: 20px;
+      }
       &::after {
         content: '';
         display: block;
@@ -131,7 +134,7 @@
       }
       @include respond-to(sm) {
         top: -5px;
-        max-width: 90%;
+        max-width: 80%;
         font-size: 14px;
         line-height: 17px;
       }

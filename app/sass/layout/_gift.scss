@@ -29,7 +29,7 @@
   z-index: 2;
   padding: 80px 0 70px;
   @include respond-to(sm) {
-    padding: 40px 0 110px;
+    padding: 25px 0 110px;
   }
   fieldset {
     max-width: 1090px;
@@ -46,7 +46,7 @@
       text-align: center;
     }
     @include respond-to(sm) {
-      min-height: 780px;
+      min-height: 750px;
     }
     legend {
       padding: 0 10px;
@@ -132,6 +132,7 @@
         margin: 30px 0 13px;
       }
       @include respond-to(sm) {
+        margin: 20px 0 7px;
         font-size: 22px;
         line-height: 40px;
       }
@@ -145,6 +146,7 @@
       @include respond-to(sm) {
         margin-bottom: 25px;
         line-height: normal;
+        letter-spacing: normal;
         span:first-of-type {
           display: block;
           width: 35px;
@@ -191,8 +193,8 @@
       box-shadow: 0 5px 24px 8px rgba(156, 153, 150, 0.2);
     }
     @include respond-to(sm) {
-      margin: 0 0 -480px 0;
-      bottom: -50px;
+      margin: 0 0 -520px 0;
+      bottom: -40px;
     }
     form {
       max-width: 290px;

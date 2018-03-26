@@ -2,7 +2,7 @@
   padding: 60px 0 140px;
   @include respond-to(sm) {
     margin-top: -15px;
-    padding: 0 0 60px;
+    padding: 0 0 45px;
   }
   &-title {
     max-width: 525px;
@@ -128,7 +128,7 @@
         line-height: 35px;
         text-align: center;
         @include respond-to(sm) {
-          bottom: 13px;
+          bottom: 15px;
           font-size: 17px;
           line-height: 19.74px;
         }
@@ -181,7 +181,7 @@
   &--principles {
     padding: 90px 0 0;
     @include respond-to(sm) {
-      padding-top: 60px;
+      padding-top: 45px;
     }
     .events-title {
       max-width: 710px;
@@ -189,8 +189,17 @@
         display: none;
       }
     }
+    .events-content {
+      @include respond-to(sm) {
+        margin-right: -15px;
+        margin-left: -15px;
+      }
+    }
     .events-item {
       text-align: center;
+      @include respond-to(sm) {
+        min-height: 155px;
+      }
       &::before {
         content: '';
         display: block;
@@ -235,7 +244,7 @@
           margin: 0 auto;
           font-size: 16px;
           line-height: 17px;
-          transform: translate(0, 80%);
+          transform: translate(0, 90%);
           span {
             display: table-cell;
             vertical-align: middle;

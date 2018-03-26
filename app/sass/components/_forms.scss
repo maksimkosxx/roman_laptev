@@ -40,8 +40,13 @@ form {
       font-family: $FontAvenir;
       font-size: 22px;
       font-weight: 400;
-      line-height:normal!important;
       transition: .25s;
+      &::-webkit-input-placeholder {
+        line-height:normal!important;
+      }
+      &:-moz-placeholder {
+        line-height: 30px;
+      }
       @include respond-to(sm) {
         font-size: 15px;
         line-height: 34px;

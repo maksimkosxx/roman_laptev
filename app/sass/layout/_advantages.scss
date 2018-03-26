@@ -2,7 +2,7 @@
   padding: 50px 0 0;
   @include respond-to(sm) {
     max-width: 400px;
-    padding: 190px 0 30px;
+    padding: 175px 0 30px;
     margin: 0 auto;
   }
   &-title {
@@ -36,19 +36,20 @@
       .slick-next,
       .slick-prev {
         top: 58%;
-        width: 15px;
-        height: 40px;
+        width: 20px;
+        height: 48px;
         z-index: 3;
         &::before {
-          background-size: cover;
+          background: url(../img/icons/arrow-gold.png) center no-repeat;
+          background-size: contain;
         }
       }
       .slick-prev {
-        left: -2%;
+        left: -3%;
       }
       .slick-next {
-        right: -2.5%;
-        top: 61%;
+        right: -3.5%;
+        top: 60.5%;
       }
     }
   }
@@ -79,13 +80,13 @@
     }
     @include respond-to(sm) {
       max-width: 100%;
-      min-height: 313px;
-      padding: 85px 15px 0;
+      min-height: 327px;
+      padding: 62px 15px 0;
       margin: auto;
     }
     &__wrapper {
       position: relative;
-      max-width: 260px;
+      max-width: 270px;
       min-height: 447px;
       border: 2px solid #a78c6e;
       border-top: 0;
@@ -108,7 +109,7 @@
         height: 2px;
         background-color: #a78c6e;
         @include respond-to(sm) {
-          width: 10px;
+          width: 20px;
         }
       }
       &::after {
@@ -130,7 +131,7 @@
         line-height: 23px;
         text-align: center;
         @include respond-to(sm) {
-          max-width: 210px;
+          max-width: 190px;
           top: -48px;
           font-size: 15px;
           line-height: 18.16px;
@@ -176,8 +177,8 @@
         left: 0;
         right: 0;
         width: 87%;
-        max-width: 315px;
-        max-height: 270px;
+        max-width: 310px;
+        max-height: 300px;
         margin: auto;
       }
     }

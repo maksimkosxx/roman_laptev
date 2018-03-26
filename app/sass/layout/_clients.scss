@@ -48,6 +48,7 @@
     color: #363a3e;
     text-align: center;
     @include respond-to(sm) {
+      margin: 0 -8px;
       font-size: 15px;
       line-height: 22px;
     }
@@ -61,7 +62,7 @@
       opacity: 0.76;
       @include respond-to(sm) {
         width: 37px;
-        margin-bottom: 25px;
+        margin: 10px auto 25px;
       }
     }
   }
@@ -116,7 +117,7 @@
     @include respond-to(sm) {
       max-width: 49%;
       img {
-        max-width: 80%;
+        max-width: 87%;
       }
     }
   }

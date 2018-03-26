@@ -11,7 +11,7 @@
     font-size: 45px;
     font-weight: 400;
     @include respond-to(sm) {
-      margin-bottom: 16px;
+      margin-bottom: 0;
       font-size: 22px;
       line-height: 24.36px;
     }
@@ -32,7 +32,7 @@
       display: block;
       width: 71px;
       height: 2px;
-      margin: 30px auto 0;
+      margin: 30px auto 20px;
       background-color: #3e3e3e;
       opacity: 0.76;
       @include respond-to(sm) {
@@ -60,8 +60,8 @@
       border: none;
     }
     @include respond-to(sm) {
-      margin: 27px auto 0;
-      min-height: 455px;
+      margin: 15px auto 0;
+      min-height: 420px;
     }
     &__image {
       position: relative;
@@ -101,8 +101,9 @@
       }
       @include respond-to(sm) {
         max-width: 100%;
-        margin-top: 75px;
-        padding: 0 20px 25px;
+        min-height: 123px;
+        margin-top: 70px;
+        padding: 0 5px 5px;
         border: 2px solid #a78c6e;
       }
     }
@@ -145,7 +146,7 @@
         background: #fff;
       }
       @include respond-to(sm) {
-        max-width: 190px;
+        max-width: 175px;
         margin: -60px auto 0;
         font-size: 22px;
         line-height: 25px;
@@ -178,7 +179,7 @@
         text-align: center;
       }
       @include respond-to(sm) {
-        margin-top: 15px;
+        margin: 10px auto 0;
         font-size: 15px;
         line-height: 18.01px;
       }
@@ -201,7 +202,13 @@
           bottom: 0;
           left: 0;
           max-width: 100%;
-          padding: 0 20px 20px;
+          padding: 0 20px 5px;
+          margin-bottom: 5px;
+        }
+        @include respond-to(sm) {
+          bottom: 8px;
+          margin-top: 20px;
+          padding: 0 0 5px;
         }
       }
       .steps-item__title {
@@ -251,7 +258,7 @@
       line-height: 48px;
       text-align: center;
       @include respond-to(sm) {
-        margin: 17px 0;
+        margin: 5px 0 17px;
         font-size: 22px;
         line-height: 25.42px;
       }
