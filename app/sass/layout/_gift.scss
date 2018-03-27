@@ -101,6 +101,8 @@
       }
     }
     @include respond-to(sm) {
+      max-width: 247px;
+      margin: 0 auto;
       padding-right: 0;
       font-size: 15px;
       line-height: 19px;

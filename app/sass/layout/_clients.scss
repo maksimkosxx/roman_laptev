@@ -116,6 +116,7 @@
     }
     @include respond-to(sm) {
       max-width: 49%;
+      margin-bottom: 33px;
       img {
         max-width: 87%;
       }

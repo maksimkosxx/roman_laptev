@@ -193,6 +193,9 @@
     padding: 0 15px;
     margin: 0 auto;
     text-align: center;
+    @include respond-to(sm) {
+      padding: 0 10px;
+    }
     &__title {
       margin-bottom: 28px;
       color: #363a3e;
@@ -218,10 +221,10 @@
       span {
         display: block;
         margin-top: 20px;
-        color: #363a3e;
+        color: #000;
         font-family: $FontAvenir;
         font-size: 22px;
-        font-weight: 600;
+        font-weight: 500;
         line-height: 30px;
       }
     }

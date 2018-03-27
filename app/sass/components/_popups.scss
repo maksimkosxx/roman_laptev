@@ -39,12 +39,15 @@
     max-width: 93%;
   }
   @include respond-to(sm) {
-    top: 30px;
-    bottom: auto;
     width: 90%;
     max-width: 400px;
     height: 433px;
     overflow: auto;
+  }
+  &--order {
+    @include respond-to(sm) {
+      height: 390px;
+    }
   }
   &-close {
     position: absolute;
@@ -101,8 +104,8 @@
       padding: 20px 20px 20px 40px;
     }
     @include respond-to(sm) {
-      height: 433px;
-      padding: 20px;
+      height: 390px;
+      padding: 10px;
       bottom: auto;
     }
     &__content {
@@ -181,7 +184,7 @@
     resize: none;
     line-height: normal;
     @include respond-to(sm) {
-     min-height: 102px;
+     min-height: 90px;
     }
     @include placeholder {
       line-height: normal;

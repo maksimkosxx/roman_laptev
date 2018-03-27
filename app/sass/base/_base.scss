@@ -79,40 +79,38 @@ h2 {
 }
 body .cbk-phone {
   left: auto!important;
-  right: 3% !important;
-  width: 80px!important;
-  height: 80px!important;
+  right: 20px !important;
+  width: 65px!important;
+  height: 65px!important;
   transition: .3s;
   @include respond-to(md) {
     right: 2px!important;
     bottom: 2px!important;
   }
   &:hover {
-    width: 70px!important;
-    height: 70px!important;
+    width: 65px!important;
+    height: 65px!important;
     transition: .3s;
     .cbk-phone-bgr {
       opacity: 0.6;
     }
     .ws-icon-phone {
       font-size: 40px;
-      transition: .3s;
     }
     .cbk-phone-phone {
-      margin: 13px;
-      transition: .3s;
+      margin: 14px;
     }
   }
 
 }
 body .cbk-phone .cbk-phone-phone {
-  margin: 17px;
+  margin: 14px;
 }
 body .cbk-phone .cbk-phone-bgr {
   opacity: 0.5;
   background-color: #d7a962!important;
 }
 body .cbk-phone .cbk-phone-phone .ws-icon-phone {
-  font-size: 47px;
+  font-size: 40px;
 }
 

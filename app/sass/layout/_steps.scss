@@ -100,10 +100,13 @@
         border: 2px solid #a78c6e;
       }
       @include respond-to(sm) {
-        max-width: 100%;
+        position: relative;
+        left: -4.5px;
+        max-width: 103%;
+        width: 103%;
         min-height: 123px;
-        margin-top: 70px;
-        padding: 0 5px 5px;
+        margin: 70px auto 0;
+        padding: 0 3px 5px;
         border: 2px solid #a78c6e;
       }
     }
@@ -189,8 +192,15 @@
       .steps-item__image {
         left: auto;
         right: -40px;
+        &--mob {
+          display: none;
+        }
         @include respond-to(md) {
           right: auto;
+          display: none;
+          &--mob {
+            display: block;
+          }
         }
       }
       .steps-item__text {
@@ -198,17 +208,16 @@
         padding-right: 0;
         padding-left: 40px;
         @include respond-to(md) {
-          position: absolute;
-          bottom: 0;
           left: 0;
           max-width: 100%;
           padding: 0 20px 5px;
           margin-bottom: 5px;
         }
         @include respond-to(sm) {
-          bottom: 8px;
-          margin-top: 20px;
-          padding: 0 0 5px;
+          position: relative;
+          left: -4.5px;
+          max-width: 103%;
+          padding: 0 3px 5px;
         }
       }
       .steps-item__title {
@@ -258,7 +267,7 @@
       line-height: 48px;
       text-align: center;
       @include respond-to(sm) {
-        margin: 5px 0 17px;
+        margin: 17px 0;
         font-size: 22px;
         line-height: 25.42px;
       }
