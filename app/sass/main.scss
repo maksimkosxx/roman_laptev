@@ -1,4 +1,8 @@
-
+@import 'vendors/slick',
+        'vendors/slick-theme',
+        'vendors/irejetc',
+        'vendors/lightbox',
+        'vendors/fm.revealator.jquery';
 
 @import 'utils/variables',
         'utils/mixins';
@@ -26,9 +30,3 @@
 @import 'components/buttons',
         'components/forms',
         'components/popups';
-
-//@import 'pages/home';
-//@import 'pages/contact';
-
-//@import 'themes/theme';
-//@import 'themes/admin';

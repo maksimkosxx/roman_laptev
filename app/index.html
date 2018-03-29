@@ -9,6 +9,7 @@
     <meta name="keywords"
           content="роман лаптев, ведущий, ведущий на свадьбу, ведущий на корпоратив, ведущий на день рождения"/>
 
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -17,7 +18,6 @@
     <link href="/favicon48.png" rel="apple-touch-icon" sizes="48x48">
     <link href="/favicon64.png" rel="apple-touch-icon" sizes="64x64">
 
-    <link rel="stylesheet" href="/libs/libs.min.css">
     <link rel="stylesheet" href="/css/main.min.css">
 </head>
 <body>
@@ -60,13 +60,13 @@
                 </div>
             </div>
         </div>
+        <span id="video"></span>
     </div>
 </div>
-
 <div id="1" class="container">
     <a href="http://romanlaptev.ru/obo-mne"></a>
     <section class="about">
-        <div id="video" class="about-text">
+        <div class="about-text">
             <fieldset>
                 <legend>Давайте <br> познакомимся</legend>
                 <div class="about-text__description line">
@@ -98,7 +98,7 @@
                     <div class="events-item__image">
                         <img src="/img/icons/events/icon-1.png" alt="">
                     </div>
-                    <p>Свадьбы</p>
+                    <p>Свадьбы</p> >
                 </div>
             </div>
             <div class="events-item revealator-slideright revealator-delay1 revealator-once">
@@ -355,7 +355,7 @@
             неизменны лишь принципы:
         </div>
         <div class="events-content">
-            <div class="events-item revealator-fade revealator-once">
+            <div class="events-item revealator-slideright revealator-once">
                 <p><span>Вы спокойны</span></p>
                 <span class="back">
                     Работаю по&nbsp;договору, дата бронируется.
@@ -363,14 +363,14 @@
                     состоится при любых обстоятельствах
                 </span>
             </div>
-            <div class="events-item revealator-fade revealator-delay1 revealator-once">
+            <div class="events-item revealator-slideright revealator-delay1 revealator-once">
                 <p><span>Я вовремя</span></p>
                 <span class="back">
                     Приезжаю на&nbsp;площадку не&nbsp;позднее 1,5 часов до&nbsp;начала торжества.
                     Проверяю готовность оборудования и&nbsp;лично встречаю ваших гостей
                 </span>
             </div>
-            <div class="events-item revealator-fade revealator-delay2 revealator-once">
+            <div class="events-item revealator-slideright revealator-delay2 revealator-once">
                 <p><span>Все, как договаривались</span></p>
                 <span class="back">
                     Ваши пожелания и&nbsp;наши договоренности для меня закон,
@@ -378,7 +378,7 @@
                     Все остальное&nbsp;&mdash; импровизация и&nbsp;уникальность вашей компании
                 </span>
             </div>
-            <div class="events-item revealator-fade revealator-delay3 revealator-once">
+            <div class="events-item revealator-slideright revealator-delay3 revealator-once">
                 <p><span>Все свои</span></p>
                 <span class="back">
                     Генерирую непринужденность и&nbsp;единение.
@@ -386,7 +386,7 @@
                     и&nbsp;безудержному&nbsp;веселью.
                 </span>
             </div>
-            <div class="events-item revealator-fade revealator-delay4 revealator-once">
+            <div class="events-item revealator-slideright revealator-delay4 revealator-once">
                 <p><span>Я рядом</span></p>
                 <span class="back">
                     Даже когда я&nbsp;не&nbsp;говорю в&nbsp;микрофон,
@@ -394,7 +394,7 @@
                     Поэтому гости чувствуют мое внимание каждую минуту.
                 </span>
             </div>
-            <div class="events-item revealator-fade revealator-delay5 revealator-once">
+            <div class="events-item revealator-slideright revealator-delay5 revealator-once">
                 <p><span>Вы в центре внимания</span></p>
                 <span class="back">
                     Этот праздник в&nbsp;Вашу честь, каждый гость в&nbsp;почете,
@@ -1438,12 +1438,11 @@
                 Обратный звонок
             </button>
             <div class="contacts-text__social">
-                <a href="https://vk.com/roman_lap" target="_blank"><img src="/img/social/vk.png" alt=""></a>
-                <a href="https://www.instagram.com/roman_lap/" target="_blank"><img src="/img/social/insta.png" alt=""></a>
-                <a href="https://www.facebook.com/romanvedet/" target="_blank"><img src="/img/social/fb.png" alt=""></a>
-                <a href="https://www.youtube.com/channel/UCzw7hshWiqNqe2-Dm9k2xiQ/featured?view_as=subscriber"
-                   target="_blank"><img src="/img/social/youtube.png" alt=""></a>
-                <a href="skype:roma_mv?call" target="_blank"><img src="/img/social/skype.png" alt=""></a>
+                <a href="https://vk.com/roman_lap" target="_blank" class="vk"></a>
+                <a href="https://www.instagram.com/roman_lap/" target="_blank" class="insta"></a>
+                <a href="https://www.facebook.com/romanvedet/" target="_blank" class="fb"></a>
+                <a href="https://www.youtube.com/channel/UCzw7hshWiqNqe2-Dm9k2xiQ/featured?view_as=subscriber" target="_blank" class="ytube"></a>
+                <a href="skype:roma_mv?call" target="_blank" class="skype"></a>
             </div>
         </div>
         <div class="contacts-image">
@@ -1524,9 +1523,10 @@
         </div>
     </div>
 </div>
-<button class="scroll-top"></button>
+<button class="scroll-top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44"><path fill="#31363b" d="M29.121 19.55l-6.29-6.196a.803.803 0 0 0-.082-.071.386.386 0 0 0-.038-.03c-.016-.011-.031-.024-.048-.034l-.048-.03c-.015-.009-.029-.018-.044-.025a.585.585 0 0 0-.051-.024.991.991 0 0 0-.047-.022l-.049-.018c-.018-.005-.035-.014-.053-.019l-.05-.013-.054-.013-.059-.008a1.134 1.134 0 0 0-.267-.007l-.05.008a.581.581 0 0 0-.058.009c-.019.003-.037.009-.055.013l-.05.013-.052.018a.712.712 0 0 0-.049.019c-.017.006-.032.014-.048.021l-.051.024-.044.026a.683.683 0 0 0-.048.029c-.016.01-.031.022-.047.034l-.04.028c-.042.035-.08.073-.117.113-.013.011-.026.021-.037.033l-6.313 6.219a1.082 1.082 0 0 0-.003 1.544 1.117 1.117 0 0 0 1.564-.002l4.495-4.426-.023 14.11c-.001.603.493 1.092 1.104 1.09s1.107-.49 1.109-1.095l.023-14.108 4.403 4.334c.432.426 1.133.424 1.565-.003s.434-1.116.002-1.541"/></svg>
+</button>
 
-<script src="/libs/libs.min.js" defer></script>
 <script src="/js/main.min.js" defer></script>
 
 <script defer>(window.Image ? (new Image()) : document.createElement('img')).src = 'https://vk.com/rtrg?p=VK-RTRG-218611-fN446';</script>
@@ -1576,7 +1576,7 @@
 
 <link rel="stylesheet" href="https://cdn.envybox.io/widget/cbk.css">
 <script type="text/javascript" src="https://cdn.envybox.io/widget/cbk.js?wcb_code=c92fc0f9e2688c01ff73e7fcdab70e2d"
-        charset="UTF-8" async></script>
+        charset="UTF-8" defer></script>
 
 
 </body>

@@ -29,7 +29,7 @@
   z-index: 2;
   padding: 80px 0 70px;
   @include respond-to(sm) {
-    padding: 25px 0 110px;
+    padding: 25px 0 200px;
   }
   fieldset {
     max-width: 1090px;
@@ -195,7 +195,7 @@
       box-shadow: 0 5px 24px 8px rgba(156, 153, 150, 0.2);
     }
     @include respond-to(sm) {
-      margin: 0 0 -520px 0;
+      margin: 0 auto -340px;
       bottom: -40px;
     }
     form {

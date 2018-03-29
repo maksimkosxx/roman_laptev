@@ -28,7 +28,7 @@
     height: 100%;
     background-color: #d9d5d0;
     opacity: 0.4;
-    background: url(/img/bg_block1.png) center no-repeat;
+    background: url(/img/bg_block1.jpg) center no-repeat;
     background-size: cover;
     @include respond-to(sm) {
       display: none;
@@ -64,8 +64,8 @@
       max-width: 290px;
       min-height: 345px;
       margin: 0 auto;
+      background: url(/img/roman-sm.png) 0 0 no-repeat;
       background-size: 100%;
-      background-position: 0 0;
     }
   }
 }

@@ -115,30 +115,70 @@
       max-width: 294px;
       margin-top: 50px;
       @include respond-to(md) {
-        display: block;
+       max-width: 275px;
       }
       @include respond-to(sm) {
         max-width: 200px;
         margin-top: 20px;
-        a {
-          &:nth-of-type(3) {
-            img {
-              width: 8px;
-            }
-          }
-        }
-        img {
-          display: block;
-          max-width: 40%;
-        }
+      }
+      .fb, .insta, .skype, .vk, .ytube{
+        background: url(../img/social/sprites-social.png) no-repeat;
       }
       a {
+        display: inline-block;
+        vertical-align: middle;
         transition: .2s;
+        &.vk {
+          background-position: 2% 45%;
+          width: 42px;
+          height: 24px;
+        }
+        &.insta {
+          background-position: 29% 50%;
+          width: 29px;
+          height: 28px;
+        }
+        &.fb {
+          background-position: 49% 43%;
+          width: 13px;
+          height: 27px;
+        }
+        &.ytube {
+          background-position: 72.1% 45%;
+          width: 25px;
+          height: 29px;
+        }
+        &.skype {
+          background-position: 97.1% 46%;
+          width: 31px;
+          height: 31px;
+        }
         @include respond-to(md) {
-          display: inline-block;
-          vertical-align: middle;
-          width: 18%;
-          text-align: center;
+          //display: inline-block;
+          //vertical-align: middle;
+          //width: 18%!important;
+          //text-align: center;
+          //background-size: cover!important;
+        }
+        @include respond-to(sm) {
+          background-size: 194px!important;
+          .fb, .insta, .skype, .vk, .ytube{
+            width: 18px;
+            height: 24px;
+            background: url(../img/social/sprites-social.png) no-repeat;
+          }
+          &.insta {
+            background-position: 25% 50%;
+          }
+          &.fb {
+            background-position: 49% 46%;
+          }
+          &.ytube {
+            background-position: 75% 45%;
+          }
+          &.skype {
+            background-position: 100% 47%;
+          }
         }
         &:hover {
           opacity: 0.7;

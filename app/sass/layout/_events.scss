@@ -102,6 +102,9 @@
       display: block;
       width: 200px;
       height: 106px;
+      -webkit-transform: translate(0, 130%);
+      -moz-transform: translate(0, 130%);
+      -ms-transform: translate(0, 130%);
       transform: translate(0, 130%);
       border: 2px solid #fff;
       border-top: none;
@@ -112,6 +115,9 @@
       @include respond-to(sm) {
         width: 80%;
         height: 61px;
+        -webkit-transform: translate(0, 70%);
+        -moz-transform: translate(0, 70%);
+        -ms-transform: translate(0, 70%);
         transform: translate(0, 70%);
 
       }
@@ -223,6 +229,9 @@
         max-width: 275px;
         height: 109px;
         border: 2px solid #ffffff;
+        -webkit-transform: translate(0, 125%);
+        -moz-transform: translate(0, 125%);
+        -ms-transform: translate(0, 125%);
         transform: translate(0, 125%);
         color: #ffffff;
         font-family: $FontSylfaen;
@@ -234,6 +243,9 @@
           vertical-align: middle;
           width: 292px;
           height: 120px;
+          -webkit-transform: translate(17%, 100%);
+          -moz-transform: translate(17%, 100%);
+          -ms-transform: translate(17%, 100%);
           transform: translate(17%, 100%);
         }
         @include respond-to(sm) {
@@ -244,6 +256,9 @@
           margin: 0 auto;
           font-size: 16px;
           line-height: 17px;
+          -webkit-transform: translate(0, 90%);
+          -moz-transform: translate(0, 90%);
+          -ms-transform: translate(0, 90%);
           transform: translate(0, 90%);
           span {
             display: table-cell;

@@ -10,14 +10,32 @@ var gulp       = require('gulp'), // Подключаем Gulp
     cache        = require('gulp-cache'), // Подключаем библиотеку кеширования
     autoprefixer = require('gulp-autoprefixer');// Подключаем библиотеку для автоматического добавления префиксов
 
+// gulp.task('sass', function(){ // Создаем таск Sass
+//     return gulp.src('app/sass/main.scss') // Берем источник
+//         .pipe(sass({outputStyle: 'compressed'})) // Преобразуем Sass в CSS посредством gulp-sass
+//         .pipe(rename({suffix: '.min'})) // Добавляем суффикс .min
+//         .pipe(autoprefixer(['last 15 versions', '> 2%', 'ie 8', 'ie 9'], { cascade: true })) // Создаем префиксы
+//         .pipe(gulp.dest('app/css')) // Выгружаем результата в папку app/css
+//         .pipe(browserSync.reload({stream: true})) // Обновляем CSS на странице при изменении
+// });
+
 gulp.task('sass', function(){ // Создаем таск Sass
-    return gulp.src('app/sass/main.scss') // Берем источник
+    return gulp.src([
+        'app/sass/vendors/slick.scss',
+        'app/sass/vendors/slick-theme.scss',
+        'app/sass/vendors/irejetc.scss',
+        'app/sass/vendors/lightbox.scss',
+        'app/sass/vendors/fm.revealator.jquery.scss',
+        'app/sass/main.scss'
+    ])
+        .pipe(concat('main.css')) // Собираем их в кучу в новом файле main.css
+        .pipe(autoprefixer(['last 15 versions', '> 2%', 'ie 8', 'ie 9'], { cascade: true })) // Создаем префиксы
         .pipe(sass({outputStyle: 'compressed'})) // Преобразуем Sass в CSS посредством gulp-sass
         .pipe(rename({suffix: '.min'})) // Добавляем суффикс .min
-        .pipe(autoprefixer(['last 15 versions', '> 2%', 'ie 8', 'ie 9'], { cascade: true })) // Создаем префиксы
-        .pipe(gulp.dest('app/css')) // Выгружаем результата в папку app/css
-        .pipe(browserSync.reload({stream: true})) // Обновляем CSS на странице при изменении
+        .pipe(gulp.dest('app/css/')) // Выгружаем в папку app/css
+        .pipe(browserSync.reload({stream: true}))
 });
+
 
 
 gulp.task('browser-sync', function() { // Создаем таск browser-sync
@@ -30,7 +48,7 @@ gulp.task('browser-sync', function() { // Создаем таск browser-sync
 });
 
 gulp.task('scripts', function() {
-    return gulp.src([ // Берем все необходимые библиотеки
+    return gulp.src([
         'app/libs/js/jquery-3.2.1.min.js', // Берем jQuery
         'app/libs/js/fm.revealator.jquery.js',
         'app/libs/js/jquery.browser-plugin.js',
@@ -39,26 +57,13 @@ gulp.task('scripts', function() {
         'app/libs/js/slick.min.js', // Карусель slick
         'app/libs/js/lightbox.js',
         'app/libs/js/ireject.js',
-        'app/libs/js/jquery.shorten.1.0.js' // Читать далее
+        'app/libs/js/jquery.shorten.1.0.js', // Читать далее
+        'app/js/main.js'
     ])
-        .pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
+        .pipe(concat('main.min.js')) // Собираем их в кучу в новом файле libs.min.js
         .pipe(uglify()) // Сжимаем JS файл
-        .pipe(gulp.dest('app/libs')); // Выгружаем в папку app/libs
+        .pipe(gulp.dest('app/js')); // Выгружаем в папку app/libs
 });
-gulp.task('sass-libs', function(){ // Создаем таск Sass
-    return gulp.src([ // Берем все необходимые библиотеки
-       'app/sass/vendors/slick.scss',
-       'app/sass/vendors/slick-theme.scss',
-       'app/sass/vendors/irejetc.scss',
-       'app/sass/vendors/lightbox.scss',
-       'app/sass/vendors/fm.revealator.jquery.scss'
-    ])
-        .pipe(concat('libs.css')) // Собираем их в кучу в новом файле libs.min.js
-        .pipe(sass({outputStyle: 'compressed'})) // Преобразуем Sass в CSS посредством gulp-sass
-        .pipe(rename({suffix: '.min'})) // Добавляем суффикс .min
-        .pipe(gulp.dest('app/libs')) // Выгружаем в папку app/libs
-});
-
 
 
 gulp.task('svgmin', function () {  // Минификация свг изображений
@@ -67,7 +72,7 @@ gulp.task('svgmin', function () {  // Минификация свг изобра
         .pipe(gulp.dest('app/img'));
 });
 
-gulp.task('watch', ['browser-sync', 'scripts', 'svgmin', 'sass-libs'], function() {
+gulp.task('watch', ['browser-sync', 'scripts', 'svgmin'], function() {
     gulp.watch('app/sass/**/*.scss', ['sass']); // Наблюдение за sass файлами в папке sass
     gulp.watch('app/*.html', browserSync.reload); // Наблюдение за HTML файлами в корне проекта
     gulp.watch('app/js/**/*.js', browserSync.reload);   // Наблюдение за JS файлами в папке js
@@ -79,12 +84,6 @@ gulp.task('clean', function() {
 
 
 gulp.task('build', ['clean', 'sass', 'scripts'], function() {
-
-    var buildLib = gulp.src([ // Переносим библиотеки в продакшен
-        'app/libs/*'
-    ])
-        .pipe(gulp.dest('dist/libs'));
-
 
     var buildCss = gulp.src([ // Переносим css в продакшен
         'app/css/main.min.css'
@@ -103,6 +102,16 @@ gulp.task('build', ['clean', 'sass', 'scripts'], function() {
 
     var buildImg = gulp.src('app/img/**/*') // Переносим изображения в продакшен
         .pipe(gulp.dest('dist/img/'));
+
+    var buildPhp = gulp.src('app/*.php') // Переносим изображения в продакшен
+        .pipe(gulp.dest('dist/'));
+
+
+    var buildFavicon = gulp.src([ // Переносим css в продакшен
+        'app/*.ico',
+        'app/*.png'
+    ])
+        .pipe(gulp.dest('dist/'));
 
 });
 
