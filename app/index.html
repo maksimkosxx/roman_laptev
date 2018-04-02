@@ -26,16 +26,16 @@
     <div class="container">
         <header class="header">
             <ul class="header-nav">
-                <li><a href="#1">Обо мне</a></li>
-                <li><a href="#2">Портфолио</a></li>
-                <li><a href="#3">Отзывы</a></li>
-                <li><a href="#4">Молодоженам</a></li>
-                <li><a href="#5">Стоимость</a></li>
-                <li><a href="#6">Контакты</a></li>
+                <li><a href="#obo-mne">Обо мне</a></li>
+                <li><a href="#portfolio">Портфолио</a></li>
+                <li><a href="#otzivi">Отзывы</a></li>
+                <li><a href="#molodozhenam">Молодоженам</a></li>
+                <li><a href="#stoimost">Стоимость</a></li>
+                <li><a href="#kontakty">Контакты</a></li>
             </ul>
             <div class="header-column">
                 <a href="tel:8 910 137 04 40" class="header-phone">8 910 137 04 40</a>
-                <button class="btn btn--order">Задать мне вопрос</button>
+                <button class="btn btn-special btn-order" data-type="question">Задать мне вопрос</button>
             </div>
             <div class="header-close"><span></span><span></span></div>
         </header>
@@ -63,8 +63,8 @@
         <span id="video"></span>
     </div>
 </div>
-<div id="1" class="container">
-    <a href="http://romanlaptev.ru/obo-mne"></a>
+
+<div id="obo-mne" class="container">
     <section class="about">
         <div class="about-text">
             <fieldset>
@@ -80,7 +80,7 @@
             <div class="about-video__description">О моей работе за 2 минуты</div>
             <div class="youtube"
                  id="KNpnCWig46s"
-                 data-params="modestbranding=1&showinfo=0&controls=0"
+                 data-params="modestbranding=1&showinfo=0"
                  style="width:100%;height:100%;">
             </div>
         </div>
@@ -98,7 +98,7 @@
                     <div class="events-item__image">
                         <img src="/img/icons/events/icon-1.png" alt="">
                     </div>
-                    <p>Свадьбы</p> >
+                    <p>Свадьбы</p>
                 </div>
             </div>
             <div class="events-item revealator-slideright revealator-delay1 revealator-once">
@@ -187,10 +187,11 @@
                     <div class="text">свободна ли Ваша дата в 1 клик</div>
                 </div>
                 <form action="/mail.php" method="post">
+                    <input type="hidden" name="type" value="date">
                     <input type="text" name="name" class="field" placeholder="Ваше имя">
                     <input type="tel" name="tel" class="field" placeholder="Телефон" required>
                     <input type="text" name="date" class="field" placeholder="Дата торжества" required>
-                    <input type="submit" class="btn" value="Узнать">
+                    <input type="submit" class="btn btn-order" value="Узнать">
                 </form>
             </div>
         </div>
@@ -251,8 +252,7 @@
 
 <div class="wrapper-portfolio">
     <div class="container">
-        <section id="2" class="portfolio">
-            <a href="http://romanlaptev.ru/portfolio"></a>
+        <section id="portfolio" class="portfolio">
             <fieldset>
                 <legend>
                     Посмотрите, <br>
@@ -264,7 +264,7 @@
                         <div class="portfolio-item portfolio-item--video first">
                             <div class="youtube"
                                  id="KNpnCWig46s"
-                                 data-params="modestbranding=1&showinfo=0&controls=0"
+                                 data-params="modestbranding=1&showinfo=0"
                                  style="width:100%;height:100%;">
                             </div>
                         </div>
@@ -273,69 +273,69 @@
                         <div class="portfolio-item portfolio-item--video second">
                             <div class="youtube"
                                  id="6WyvNu0xV1g"
-                                 data-params="modestbranding=1&showinfo=0&controls=0"
+                                 data-params="modestbranding=1&showinfo=0"
                                  style="width:100%;height:100%;">
                             </div>
                         </div>
                         <div class="portfolio-item">
-                            <a href="/img/portfolio/large/image1b.jpg" data-lightbox="image-1">
+                            <a href="/img/portfolio/large/image1b.jpg" data-lightbox="gallery">
                                 <img src="/img/portfolio/large/image1b.jpg" alt="">
                             </a>
                         </div>
                         <div class="portfolio-item">
-                            <a href="/img/portfolio/large/image2b.jpg" data-lightbox="image-2">
+                            <a href="/img/portfolio/large/image2b.jpg" data-lightbox="gallery">
                                 <img src="/img/portfolio/large/image2b.jpg" alt="">
                             </a>
                         </div>
                     </div>
                     <div class="portfolio-content__row">
                         <div class="portfolio-item">
-                            <a href="/img/portfolio/large/image3b.jpg" data-lightbox="image-3">
+                            <a href="/img/portfolio/large/image3b.jpg" data-lightbox="gallery">
                                 <img src="/img/portfolio/large/image3b.jpg" alt="">
                             </a>
                         </div>
                         <div class="portfolio-item">
-                            <a href="/img/portfolio/large/image4b.jpg" data-lightbox="image-4">
+                            <a href="/img/portfolio/large/image4b.jpg" data-lightbox="gallery">
                                 <img src="/img/portfolio/large/image4b.jpg" alt="">
                             </a>
                         </div>
                         <div class="portfolio-item">
-                            <a href="/img/portfolio/large/image5b.jpg" data-lightbox="image-5">
+                            <a href="/img/portfolio/large/image5b.jpg" data-lightbox="gallery">
                                 <img src="/img/portfolio/large/image5b.jpg" alt="">
                             </a>
                         </div>
                         <div class="portfolio-item">
-                            <a href="/img/portfolio/large/image6b.jpg" data-lightbox="image-6">
+                            <a href="/img/portfolio/large/image6b.jpg" data-lightbox="gallery">
                                 <img src="/img/portfolio/large/image6b.jpg" alt="">
                             </a>
                         </div>
                         <div class="portfolio-item">
-                            <a href="/img/portfolio/large/image7b.jpg" data-lightbox="image-7">
+                            <a href="/img/portfolio/large/image7b.jpg" data-lightbox="gallery">
                                 <img src="/img/portfolio/large/image7b.jpg" alt="">
                             </a>
                         </div>
                         <div class="portfolio-item portfolio-item--large">
-                            <a href="/img/portfolio/large/image8b.jpg" data-lightbox="image-8">
+                            <a href="/img/portfolio/large/image8b.jpg" data-lightbox="gallery">
                                 <img src="/img/portfolio/large/image8b.jpg" alt="">
                             </a>
                         </div>
                         <div class="portfolio-item portfolio-item--large">
-                            <a href="/img/portfolio/large/image9b.jpg" data-lightbox="image-9">
+                            <a href="/img/portfolio/large/image9b.jpg" data-lightbox="gallery">
                                 <img src="/img/portfolio/large/image9b.jpg" alt="">
                             </a>
                         </div>
                         <div class="portfolio-item">
-                            <a href="/img/portfolio/large/image10b.jpg" data-lightbox="image-10">
+                            <a href="/img/portfolio/large/image10b.jpg" data-lightbox="gallery">
                                 <img src="/img/portfolio/large/image10b.jpg" alt="">
                             </a>
                         </div>
                         <div class="portfolio-item">
-                            <a href="/img/portfolio/large/image11b.jpg" data-lightbox="image-11">
+                            <a href="/img/portfolio/large/image11b.jpg" data-lightbox="gallery">
                                 <img src="/img/portfolio/large/image11b.jpg" alt="">
                             </a>
                         </div>
                         <div class="portfolio-item">
-                            <a href="/img/portfolio/large/image12b.jpg" data-lightbox="image-12">
+                            <a href="/img/portfolio/large/image12b.jpg" data-lightbox="gallery">
                                 <img src="/img/portfolio/large/image12b.jpg" alt="">
                             </a>
                         </div>
@@ -358,59 +358,71 @@
             <div class="events-item revealator-slideright revealator-once">
                 <p><span>Вы спокойны</span></p>
                 <span class="back">
-                    Работаю по&nbsp;договору, дата бронируется.
+                    <span class="back-text">
+                        Работаю по&nbsp;договору, дата бронируется.
                     Вы&nbsp;получаете гарантию того, что праздник
                     состоится при любых обстоятельствах
+                    </span>
                 </span>
             </div>
             <div class="events-item revealator-slideright revealator-delay1 revealator-once">
                 <p><span>Я вовремя</span></p>
                 <span class="back">
-                    Приезжаю на&nbsp;площадку не&nbsp;позднее 1,5 часов до&nbsp;начала торжества.
+                    <span class="back-text">
+                        Приезжаю на&nbsp;площадку не&nbsp;позднее 1,5 часов до&nbsp;начала торжества.
                     Проверяю готовность оборудования и&nbsp;лично встречаю ваших гостей
+                    </span>
                 </span>
             </div>
             <div class="events-item revealator-slideright revealator-delay2 revealator-once">
                 <p><span>Все, как договаривались</span></p>
                 <span class="back">
-                    Ваши пожелания и&nbsp;наши договоренности для меня закон,
+                    <span class="back-text">
+                        Ваши пожелания и&nbsp;наши договоренности для меня закон,
                     которому я&nbsp;неотступно следую.
                     Все остальное&nbsp;&mdash; импровизация и&nbsp;уникальность вашей компании
+                    </span>
                 </span>
             </div>
             <div class="events-item revealator-slideright revealator-delay3 revealator-once">
                 <p><span>Все свои</span></p>
                 <span class="back">
-                    Генерирую непринужденность и&nbsp;единение.
+                    <span class="back-text">
+                        Генерирую непринужденность и&nbsp;единение.
                     Это всегда располагает людей к&nbsp;искренности
                     и&nbsp;безудержному&nbsp;веселью.
+                    </span>
                 </span>
             </div>
             <div class="events-item revealator-slideright revealator-delay4 revealator-once">
                 <p><span>Я рядом</span></p>
                 <span class="back">
-                    Даже когда я&nbsp;не&nbsp;говорю в&nbsp;микрофон,
+                   <span class="back-text">
+                        Даже когда я&nbsp;не&nbsp;говорю в&nbsp;микрофон,
                     я&nbsp;внимательно наблюдаю за&nbsp;всем, что происходит в&nbsp;зале.
                     Поэтому гости чувствуют мое внимание каждую минуту.
+                   </span>
                 </span>
             </div>
             <div class="events-item revealator-slideright revealator-delay5 revealator-once">
                 <p><span>Вы в центре внимания</span></p>
                 <span class="back">
-                    Этот праздник в&nbsp;Вашу честь, каждый гость в&nbsp;почете,
+                    <span class="back-text">
+                        Этот праздник в&nbsp;Вашу честь, каждый гость в&nbsp;почете,
                     я&nbsp;же&nbsp;ненавязчиво направляю торжество в&nbsp;нужное русло.
                     Чувствую, когда нужно зажечь, а&nbsp;когда отойти в&nbsp;сторону
+                    </span>
                 </span>
             </div>
         </div>
     </div>
 </div>
 
-<div id="3" class="reviews-wrapper">
+<div id="otzivi" class="reviews-wrapper">
     <div class="container">
         <section class="reviews">
             <a href="http://romanlaptev.ru/otzivy"></a>
-            <div class="reviews-title">Чеснее всего обо мне скажут мои клиенты</div>
+            <div class="reviews-title">Честнее всего обо мне скажут мои клиенты</div>
             <div class="reviews-tabs">
                 <button id="tab1" class="reviews-tabs__button active">Частные события</button>
                 <button id="tab2" class="reviews-tabs__button">Корпоративные события</button>
@@ -1029,7 +1041,7 @@
             <div class="steps-footer__title">
                 Запишитесь на личную встречу прямо сейчас
             </div>
-            <button class="steps-footer__btn btn btn--order">
+            <button class="steps-footer__btn btn btn-special btn-order" data-type="meet">
                 Записаться на встречу
             </button>
         </div>
@@ -1038,8 +1050,7 @@
 
 <div class="wrapper-gift">
     <div class="container">
-        <section id="4" class="gift">
-            <a href="http://romanlaptev.ru/molodozhenam"></a>
+        <section id="molodozhenam" class="gift">
             <fieldset>
                 <legend>Молодоженам</legend>
                 <div class="gift-content">
@@ -1078,9 +1089,10 @@
                             <div class="gift-form__description">
                                 Заполните форму
                             </div>
+                            <input type="hidden" name="type" value="gift">
                             <input type="text" name="name" class="field" placeholder="Ваше имя">
                             <input type="email" name="mail" class="field" placeholder="e-mail" required>
-                            <input type="submit" class="btn" value="Получить">
+                            <input type="submit" class="btn btn-order" value="Получить">
                         </form>
                     </div>
                 </div>
@@ -1121,7 +1133,7 @@
                 </div>
                 <div class="team-item__description">
                     <p><span>Молниеносно</span> решает любой вопрос.</p>
-                    <p>Во всем стремиться <span>к идеалу</span>.</p>
+                    <p>Во всем стремится <span>к идеалу</span>.</p>
                     <p>Ей можно доверить <span>праздник президента</span>.</p>
                 </div>
             </div>
@@ -1163,10 +1175,9 @@
     </div>
 </div>
 
-<div class="wrapper-offers">
+<div id="stoimost" class="wrapper-offers">
     <div class="container">
-        <a href="http://romanlaptev.ru/stoimost"></a>
-        <section id="5" class="offers">
+        <section class="offers">
             <div class="offers-title">
                 Выберите один из вариантов нашего сотрудничества
             </div>
@@ -1193,7 +1204,7 @@
                                     </li>
                                     <li>
                                 <span>
-                                    Cоставление тайминга мероприятия
+                                    Проработка тайминга мероприятия
                                 </span>
                                     </li>
                                     <li>
@@ -1207,19 +1218,7 @@
                                 </span>
                                     </li>
                                 </ul>
-                                <ul>
-                                    <li>
-                                <span>
-                                    Комплект музыкального оборудования (звук, цветомузыка, экран)
-                                </span>
-                                    </li>
-                                    <li>
-                                <span>
-                                    Доставка и монтаж музыкального оборудования
-                                </span>
-                                    </li>
-                                </ul>
-                                <button class="offers-item__btn btn btn--order">Узнать стоимость</button>
+                                <button class="offers-item__btn btn btn-order btn-special" data-type="pricetandart">Узнать стоимость</button>
                             </div>
                         </div>
                         <div class="offers-item">
@@ -1239,7 +1238,7 @@
                                     </li>
                                     <li>
                                 <span>
-                                    Cоставление тайминга мероприятия
+                                    Проработка тайминга мероприятия
                                 </span>
                                     </li>
                                     <li>
@@ -1265,7 +1264,7 @@
                                 </span>
                                     </li>
                                 </ul>
-                                <button class="offers-item__btn btn btn--order">Узнать стоимость</button>
+                                <button class="offers-item__btn btn btn-order btn-special"  data-type="priceopt">Узнать стоимость</button>
                             </div>
                         </div>
                         <div class="offers-item">
@@ -1285,7 +1284,7 @@
                                     </li>
                                     <li>
                                 <span>
-                                    Cоставление тайминга мероприятия
+                                    Проработка тайминга мероприятия
                                 </span>
                                     </li>
                                     <li>
@@ -1318,7 +1317,7 @@
                                 </span>
                                     </li>
                                 </ul>
-                                <button class="offers-item__btn btn btn--order">Узнать стоимость</button>
+                                <button class="offers-item__btn btn btn-order btn-special" data-type="priceprem">Узнать стоимость</button>
                             </div>
                         </div>
                     </div>
@@ -1355,7 +1354,7 @@
                                 </span>
                                     </li>
                                 </ul>
-                                <button class="offers-item__btn btn btn--order">Узнать стоимость</button>
+                                <button class="offers-item__btn btn btn-order btn-special" data-type="event">Узнать стоимость</button>
                             </div>
                         </div>
                         <div class="offers-item offers-item--small">
@@ -1383,7 +1382,7 @@
                                 </span>
                                     </li>
                                 </ul>
-                                <button class="offers-item__btn btn btn--order">Узнать стоимость</button>
+                                <button class="offers-item__btn btn btn-order btn-special" data-type="reg">Узнать стоимость</button>
                             </div>
                         </div>
                         <div class="offers-item offers-item--small">
@@ -1406,7 +1405,7 @@
                                 </span>
                                     </li>
                                 </ul>
-                                <button class="offers-item__btn btn btn--order">Связаться</button>
+                                <button class="offers-item__btn btn btn-order btn-special" data-type="charity">Связаться</button>
                             </div>
                         </div>
                     </div>
@@ -1420,9 +1419,8 @@
     </div>
 </div>
 
-<div id="6" class="container">
+<div id="kontakty" class="container">
     <section class="contacts">
-        <a href="http://romanlaptev.ru/kontakty"></a>
         <div class="contacts-text">
             <div class="contacts-text__description">
                 От&nbsp;свежих эмоций и&nbsp;самых приятных
@@ -1434,7 +1432,7 @@
             <a href="tel:8 (910) 137 04 40" class="contacts-text__phone">
                 8 (910) 137 04 40
             </a>
-            <button class="contacts-text__btn btn btn--order">
+            <button class="contacts-text__btn btn btn-order btn-special">
                 Обратный звонок
             </button>
             <div class="contacts-text__social">
@@ -1476,6 +1474,7 @@
                     <div class="text">Заполните форму и&nbsp;нажмите кнопку. Я&nbsp;скоро перезвоню</div>
                 </div>
                 <form action="/mail.php" method="post">
+                    <input type="hidden" name="type" value="question">
                     <input type="text" id="name" name="name" class="field" placeholder="Ваше имя">
                     <input type="tel" id="tel" name="tel" class="field" placeholder="Телефон" required>
                     <textarea name="text" id="text" class="field"
@@ -1573,11 +1572,6 @@
 
     gtag('config', 'UA-109652667-1');
 </script>
-
-<link rel="stylesheet" href="https://cdn.envybox.io/widget/cbk.css">
-<script type="text/javascript" src="https://cdn.envybox.io/widget/cbk.js?wcb_code=c92fc0f9e2688c01ff73e7fcdab70e2d"
-        charset="UTF-8" defer></script>
-
 
 </body>
 </html>

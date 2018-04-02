@@ -38,27 +38,6 @@
   }
   .offers-tabs {
     position: relative;
-    @include respond-to(md) {
-      min-height: 263px;
-      border: 2px solid #a78c6e;
-      &::after {
-        content: 'Свадьба, корпоратив, юбилей, выпускной';
-        display: block;
-        position: absolute;
-        top: -20px;
-        left: 61px;
-        max-width: 610px;
-        padding: 0 15px;
-        margin: 0 auto;
-        color: #363a3e;
-        font-family: $FontSylfaen;
-        font-size: 32px;
-        font-weight: 400;
-        line-height: 40px;
-        text-align: center;
-        background-color: #ece9e5;
-      }
-    }
     @include respond-to(sm) {
       &::after {
         display: none;
@@ -72,30 +51,31 @@
     margin: 0 auto 100px;
     padding-top: 40px;
     text-align: center;
+    &:last-of-type {
+      padding: 31px 0 68px;
+      margin-bottom: 45px;
+    }
     @include respond-to(md) {
-      position: absolute;
-      top: 1.5px;
-      left: 0;
-      z-index: 3;
       width: 100%;
-      max-width: 368px;
+      max-width: 465px;
       padding: 30px 0 13px;
-      margin-bottom: 0;
-      border: none;
+      margin-bottom: 25px;
       &:last-of-type {
-        top: 2px;
-        right: -20px;
-        left: auto;
-        border: none;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-bottom: 25px;
       }
+
+
     }
     @include respond-to(sm) {
       position: static;
       &:last-of-type {
-        padding-top: 0;
+        min-height: inherit;
         right: auto;
         left: auto;
-        border: none;
+        padding: 18px 0 13px;
+        margin-bottom: 25px;
       }
     }
     &__title {
@@ -106,7 +86,9 @@
       display: inline-block;
       max-width: 610px;
       padding: 0 8px;
-      //margin: 0 auto;
+      -webkit-transform: translate(44%, 0);
+      -moz-transform: translate(44%, 0);
+      -ms-transform: translate(44%, 0);
       transform: translate(44%, 0);
       color: #363a3e;
       font-family: $FontSylfaen;
@@ -116,7 +98,12 @@
       text-align: center;
       background-color: #ece9e5;
       @include respond-to(md) {
-        display: none;
+        max-width: 410px;
+        font-size: 21px;
+        -webkit-transform: translate(6%, 0);
+        -moz-transform: translate(6%, 0);
+        -ms-transform: translate(6%, 0);
+        transform: translate(6%, 0);
       }
       @include respond-to(sm) {
         display: block;
@@ -127,6 +114,10 @@
         margin: 0;
         line-height: 18.65px;
         text-align: center;
+        -webkit-transform: translate(40%, 0);
+        -moz-transform: translate(40%, 0);
+        -ms-transform: translate(40%, 0);
+        transform: translate(40%, 0);
       }
     }
   }
@@ -138,11 +129,10 @@
     margin: 0 -17px -27px;
     @include respond-to(md) {
       display: block;
-      margin: 0 0 0 -10px;
+      margin: 0 -10px 0;
     }
     @include respond-to(sm) {
       width: auto;
-      margin: 0 -10px 0;
     }
   }
   &-item {
@@ -159,7 +149,8 @@
       min-height: 700px;
     }
     @include respond-to(md) {
-      width: 370px;
+      width: 100%;
+      max-width: 100%;
       min-height: inherit;
       margin-bottom: 8px;
       padding: 0;

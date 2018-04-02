@@ -81,7 +81,9 @@
         }
       }
       @include respond-to(md) {
-        max-width: 600px;
+        display: block;
+        width: 100%;
+        max-width: 100%;
         top: 0;
         margin-left: 0;
         text-align: center;
@@ -214,7 +216,6 @@
       }
       &.first {
         float: right;
-        //margin-top: -200px;
         min-height: 344px;
         @include respond-to(lg) {
           margin-top: 0;
@@ -263,7 +264,7 @@
         min-height: 488px;
       }
       @include respond-to(sm) {
-        height: 185px;
+        height: 195px;
         min-height: inherit;
       }
     }

@@ -112,14 +112,14 @@
     }
     &__social {
       @include flex;
-      max-width: 294px;
+      max-width: 285px;
       margin-top: 50px;
       @include respond-to(md) {
        max-width: 275px;
       }
       @include respond-to(sm) {
-        max-width: 200px;
-        margin-top: 20px;
+        max-width: 190px;
+        margin-top: 17px;
       }
       .fb, .insta, .skype, .vk, .ytube{
         background: url(../img/social/sprites-social.png) no-repeat;
@@ -161,23 +161,26 @@
           //background-size: cover!important;
         }
         @include respond-to(sm) {
-          background-size: 194px!important;
+          background-size: 150px!important;
           .fb, .insta, .skype, .vk, .ytube{
-            width: 18px;
-            height: 24px;
             background: url(../img/social/sprites-social.png) no-repeat;
           }
+          &.vk {
+            width: 25px;
+            height: 18px;
+            background-position: 2% 45%;
+          }
           &.insta {
-            background-position: 25% 50%;
+            background-position: 27% 50%;
           }
           &.fb {
-            background-position: 49% 46%;
+            background-position: 49% 50%;
           }
           &.ytube {
-            background-position: 75% 45%;
+            background-position: 72% 50%;
           }
           &.skype {
-            background-position: 100% 47%;
+            background-position: 102% 60%;
           }
         }
         &:hover {
@@ -191,6 +194,11 @@
   }
   &-image {
     margin-right: -70px;
+
+    img {
+      vertical-align: middle;
+      box-shadow: 0 5px 16px rgba(0, 0, 0, 0.16);
+    }
     @include respond-to(lg) {
       margin-right: -45px;
       img {

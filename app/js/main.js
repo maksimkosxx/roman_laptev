@@ -17,7 +17,8 @@ $(document).ready(function () {
 
     function navScroll() {
         if ($(window).width() > 1024) {
-            var lastId, topMenu = $(".header-nav"), topMenuHeight = topMenu.outerHeight() + 15,
+
+            var lastId, topMenu = $(".header-nav"), topMenuHeight = topMenu.height() + 80,
                 menuItems = topMenu.find("a"), scrollItems = menuItems.map(function () {
                     var item = $($(this).attr("href"));
                     if (item.length) {
@@ -25,8 +26,15 @@ $(document).ready(function () {
                     }
                 });
             menuItems.click(function (e) {
+
+                if($('.wrapper-header').hasClass('sticky')) {
+                    var topMenuHeight = topMenu.height() + 15;
+                } else {
+                    var topMenuHeight = topMenu.height() + 80;
+                }
+
                 var href = $(this).attr("href"), offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight;
-                $('html, body').stop().animate({scrollTop: offsetTop}, 300);
+                $('html, body').stop().animate({scrollTop: offsetTop}, 500);
                 e.preventDefault()
             });
             $(window).scroll(function () {
@@ -45,22 +53,26 @@ $(document).ready(function () {
     }
     navScroll();
 
-    $('.header-nav > li a').on('click', function () {
+
         if ($(window).width() < 1024) {
+
+            $('.header-nav > li a').on('click', function () {
             $('.wrapper-header').animate({opacity: 0}, 200, function () {
                 $('.wrapper-header').css('display', 'none');
                 $('.wrapper-popup').fadeOut(400);
                 $('body').css('overflow', 'auto')
-            })
+            });
+
+            $('.header-nav li a').removeClass('active');
+            $(this).addClass('active');
+            var scroll_el = $(this).attr('href');
+            if ($(scroll_el).length > 0) {
+                $('html, body').animate({scrollTop: $(scroll_el).offset().top}, 1500)
+            }
+            return false
+            });
         }
-        $('.header-nav li a').removeClass('active');
-        $(this).addClass('active');
-        var scroll_el = $(this).attr('href');
-        if ($(scroll_el).length > 0) {
-            $('html, body').animate({scrollTop: $(scroll_el).offset().top}, 1500)
-        }
-        return false
-    });
+
     $(window).scroll(function () {
         if ($(window).width() < 1024) {
             if ($(this).scrollTop() > 100) {
@@ -163,7 +175,7 @@ $(document).ready(function () {
     portfolio();
 
     function popups() {
-        var btn = $('.btn--order');
+        var btn = $('.btn-special');
         btn.on('click', function (e) {
             e.preventDefault();
             $('.wrapper-popup').fadeIn(400, function () {
@@ -197,6 +209,16 @@ $(document).ready(function () {
         $("input[name='tel']").mask("8(999) 999-9999");
         $("input[name='date']").mask("99.99.9999", {placeholder: "дд.мм.гггг"})
     });
+
+
+    // Post type form
+
+    $('.btn-order').on('click', function () {
+        var thisType = $(this).attr('data-type');
+        $(".popup--order input[name='type']").val(thisType);
+    });
+
+
     $("input[name='name']").on('change', function () {
         var inputName = $(this).val(), titleText = 'Спасибо, ' + inputName + '!';
         if (inputName.length == '') {
@@ -211,7 +233,7 @@ $(document).ready(function () {
             errorPlacement: function () {
             }, submitHandler: function () {
                 $.ajax({
-                    type: "POST", url: "/mail.php", data: $form.serialize(), success: function () {
+                    type: "POST", url: "mail.php", data: $form.serialize(), success: function () {
                         $('.wrapper-popup').fadeIn(400, function () {
                             $('body').css('overflow', 'hidden');
                             $('.popup').css('display', 'none').animate({opacity: 1}, 200);
@@ -233,7 +255,7 @@ $(document).ready(function () {
             errorPlacement: function () {
             }, submitHandler: function () {
                 $.ajax({
-                    type: "POST", url: "/mail.php", data: $form.serialize(), success: function () {
+                    type: "POST", url: "mail.php", data: $form.serialize(), success: function () {
                         $('.wrapper-popup').fadeIn(400, function () {
                             $('body').css('overflow', 'hidden');
                             $('.popup').css('display', 'none').animate({opacity: 1}, 200);
@@ -249,6 +271,7 @@ $(document).ready(function () {
             }
         })
     });
+
     $(function () {
         $.reject({
             reject: {

@@ -204,8 +204,6 @@
       margin: auto;
     }
     @include respond-to(sm) {
-      top: 30px;
-      bottom: auto;
       max-width: 288px;
       height: 270px;
     }
