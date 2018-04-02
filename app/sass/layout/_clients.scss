@@ -78,10 +78,26 @@
       flex-wrap: wrap;
       @include respond-to(md) {
         display: block;
-        &:first-of-type {
-          .clients-item:last-of-type {
+        &:nth-of-type(2) {
+          .clients-item:nth-of-type(2) {
             img {
-              max-width: 50%;
+              max-width: 60%;
+            }
+          }
+        }
+      }
+      @include respond-to(sm) {
+        &:nth-of-type(2) {
+          .clients-item:nth-of-type(3) {
+            img {
+              margin-top: 30px;
+            }
+          }
+        }
+        &:nth-of-type(3) {
+          .clients-item:nth-of-type(2) {
+            img {
+              margin-top: 10px;
             }
           }
         }

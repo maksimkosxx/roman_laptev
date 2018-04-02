@@ -104,6 +104,9 @@
     }
     img {
       margin-top: calc(-50% + 55px);
+      @include respond-to(md) {
+        margin-top: calc(-40% + 30px);
+      }
       @include respond-to(sm) {
         display: inline-block;
         vertical-align: middle;
@@ -119,6 +122,9 @@
       font-size: 32px;
       font-weight: 400;
       line-height: 40px;
+      @include respond-to(md) {
+        margin-top: 20px;
+      }
       @include respond-to(sm) {
         margin: 0 0 0 -1px;
         font-size: 20px;
@@ -179,7 +185,7 @@
         }
         span {
           font-family: $FontAvenirDemi;
-          font-weight: 600;
+          font-weight: 500;
           line-height: 30px;
           @include respond-to(sm) {
             line-height: 20px;

@@ -2,6 +2,9 @@
   margin-top: 175px;
   background: url(/img/bg_block6.jpg) center no-repeat;
   background-size: cover;
+  @include respond-to(lg) {
+    margin-top: 80px;
+  }
   @include respond-to(md) {
     margin-top: 50px;
     background: #d9d5d0;

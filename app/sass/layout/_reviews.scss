@@ -95,8 +95,9 @@
     &__content {
       position: relative;
       visibility: hidden;
+      opacity: 0;
       height: 0;
-      transition: .2s;
+      pointer-events: none;
       &::after {
         content: '';
         display: block;
@@ -124,6 +125,8 @@
       &.active {
         height: auto;
         visibility: visible;
+        opacity: 1;
+        pointer-events: inherit;
       }
     }
   }
@@ -301,7 +304,7 @@
       }
       & > span:first-of-type {
         font-family: $FontAvenirDemi;
-        font-weight: 600;
+        font-weight: 500;
       }
       .morelink {
         display: block;
@@ -349,6 +352,7 @@
         right: 0;
       }
       img {
+        width: 100%;
         box-shadow: -5px 6px 38px -10px rgba(156, 153, 149, 0.9);
         @include respond-to(lg) {
           width: 150px;

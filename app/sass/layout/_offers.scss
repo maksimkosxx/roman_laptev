@@ -178,6 +178,7 @@
         padding: 20px 20px 20px 35px;
         font-size: 15px;
         line-height: normal;
+        cursor: pointer;
         &::after {
           content: '+';
           position: absolute;
@@ -199,7 +200,7 @@
         &.active {
           &::after {
             content: '—';
-            padding-bottom: 7px;
+            line-height: 23px;
           }
         }
       }

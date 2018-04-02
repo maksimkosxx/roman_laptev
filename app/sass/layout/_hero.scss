@@ -1,3 +1,11 @@
+.wrapper-top {
+  margin-top: 118px;
+  background-color: #d9d5d0;
+  @include respond-to(md) {
+    margin-top: 0;
+  }
+}
+
 .wrapper-hero {
   position: relative;
   max-width: 1400px;
@@ -49,7 +57,8 @@
     min-height: 761px;
     background: url(/img/roman.png) 0 100% no-repeat;
     @include respond-to(lg) {
-      min-height: 600px;
+      left: 13%;
+      min-height: 650px;
       background-size: contain;
     }
     @include respond-to(md) {
@@ -78,6 +87,9 @@
   z-index: 2;
   padding-top: 190px;
   text-align: right;
+  @include respond-to(lg) {
+    padding-top: 120px;
+  }
   @include respond-to(sm) {
     padding: 71px 0 40px;
   }

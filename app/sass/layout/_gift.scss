@@ -116,10 +116,10 @@
     }
     span {
       font-family: $FontAvenirDemi;
-      font-weight: 600;
+      font-weight: 500;
     }
     p {
-      margin: 40px 0;
+      margin: 50px 0 30px;
       color: #f9d7a2;
       font-family: $FontSylfaen;
       font-size: 32px;
@@ -141,14 +141,12 @@
     }
     li {
       line-height: 50px;
-      letter-spacing: 1.65px;
       @include respond-to(md) {
         line-height: 40px;
       }
       @include respond-to(sm) {
         margin-bottom: 25px;
         line-height: normal;
-        letter-spacing: normal;
         span:first-of-type {
           display: block;
           width: 35px;

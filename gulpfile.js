@@ -21,16 +21,10 @@ var gulp       = require('gulp'), // Подключаем Gulp
 
 gulp.task('sass', function(){ // Создаем таск Sass
     return gulp.src([
-        'app/sass/vendors/slick.scss',
-        'app/sass/vendors/slick-theme.scss',
-        'app/sass/vendors/irejetc.scss',
-        'app/sass/vendors/lightbox.scss',
-        'app/sass/vendors/fm.revealator.jquery.scss',
         'app/sass/main.scss'
     ])
-        .pipe(concat('main.css')) // Собираем их в кучу в новом файле main.css
-        .pipe(autoprefixer(['last 15 versions', '> 2%', 'ie 8', 'ie 9'], { cascade: true })) // Создаем префиксы
         .pipe(sass({outputStyle: 'compressed'})) // Преобразуем Sass в CSS посредством gulp-sass
+        .pipe(autoprefixer(['last 15 versions', '> 2%', 'ie 8', 'ie 9'], { cascade: true })) // Создаем префиксы
         .pipe(rename({suffix: '.min'})) // Добавляем суффикс .min
         .pipe(gulp.dest('app/css/')) // Выгружаем в папку app/css
         .pipe(browserSync.reload({stream: true}))
