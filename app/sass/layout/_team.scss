@@ -67,6 +67,9 @@
     margin: 0 14px 73px;
     border: 2px solid #a78c6e;
     text-align: center;
+    @include respond-to(lg) {
+      max-width: 30%;
+    }
     @include respond-to(md) {
       display: inline-block;
       vertical-align: top;
@@ -89,18 +92,13 @@
         text-align: right;
       }
       &__info {
+        position: relative;
         display: inline-block;
         vertical-align: middle;
         width: 40%;
+        padding-bottom: 15px;
         margin-left: 13px;
-        @include respond-to(sm) {
-          position: relative;
-          padding-bottom: 15px;
-        }
       }
-    }
-    @include respond-to(lg) {
-      max-width: 30%;
     }
     img {
       margin-top: calc(-50% + 55px);

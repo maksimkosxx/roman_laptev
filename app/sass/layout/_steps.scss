@@ -42,21 +42,20 @@
     }
   }
   &-item {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: space-between;
     max-width: 1082px;
     min-height: 603px;
     margin: 60px auto 0;
+    padding-top: 65px;
     border: 2px solid #a78c6e;
     @include respond-to(lg) {
       min-height: 430px;
+      padding-top: 45px;
     }
     @include respond-to(md) {
       display: block;
-      margin: 27px auto 100px;
-      min-height: 746px;
+      margin: 27px auto 50px;
+      padding-top: 0;
+      min-height: 726px;
       border: none;
     }
     @include respond-to(sm) {
@@ -66,6 +65,8 @@
     &__image {
       position: relative;
       left: -40px;
+      display: inline-block;
+      vertical-align: middle;
       @include respond-to(lg) {
         max-width: 58%;
         img {
@@ -89,6 +90,8 @@
       }
     }
     &__text {
+      display: inline-block;
+      vertical-align: middle;
       width: 100%;
       max-width: 340px;
       padding-right: 25px;
@@ -140,6 +143,9 @@
       font-size: 45px;
       font-weight: 400;
       line-height: 45px;
+      @include respond-to(lg) {
+        margin: -55px 0 20px;
+      }
       @include respond-to(md) {
         max-width: 250px;
         margin: -75px auto 0;
@@ -245,10 +251,15 @@
       }
     }
     &:nth-of-type(3) {
+      .steps-item__text {
+        margin-left: 20px;
+        @include respond-to(md) {
+          margin-left: 0;
+        }
+      }
       .steps-item__title {
         div:last-child {
-          position: relative;
-          right: -48px;
+          right: -52px;
           @include respond-to(md) {
             right: auto;
           }

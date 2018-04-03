@@ -167,6 +167,10 @@
     cursor: pointer;
     transition: .2s;
     outline: none;
+    @include respond-to(md) {
+      width: 50px;
+      height: 50px;
+    }
     @include respond-to(sm) {
       display: block;
       width: 33px;
@@ -180,6 +184,11 @@
       border: 14px solid transparent;
       border-left: 20px solid #fff;
       transition: .2s;
+      @include respond-to(md) {
+        margin: 2px 0 0 13px;
+        border: 10px solid transparent;
+        border-left: 13px solid #fff;
+      }
       @include respond-to(sm) {
         margin: 7px 0 0 11px;
         border: 8px solid transparent;

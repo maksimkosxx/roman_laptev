@@ -6,31 +6,22 @@ var gulp       = require('gulp'), // Подключаем Gulp
     cssnano      = require('gulp-cssnano'), // Подключаем пакет для минификации CSS
     rename       = require('gulp-rename'), // Подключаем библиотеку для переименования файлов
     svgmin       = require('gulp-svgmin'),  // Минификация svg изображений
+    gcmq         = require('gulp-group-css-media-queries'),
     del          = require('del'), // Подключаем библиотеку для удаления файлов и папок   
     cache        = require('gulp-cache'), // Подключаем библиотеку кеширования
     autoprefixer = require('gulp-autoprefixer');// Подключаем библиотеку для автоматического добавления префиксов
-
-// gulp.task('sass', function(){ // Создаем таск Sass
-//     return gulp.src('app/sass/main.scss') // Берем источник
-//         .pipe(sass({outputStyle: 'compressed'})) // Преобразуем Sass в CSS посредством gulp-sass
-//         .pipe(rename({suffix: '.min'})) // Добавляем суффикс .min
-//         .pipe(autoprefixer(['last 15 versions', '> 2%', 'ie 8', 'ie 9'], { cascade: true })) // Создаем префиксы
-//         .pipe(gulp.dest('app/css')) // Выгружаем результата в папку app/css
-//         .pipe(browserSync.reload({stream: true})) // Обновляем CSS на странице при изменении
-// });
 
 gulp.task('sass', function(){ // Создаем таск Sass
     return gulp.src([
         'app/sass/main.scss'
     ])
-        .pipe(sass({outputStyle: 'compressed'})) // Преобразуем Sass в CSS посредством gulp-sass
+        .pipe(sass()) // Преобразуем Sass в CSS посредством gulp-sass
         .pipe(autoprefixer(['last 15 versions', '> 2%', 'ie 8', 'ie 9'], { cascade: true })) // Создаем префиксы
+        .pipe(gcmq())
         .pipe(rename({suffix: '.min'})) // Добавляем суффикс .min
         .pipe(gulp.dest('app/css/')) // Выгружаем в папку app/css
         .pipe(browserSync.reload({stream: true}))
 });
-
-
 
 gulp.task('browser-sync', function() { // Создаем таск browser-sync
     browserSync({ // Выполняем browserSync
@@ -44,7 +35,6 @@ gulp.task('browser-sync', function() { // Создаем таск browser-sync
 gulp.task('scripts', function() {
     return gulp.src([
         'app/libs/js/jquery-3.2.1.min.js', // Берем jQuery
-        'app/libs/js/fm.revealator.jquery.js',
         'app/libs/js/jquery.browser-plugin.js',
         'app/libs/js/jquery.validate.min.js', // Валидация форм
         'app/libs/js/jquery.maskedinput.min.js', // Маска поля
@@ -82,6 +72,7 @@ gulp.task('build', ['clean', 'sass', 'scripts'], function() {
     var buildCss = gulp.src([ // Переносим css в продакшен
         'app/css/main.min.css'
     ])
+        .pipe(cssnano())
         .pipe(gulp.dest('dist/css'));
 
 
