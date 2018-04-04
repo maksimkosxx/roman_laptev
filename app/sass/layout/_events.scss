@@ -141,10 +141,11 @@
       }
     }
     &__image {
-      img {
+      svg {
         margin-top: -35px;
         @include respond-to(sm) {
           width: 33px;
+          margin-top: -32px;
         }
       }
       &::before,
@@ -168,8 +169,11 @@
       }
     }
     &:nth-of-type(3) {
-      img {
-        margin-top: -45px;
+      svg {
+        margin-top: -50px;
+        @include respond-to(sm) {
+          margin-top: -42px;
+        }
       }
     }
   }
