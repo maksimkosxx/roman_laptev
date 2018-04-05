@@ -142,10 +142,16 @@
     }
     &__image {
       svg {
-        margin-top: -35px;
+        -webkit-transform: translateY(-35px);
+        -moz-transform: translateY(-35px);
+        -ms-transform: translateY(-35px);
+        transform: translateY(-35px);
         @include respond-to(sm) {
-          width: 33px;
-          margin-top: -32px;
+          width: 37px;
+          -webkit-transform: translateY(-32px);
+          -moz-transform: translateY(-32px);
+          -ms-transform: translateY(-32px);
+          transform: translateY(-32px);
         }
       }
       &::before,
@@ -170,9 +176,15 @@
     }
     &:nth-of-type(3) {
       svg {
-        margin-top: -50px;
+        -webkit-transform: translateY(-50px);
+        -moz-transform: translateY(-50px);
+        -ms-transform: translateY(-50px);
+        transform: translateY(-50px);
         @include respond-to(sm) {
-          margin-top: -42px;
+          -webkit-transform: translateY(-42px);
+          -moz-transform: translateY(-42px);
+          -ms-transform: translateY(-42px);
+          transform: translateY(-42px);
         }
       }
     }
